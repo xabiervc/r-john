@@ -1,0 +1,177 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/xabiervc/r-john/main/schemas/dialogue.schema.json",
+  "title": "Dialogue Tree Schema",
+  "description": "Schema for dialogue trees in R. John: Public Servant",
+  "type": "object",
+  "required": ["id", "npcId", "chapter", "context", "nodes"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for this dialogue tree (e.g., 'dialogue_maria_day1')",
+      "pattern": "^dialogue_[a-z]+_day[0-9]+$"
+    },
+    "npcId": {
+      "type": "string",
+      "description": "Reference to NPC in characters.json (e.g., 'maria')",
+      "pattern": "^[a-z]+$"
+    },
+    "chapter": {
+      "type": "integer",
+      "description": "Chapter number (1-7)",
+      "minimum": 1,
+      "maximum": 7
+    },
+    "context": {
+      "type": "string",
+      "description": "Context description (e.g., 'Debate prep meeting, morning, Government Building')",
+      "minLength": 10
+    },
+    "nodes": {
+      "type": "array",
+      "description": "Array of dialogue nodes",
+      "minItems": 5,
+      "items": {
+        "$ref": "#/$defs/dialogueNode"
+      }
+    }
+  },
+  "$defs": {
+    "dialogueNode": {
+      "type": "object",
+      "required": ["id", "text", "publicOptions"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique node identifier within this dialogue tree",
+          "pattern": "^[a-z0-9_]+$"
+        },
+        "text": {
+          "type": "string",
+          "description": "NPC's dialogue text",
+          "minLength": 5
+        },
+        "moodVariations": {
+          "type": "object",
+          "description": "Optional mood-based text variations",
+          "properties": {
+            "Stressed": {"type": "string"},
+            "Relaxed": {"type": "string"},
+            "Flirty": {"type": "string"},
+            "Angry": {"type": "string"},
+            "Neutral": {"type": "string"}
+          },
+          "additionalProperties": false
+        },
+        "publicOptions": {
+          "type": "array",
+          "description": "Player's public dialogue options",
+          "minItems": 2,
+          "maxItems": 5,
+          "items": {
+            "$ref": "#/$defs/dialogueOption"
+          }
+        },
+        "privateThoughts": {
+          "type": "array",
+          "description": "R. John's inner monologue options (shown to player only)",
+          "minItems": 3,
+          "maxItems": 5,
+          "items": {
+            "$ref": "#/$defs/privateThought"
+          }
+        },
+        "nextNode": {
+          "type": "string",
+          "description": "Next node ID (for linear paths)"
+        },
+        "branchingPaths": {
+          "type": "object",
+          "description": "Conditional branching based on player choice",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "dialogueOption": {
+      "type": "object",
+      "required": ["id", "text"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique option identifier",
+          "pattern": "^[a-z0-9_]+$"
+        },
+        "text": {
+          "type": "string",
+          "description": "Option text shown to player",
+          "minLength": 3
+        },
+        "reputationEffect": {
+          "type": "number",
+          "description": "Reputation change (-20 to +20)",
+          "minimum": -20,
+          "maximum": 20
+        },
+        "lustEffect": {
+          "type": "number",
+          "description": "Lust change (-10 to +10)",
+          "minimum": -10,
+          "maximum": 10
+        },
+        "riskEffect": {
+          "type": "number",
+          "description": "Exposure risk change (-10 to +20)",
+          "minimum": -10,
+          "maximum": 20
+        },
+        "nextNode": {
+          "type": "string",
+          "description": "Next node ID if this option is chosen"
+        },
+        "setFlag": {
+          "type": "string",
+          "description": "Flag to set (e.g., 'maria_interest_+10', 'emma_seduction_available')"
+        },
+        "requiresFlag": {
+          "type": "string",
+          "description": "Flag required to show this option (e.g., 'day_1_completed')"
+        }
+      }
+    },
+    "privateThought": {
+      "type": "object",
+      "required": ["id", "text"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique thought identifier",
+          "pattern": "^[a-z0-9_]+$"
+        },
+        "text": {
+          "type": "string",
+          "description": "R. John's inner thought (degenerate, strategic, etc.)",
+          "minLength": 10
+        },
+        "lustEffect": {
+          "type": "number",
+          "description": "Lust change (-5 to +10)",
+          "minimum": -5,
+          "maximum": 10
+        },
+        "riskEffect": {
+          "type": "number",
+          "description": "Risk change (-5 to +10)",
+          "minimum": -5,
+          "maximum": 10
+        },
+        "mood": {
+          "type": "string",
+          "description": "Mood this thought represents (for tracking)",
+          "enum": ["Degenerate", "Strategic", "Lonely", "Calculating", "Impatient"]
+        }
+      }
+    }
+  }
+}
