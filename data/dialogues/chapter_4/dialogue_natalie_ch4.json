@@ -1,0 +1,118 @@
+{
+  "dialogue_id": "natalie_chapter_4",
+  "npc_id": "npc_natalie",
+  "chapter": 4,
+  "day": 4,
+  "location": "congress_hall",
+  "title": "Congress Day 1 - Natalie",
+  "description": "R. John meets Natalie, calculating lobbyist, at the party congress.",
+  "mood_baseline": {"receptive": 35, "playful": 30, "bold": 55},
+  "nodes": [
+    {"id": "start", "text": "Natalie approaches you during a coffee break. She's 33, sharp suit, sharper eyes. 'Senator. We should talk.'", "choices": [
+      {"text": "Ask what about", "next": "ask_about"},
+      {"text": "Say he's listening", "next": "listening"},
+      {"text": "Recognize her from somewhere", "next": "recognize"}
+    ]},
+    {"id": "ask_about", "text": "Natalie: 'The healthcare bill. I represent several... interested parties.' She hands you a card. 'Natalie Cross, HealthFirst lobbying.'", "mood_effect": {"receptive": 10, "bold": 5}, "choices": [
+      {"text": "Say he knows her reputation", "next": "know_reputation"},
+      {"text": "Ask what they're offering", "next": "what_offering"}
+    ]},
+    {"id": "listening", "text": "Natalie: 'Good. I represent clients who want the healthcare bill amended. Generously.'", "mood_effect": {"bold": 15, "receptive": 10}, "consequence": {"attraction": 15, "risk": 10}, "choices": [
+      {"text": "Ask how generous", "next": "how_generous"},
+      {"text": "Say he doesn't mix business and pleasure", "next": "no_mix"}
+    ]},
+    {"id": "recognize", "text": "Natalie: 'We met at the fundraiser. You were... memorable.' She smiles thinly.", "mood_effect": {"receptive": 15, "bold": 10}, "consequence": {"attraction": 20, "risk": 10}, "choices": [
+      {"text": "Say she made an impression too", "next": "impression_too"},
+      {"text": "Ask if this is business or pleasure", "next": "business_pleasure"}
+    ]},
+    {"id": "know_reputation", "text": "Natalie: 'Then you know I deliver results. For my clients. And for... associates.'", "mood_effect": {"bold": 20, "receptive": 15}, "consequence": {"attraction": 25, "risk": 15}, "choices": [
+      {"text": "Ask what kind of results", "next": "what_results"},
+      {"text": "Suggest discussing privately", "next": "discuss_privately_nat"}
+    ]},
+    {"id": "what_offering", "text": "Natalie: 'Campaign contributions. Speaking fees. And other... benefits.' She holds your gaze.", "mood_effect": {"bold": 25, "receptive": 20}, "consequence": {"attraction": 30, "risk": 20}, "choices": [
+      {"text": "Ask about the other benefits", "next": "other_benefits"},
+      {"text": "Say he wants details in private", "next": "details_private"}
+    ]},
+    {"id": "how_generous", "text": "Natalie: 'Six figures. Plus future arrangements.' She steps closer. 'But let's discuss terms privately.'", "mood_effect": {"bold": 30, "receptive": 25}, "consequence": {"attraction": 35, "risk": 25}, "ending": "private_terms", "choices": [
+      {"text": "Agree and suggest a location", "next": "suggest_location"}
+    ]},
+    {"id": "no_mix", "text": "Natalie: 'Who said anything about pleasure?' She smirks. 'Though I'm not opposed to... multitasking.'", "mood_effect": {"bold": 25, "playful": 20}, "consequence": {"attraction": 30, "risk": 20}, "choices": [
+      {"text": "Say he's intrigued", "next": "intrigued_nat"},
+      {"text": "Ask what she proposes", "next": "proposes_nat"}
+    ]},
+    {"id": "impression_too", "text": "Natalie: 'I'm glad. Because I have a proposition. Mutually beneficial.'", "mood_effect": {"receptive": 20, "bold": 15}, "consequence": {"attraction": 25, "risk": 15}, "choices": [
+      {"text": "Hear her out", "next": "hear_out"},
+      {"text": "Ask if this is a bribe", "next": "is_bribe"}
+    ]},
+    {"id": "business_pleasure", "text": "Natalie: 'Why choose? I find the best deals combine both.' She checks her watch. 'I have 15 minutes before the next session.'", "mood_effect": {"bold": 30, "receptive": 25}, "consequence": {"attraction": 35, "risk": 25}, "choices": [
+      {"text": "Suggest using the time wisely", "next": "use_wisely"}
+    ]},
+    {"id": "what_results", "text": "Natalie: 'Legislation passed. Careers advanced. Enemies... neutralized.' She smiles coldly.", "mood_effect": {"bold": 25, "receptive": 20}, "consequence": {"attraction": 30, "risk": 20}, "choices": [
+      {"text": "Say he could use those services", "next": "use_services"},
+      {"text": "Ask about the price", "next": "price_nat"}
+    ]},
+    {"id": "discuss_privately_nat", "text": "Natalie: 'My hotel room. 401. After the evening session.' She walks away before you can respond.", "mood_effect": {"bold": 30, "receptive": 25}, "consequence": {"attraction": 35, "risk": 25}, "ending": "hotel_401", "choices": [
+      {"text": "Note the room number", "next": "note_401"}
+    ]},
+    {"id": "other_benefits", "text": "Natalie: 'Let's just say I'm very... hands-on with client relations.'", "mood_effect": {"bold": 30, "receptive": 25}, "consequence": {"attraction": 35, "risk": 25}, "choices": [
+      {"text": "Say he prefers hands-on too", "next": "hands_on_too"},
+      {"text": "Ask to see a demonstration", "next": "see_demo"}
+    ]},
+    {"id": "details_private", "text": "Natalie: 'Wise. The lobby bar. 8 PM. Don't wear your press badge.'", "mood_effect": {"bold": 25, "receptive": 20}, "consequence": {"attraction": 30, "risk": 20}, "ending": "lobby_bar_nat", "choices": [
+      {"text": "Confirm and head back to session", "next": "confirm_back"}
+    ]},
+    {"id": "intrigued_nat", "text": "Natalie: 'Good. Multitasking is undervalued in politics.' She hands you a key card. 'Penthouse suite. Midnight.'", "mood_effect": {"bold": 35, "receptive": 30}, "consequence": {"attraction": 40, "risk": 30}, "ending": "penthouse_midnight", "choices": [
+      {"text": "Take the key card", "next": "take_key_nat"}
+    ]},
+    {"id": "proposes_nat", "text": "Natalie: 'A partnership. You vote our way. We provide... incentives. Personal ones.'", "mood_effect": {"bold": 30, "receptive": 25}, "consequence": {"attraction": 35, "risk": 25}, "choices": [
+      {"text": "Ask what kind of incentives", "next": "kind_incentives"}
+    ]},
+    {"id": "hear_out", "text": "Natalie: 'Vote against the amendment. In return, my clients fund your next campaign. And I provide... personal consultancy.'", "mood_effect": {"bold": 30, "receptive": 25}, "consequence": {"attraction": 35, "risk": 25}, "choices": [
+      {"text": "Say the terms are interesting", "next": "terms_interesting"},
+      {"text": "Ask about the personal consultancy", "next": "personal_consult"}
+    ]},
+    {"id": "is_bribe", "text": "Natalie: 'It's a business arrangement. Call it what you want.' She shrugs.", "mood_effect": {"bold": 25, "receptive": 20}, "consequence": {"attraction": 30, "risk": 20}, "choices": [
+      {"text": "Say he does business his way", "next": "business_way"}
+    ]},
+    {"id": "use_wisely", "text": "Natalie: 'Agreed. The service elevator. Now.' She leads the way.", "mood_effect": {"bold": 35, "receptive": 30}, "consequence": {"attraction": 40, "risk": 30}, "ending": "service_elevator", "choices": [
+      {"text": "Follow her", "next": "follow_nat"}
+    ]},
+    {"id": "use_services", "text": "Natalie: 'Excellent. Let's discuss retainer terms. My office. Tomorrow.'", "mood_effect": {"bold": 25, "receptive": 20}, "consequence": {"attraction": 30, "risk": 20}, "ending": "retainer_terms", "choices": [
+      {"text": "Agree and exchange contacts", "next": "exchange_contacts_nat"}
+    ]},
+    {"id": "price_nat", "text": "Natalie: 'For you? Flexible. Very flexible.' She smiles.", "mood_effect": {"bold": 30, "receptive": 25}, "consequence": {"attraction": 35, "risk": 25}, "choices": [
+      {"text": "Negotiate now", "next": "negotiate_now"}
+    ]},
+    {"id": "hands_on_too", "text": "Natalie: 'I thought so. My room. After the session. We'll discuss... methodology.'", "mood_effect": {"bold": 35, "receptive": 30}, "consequence": {"attraction": 40, "risk": 30}, "ending": "methodology_discussion", "choices": [
+      {"text": "Ask for the room number", "next": "room_number_nat"}
+    ]},
+    {"id": "see_demo", "text": "Natalie: 'Bold. I like that. My suite. 9 PM. Bring your questions.'", "mood_effect": {"bold": 35, "receptive": 30}, "consequence": {"attraction": 40, "risk": 30}, "ending": "suite_demo", "choices": [
+      {"text": "Confirm and head back", "next": "confirm_back_nat"}
+    ]},
+    {"id": "note_401", "text": "Natalie is already gone. The card says '401 - Knock twice.'", "mood_effect": {"bold": 30, "receptive": 25}, "consequence": {"attraction": 35, "risk": 25}, "ending": "chapter_4_natalie_complete", "reputation_effect": {"scandal_risk": 25}},
+    {"id": "lobby_bar_nat": "text": "You head back to the session, thinking about 8 PM.", "mood_effect": {"bold": 25, "receptive": 20}, "consequence": {"attraction": 30, "risk": 20}, "ending": "chapter_4_natalie_complete", "reputation_effect": {"scandal_risk": 20}},
+    {"id": "penthouse_midnight": "text": "The key card is heavy, expensive. 'Midnight,' you repeat.", "mood_effect": {"bold": 35, "receptive": 30}, "consequence": {"attraction": 40, "risk": 30}, "ending": "chapter_4_natalie_complete", "reputation_effect": {"scandal_risk": 30}},
+    {"id": "take_key_nat": "text": "Natalie walks away without another word. The card has a suite number on the back.", "mood_effect": {"bold": 30, "receptive": 25}, "consequence": {"attraction": 35, "risk": 25}, "ending": "chapter_4_natalie_complete", "reputation_effect": {"scandal_risk": 25}},
+    {"id": "kind_incentives": "text": "Natalie: 'The kind that make politicians very... cooperative.' She winks.", "mood_effect": {"bold": 30, "receptive": 25}, "consequence": {"attraction": 35, "risk": 25}, "ending": "chapter_4_natalie_complete", "reputation_effect": {"scandal_risk": 25}},
+    {"id": "terms_interesting": "text": "Natalie: 'I knew you'd see reason. My lawyer will draft the agreement.'", "mood_effect": {"bold": 25, "receptive": 20}, "consequence": {"attraction": 30, "risk": 20}, "ending": "chapter_4_natalie_complete", "reputation_effect": {"scandal_risk": 20}},
+    {"id": "personal_consult": "text": "Natalie: 'Very personal. Very thorough. Ask me tonight.'", "mood_effect": {"bold": 30, "receptive": 25}, "consequence": {"attraction": 35, "risk": 25}, "ending": "chapter_4_natalie_complete", "reputation_effect": {"scandal_risk": 25}},
+    {"id": "business_way": "text": "Natalie: 'Then you'll like my way. Efficient. Discreet. Profitable.'", "mood_effect": {"bold": 25, "receptive": 20}, "consequence": {"attraction": 30, "risk": 20}, "ending": "chapter_4_natalie_complete", "reputation_effect": {"scandal_risk": 20}},
+    {"id": "follow_nat": "text": "The service elevator is empty. Natalie presses the penthouse button.", "mood_effect": {"bold": 35, "receptive": 30}, "consequence": {"attraction": 40, "risk": 30}, "ending": "chapter_4_natalie_complete", "reputation_effect": {"scandal_risk": 30}},
+    {"id": "retainer_terms": "text": "Natalie texts you her office address. 'Bring your calendar.'", "mood_effect": {"bold": 25, "receptive": 20}, "consequence": {"attraction": 30, "risk": 20}, "ending": "chapter_4_natalie_complete", "reputation_effect": {"scandal_risk": 20}},
+    {"id": "negotiate_now": "text": "Natalie: 'Later. When we have more time. And privacy.'", "mood_effect": {"bold": 30, "receptive": 25}, "consequence": {"attraction": 35, "risk": 25}, "ending": "chapter_4_natalie_complete", "reputation_effect": {"scandal_risk": 25}},
+    {"id": "room_number_nat": "text": "Natalie: '305. Don't keep me waiting.'", "mood_effect": {"bold": 30, "receptive": 25}, "consequence": {"attraction": 35, "risk": 25}, "ending": "chapter_4_natalie_complete", "reputation_effect": {"scandal_risk": 25}},
+    {"id": "confirm_back_nat": "text": "You return to your seat, thinking about 9 PM.", "mood_effect": {"bold": 30, "receptive": 25}, "consequence": {"attraction": 35, "risk": 25}, "ending": "chapter_4_natalie_complete", "reputation_effect": {"scandal_risk": 25}}
+  ],
+  "endings": {
+    "private_terms": "Private terms discussion arranged. High risk, high reward.",
+    "hotel_401": "Hotel room 401. Late night meeting scheduled.",
+    "lobby_bar_nat": "Lobby bar meeting at 8. Moderate risk.",
+    "penthouse_midnight": "Penthouse suite at midnight. Very high risk.",
+    "service_elevator": "Service elevator encounter. Maximum risk.",
+    "methodology_discussion": "Methodology discussion scheduled. High risk.",
+    "suite_demo": "Suite demonstration at 9. High risk.",
+    "retainer_terms": "Retainer terms to be discussed. Moderate risk.",
+    "chapter_4_natalie_complete": "Chapter 4 Natalie storyline complete. Lobbying scandal risk elevated."
+  },
+  "metadata": {"estimated_duration_minutes": 15, "voice_lines": 32, "unique_sprites_needed": 3, "background_variations": 2}
+}

@@ -1,0 +1,97 @@
+{
+  "dialogue_id": "victoria_chapter_4",
+  "npc_id": "npc_victoria",
+  "chapter": 4,
+  "day": 4,
+  "location": "congress_hall",
+  "title": "Congress Day 1 - Victoria",
+  "description": "R. John encounters Victoria, influencer/activist, at the party congress.",
+  "mood_baseline": {"receptive": 40, "playful": 45, "bold": 50},
+  "nodes": [
+    {"id": "start", "text": "Victoria is live-streaming near the congress entrance. She's 31, polished, image-conscious. She spots you and ends the stream. 'Senator! Perfect timing.'", "choices": [
+      {"text": "Ask what she's streaming", "next": "ask_stream"},
+      {"text": "Compliment her presence", "next": "compliment_presence"},
+      {"text": "Mention her activism", "next": "mention_activism"}
+    ]},
+    {"id": "ask_stream", "text": "Victoria: 'Behind-the-scenes content. My followers love political drama.' She smiles. 'Want to make a cameo?'", "mood_effect": {"playful": 15, "bold": 10}, "choices": [
+      {"text": "Say he prefers private content", "next": "private_content"},
+      {"text": "Ask what kind of content she makes", "next": "what_content"}
+    ]},
+    {"id": "compliment_presence", "text": "Victoria: 'Thank you! I always make an impact wherever I go.' She poses slightly. 'Good lighting helps.'", "mood_effect": {"playful": 20, "receptive": 10}, "choices": [
+      {"text": "Agree she photographs well", "next": "photographs_well"},
+      {"text": "Offer to take her photo", "next": "take_photo"}
+    ]},
+    {"id": "mention_activism", "text": "Victoria: 'I'm here for the women's rights panel. But honestly?' She lowers her voice. 'The real change happens behind closed doors.'", "mood_effect": {"bold": 20, "receptive": 15}, "consequence": {"attraction": 20, "risk": 10}, "choices": [
+      {"text": "Ask what she means", "next": "what_means"},
+      {"text": "Agree and suggest a private discussion", "next": "private_discussion_vic"}
+    ]},
+    {"id": "private_content", "text": "Victoria: 'Interesting.' She steps closer. 'I do have a private channel. Exclusive content for... select viewers.'", "mood_effect": {"bold": 25, "receptive": 20}, "consequence": {"attraction": 30, "risk": 20}, "choices": [
+      {"text": "Ask how to access it", "next": "access_private"},
+      {"text": "Say he'd prefer one-on-one content", "next": "one_on_one"}
+    ]},
+    {"id": "what_content", "text": "Victoria: 'Lifestyle, politics, and... exclusive interviews.' She smirks. 'The kind that don't make it to mainstream media.'", "mood_effect": {"bold": 20, "playful": 15}, "consequence": {"attraction": 25, "risk": 15}, "choices": [
+      {"text": "Offer an exclusive interview", "next": "offer_exclusive"},
+      {"text": "Ask about her other projects", "next": "other_projects"}
+    ]},
+    {"id": "photographs_well", "text": "Victoria: 'I know my angles.' She shows you her phone. 'Want to see my best shots?'", "mood_effect": {"playful": 20, "bold": 15}, "consequence": {"attraction": 25, "risk": 15}, "choices": [
+      {"text": "Look at her photos", "next": "look_photos"},
+      {"text": "Say he prefers live models", "next": "live_models"}
+    ]},
+    {"id": "take_photo", "text": "Victoria: 'Even better. But find somewhere with good light. The VIP lounge has perfect lighting.'", "mood_effect": {"receptive": 15, "bold": 20}, "consequence": {"attraction": 25, "risk": 20}, "choices": [
+      {"text": "Suggest going there now", "next": "go_now_vic"}
+    ]},
+    {"id": "what_means", "text": "Victoria: 'Let's just say I know people who know people. And I keep their secrets.' She holds your gaze.", "mood_effect": {"bold": 25, "receptive": 20}, "consequence": {"attraction": 30, "risk": 20}, "choices": [
+      {"text": "Say he has secrets worth keeping", "next": "secrets_worth"},
+      {"text": "Ask what she charges for discretion", "next": "charges_discretion"}
+    ]},
+    {"id": "private_discussion_vic", "text": "Victoria: 'I was hoping you'd say that. My hotel room has better acoustics. Room 305.'", "mood_effect": {"bold": 30, "receptive": 25}, "consequence": {"attraction": 40, "risk": 25}, "ending": "hotel_room_vic", "choices": [
+      {"text": "Note the room number", "next": "note_room"}
+    ]},
+    {"id": "access_private", "text": "Victoria: 'It's invite-only. But...' She scans a QR code on her phone. 'Consider yourself invited.'", "mood_effect": {"bold": 25, "receptive": 20}, "consequence": {"attraction": 30, "risk": 20}, "ending": "private_invite", "choices": [
+      {"text": "Thank her and ask about meeting in person", "next": "meet_person"}
+    ]},
+    {"id": "one_on_one", "text": "Victoria: 'Now you're speaking my language. I do private sessions. Very exclusive.'", "mood_effect": {"bold": 30, "receptive": 25}, "consequence": {"attraction": 35, "risk": 25}, "choices": [
+      {"text": "Ask about rates and availability", "next": "rates_availability"}
+    ]},
+    {"id": "offer_exclusive", "text": "Victoria: 'That could be arranged. But exclusivity comes at a price.' She smiles.", "mood_effect": {"bold": 25, "receptive": 20}, "consequence": {"attraction": 30, "risk": 20}, "choices": [
+      {"text": "Say price is no object", "next": "price_no_object"},
+      {"text": "Ask what she has in mind", "next": "has_in_mind"}
+    ]},
+    {"id": "other_projects", "text": "Victoria: 'Brand partnerships, mostly. But I'm looking for... political collaborations.' She touches your arm.", "mood_effect": {"receptive": 20, "bold": 15}, "consequence": {"attraction": 25, "risk": 15}, "choices": [
+      {"text": "Say he's interested in collaborating", "next": "interested_collab"}
+    ]},
+    {"id": "look_photos", "text": "Victoria shows you her portfolio. Some photos are... revealing. 'These are from my boudoir series. Art, obviously.'", "mood_effect": {"bold": 25, "playful": 20}, "consequence": {"attraction": 30, "risk": 20}, "choices": [
+      {"text": "Compliment her artistry", "next": "artistry_compliment"},
+      {"text": "Ask if she does private shoots", "next": "private_shoots"}
+    ]},
+    {"id": "live_models", "text": "Victoria: 'Even better.' She checks her watch. 'I have 20 minutes before the next panel. Your place or mine?'", "mood_effect": {"bold": 35, "receptive": 30}, "consequence": {"attraction": 45, "risk": 30}, "ending": "quick_encounter", "choices": [
+      {"text": "Make your choice", "next": "make_choice_vic"}
+    ]},
+    {"id": "secrets_worth", "text": "Victoria: 'I bet you do.' She hands you a card. 'My private line. Use it wisely.'", "mood_effect": {"bold": 25, "receptive": 20}, "consequence": {"attraction": 30, "risk": 20}, "ending": "private_line_vic", "choices": [
+      {"text": "Take the card and thank her", "next": "take_card_vic"}
+    ]},
+    {"id": "charges_discretion", "text": "Victoria: 'Depends on the secret. And the client.' She smiles. 'But for you? Special rates.'", "mood_effect": {"bold": 30, "receptive": 25}, "consequence": {"attraction": 35, "risk": 25}, "choices": [
+      {"text": "Negotiate terms", "next": "negotiate_terms"}
+    ]},
+    {"id": "note_room", "text": "Victoria: 'Come around 10. Bring wine. And your camera.' She winks.", "mood_effect": {"bold": 30, "receptive": 25}, "consequence": {"attraction": 40, "risk": 25}, "ending": "chapter_4_victoria_complete", "reputation_effect": {"scandal_risk": 25}},
+    {"id": "private_invite", "text": "Victoria: 'Check your messages. I just sent you the link. And... my address.'", "mood_effect": {"bold": 25, "receptive": 20}, "consequence": {"attraction": 30, "risk": 20}, "ending": "chapter_4_victoria_complete", "reputation_effect": {"scandal_risk": 20}},
+    {"id": "meet_person", "text": "Victoria: 'Even better. My place tonight. I'll text you the address.'", "mood_effect": {"bold": 30, "receptive": 25}, "consequence": {"attraction": 35, "risk": 25}, "ending": "chapter_4_victoria_complete", "reputation_effect": {"scandal_risk": 25}},
+    {"id": "rates_availability", "text": "Victoria: '€5k per session. But for you? Let's say... favors exchanged.'", "mood_effect": {"bold": 35, "receptive": 30}, "consequence": {"attraction": 40, "risk": 30}, "ending": "chapter_4_victoria_complete", "reputation_effect": {"scandal_risk": 30}},
+    {"id": "price_no_object", "text": "Victoria: 'Good answer. My studio. Tonight. 11 PM. Don't be late.'", "mood_effect": {"bold": 30, "receptive": 25}, "consequence": {"attraction": 35, "risk": 25}, "ending": "chapter_4_victoria_complete", "reputation_effect": {"scandal_risk": 25}},
+    {"id": "has_in_mind", "text": "Victoria: 'A photoshoot. Just us. For my 'political allies' series.'", "mood_effect": {"bold": 30, "receptive": 25}, "consequence": {"attraction": 35, "risk": 25}, "ending": "chapter_4_victoria_complete", "reputation_effect": {"scandal_risk": 25}},
+    {"id": "interested_collab", "text": "Victoria: 'Perfect. Let's discuss details. My hotel, 9 PM.'", "mood_effect": {"bold": 25, "receptive": 20}, "consequence": {"attraction": 30, "risk": 20}, "ending": "chapter_4_victoria_complete", "reputation_effect": {"scandal_risk": 20}},
+    {"id": "artistry_compliment", "text": "Victoria: 'Thank you! I need a male subject for my next series. Interested?'", "mood_effect": {"bold": 25, "receptive": 20}, "consequence": {"attraction": 30, "risk": 20}, "ending": "chapter_4_victoria_complete", "reputation_effect": {"scandal_risk": 20}},
+    {"id": "private_shoots", "text": "Victoria: 'Only for serious clients. Are you serious, Senator?'", "mood_effect": {"bold": 30, "receptive": 25}, "consequence": {"attraction": 35, "risk": 25}, "ending": "chapter_4_victoria_complete", "reputation_effect": {"scandal_risk": 25}},
+    {"id": "make_choice_vic", "text": "You make your choice. Victoria smiles. 'Excellent. Let's go.'", "mood_effect": {"bold": 30, "receptive": 25}, "consequence": {"attraction": 40, "risk": 30}, "ending": "chapter_4_victoria_complete", "reputation_effect": {"scandal_risk": 30}},
+    {"id": "take_card_vic", "text": "Victoria: 'Call me when you're ready to talk. Really talk.'", "mood_effect": {"bold": 25, "receptive": 20}, "consequence": {"attraction": 30, "risk": 20}, "ending": "chapter_4_victoria_complete", "reputation_effect": {"scandal_risk": 20}},
+    {"id": "negotiate_terms", "text": "Victoria: 'We'll negotiate in person. My suite. Midnight.'", "mood_effect": {"bold": 30, "receptive": 25}, "consequence": {"attraction": 35, "risk": 25}, "ending": "chapter_4_victoria_complete", "reputation_effect": {"scandal_risk": 25}}
+  ],
+  "endings": {
+    "hotel_room_vic": "Victoria invited you to her hotel room. High risk, high reward.",
+    "private_invite": "Private channel access granted. Moderate risk.",
+    "quick_encounter": "Quick encounter proposed. Very high risk.",
+    "private_line_vic": "Private contact established. Moderate risk.",
+    "chapter_4_victoria_complete": "Chapter 4 Victoria storyline complete. Social media exposure risk elevated."
+  },
+  "metadata": {"estimated_duration_minutes": 14, "voice_lines": 28, "unique_sprites_needed": 3, "background_variations": 2}
+}

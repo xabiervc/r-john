@@ -1,0 +1,108 @@
+{
+  "dialogue_id": "isabella_chapter_3",
+  "npc_id": "npc_isabella",
+  "chapter": 3,
+  "day": 3,
+  "location": "hotel_lobby",
+  "title": "Congress Travel - Isabella",
+  "description": "R. John meets Isabella, friendly hotel staff, during congress travel check-in.",
+  "mood_baseline": {"receptive": 45, "playful": 55, "bold": 35},
+  "nodes": [
+    {"id": "start", "text": "Isabella stands behind the hotel check-in desk. She's 27, warm smile, flirty eyes. 'Welcome to the Grand Hotel, Senator. We've been expecting you.'", "choices": [
+      {"text": "Thank her warmly", "next": "thank_warm"},
+      {"text": "Ask if she knows who he is", "next": "ask_recognition"},
+      {"text": "Compliment the hotel", "next": "compliment_hotel"}
+    ]},
+    {"id": "thank_warm", "text": "Isabella: 'You're very welcome. We have you in the presidential suite.' She slides the key card across. 'Anything else I can help you with?'", "mood_effect": {"receptive": 10, "playful": 5}, "choices": [
+      {"text": "Ask about room service hours", "next": "room_service"},
+      {"text": "Say maybe later, privately", "next": "maybe_privately"}
+    ]},
+    {"id": "ask_recognition", "text": "Isabella: 'Of course! I saw your debate last week. You were... impressive.' She bites her lip slightly.", "mood_effect": {"playful": 15, "receptive": 10}, "consequence": {"attraction": 15, "risk": 5}, "choices": [
+      {"text": "Say he's glad someone appreciated it", "next": "glad_appreciated"},
+      {"text": "Ask what impressed her most", "next": "what_impressed"}
+    ]},
+    {"id": "compliment_hotel", "text": "Isabella: 'Thank you! I've worked here five years. Best hotel in the city.' She leans forward slightly. 'Though the guests make it even better.'", "mood_effect": {"playful": 20, "bold": 10}, "consequence": {"attraction": 20, "risk": 5}, "choices": [
+      {"text": "Agree enthusiastically", "next": "agree_enthusiastic"},
+      {"text": "Ask for her personal recommendation", "next": "personal_recommendation"}
+    ]},
+    {"id": "room_service", "text": "Isabella: '24 hours. But...' She lowers her voice. 'I can bring something special myself if you prefer. More... personalized service.'", "mood_effect": {"bold": 20, "receptive": 15}, "consequence": {"attraction": 25, "risk": 10}, "choices": [
+      {"text": "Say he'd like that very much", "next": "like_that"},
+      {"text": "Ask what time she finishes shift", "next": "finish_shift"}
+    ]},
+    {"id": "maybe_privately", "text": "Isabella: 'Of course.' She writes something on a napkin. 'My personal number. For any... special requests.'", "mood_effect": {"bold": 25, "receptive": 20}, "consequence": {"attraction": 30, "risk": 15}, "ending": "number_exchanged", "choices": [
+      {"text": "Take the napkin and thank her", "next": "take_napkin"}
+    ]},
+    {"id": "glad_appreciated", "text": "Isabella: 'Most politicians are boring. You're... different.' Her hand brushes yours as she returns your ID.", "mood_effect": {"receptive": 15, "bold": 10}, "consequence": {"attraction": 20, "risk": 10}, "choices": [
+      {"text": "Say different is good", "next": "different_good"},
+      {"text": "Invite her for a drink later", "next": "invite_drink"}
+    ]},
+    {"id": "what_impressed", "text": "Isabella: 'The way you handled that journalist. Confident but not arrogant.' She smiles. 'Rare combination.'", "mood_effect": {"receptive": 15, "playful": 10}, "consequence": {"attraction": 20, "risk": 5}, "choices": [
+      {"text": "Say he has many rare qualities", "next": "rare_qualities"},
+      {"text": "Ask to show her more later", "next": "show_more"}
+    ]},
+    {"id": "agree_enthusiastic", "text": "Isabella: 'Exactly! Especially the VIP guests.' She winks. 'Like you.'", "mood_effect": {"playful": 20, "bold": 15}, "consequence": {"attraction": 25, "risk": 10}, "choices": [
+      {"text": "Say VIPs deserve VIP treatment", "next": "vip_treatment"},
+      {"text": "Ask what VIP treatment includes", "next": "vip_includes"}
+    ]},
+    {"id": "personal_recommendation", "text": "Isabella: 'The spa on floor 10. Very private. Or...' She hesitates. 'I could show you the rooftop bar. Best view in the city.'", "mood_effect": {"receptive": 15, "bold": 15}, "consequence": {"attraction": 25, "risk": 15}, "choices": [
+      {"text": "Choose the rooftop bar", "next": "rooftop_bar"},
+      {"text": "Ask if she joins guests there", "next": "joins_guests"}
+    ]},
+    {"id": "like_that", "text": "Isabella: 'Perfect. I finish at 10. My shift ends, but I can make a special delivery.' She smiles knowingly.", "mood_effect": {"bold": 25, "receptive": 20}, "consequence": {"attraction": 35, "risk": 20}, "ending": "special_delivery", "choices": [
+      {"text": "Say he'll be waiting", "next": "be_waiting"}
+    ]},
+    {"id": "finish_shift", "text": "Isabella: '10 PM. But I often stay late for... special guests.' She writes her number on your key card folder.", "mood_effect": {"bold": 25, "receptive": 20}, "consequence": {"attraction": 35, "risk": 20}, "ending": "shift_ends", "choices": [
+      {"text": "Say he'll call", "next": "will_call"}
+    ]},
+    {"id": "different_good", "text": "Isabella: 'Very good.' She leans closer. 'My break is in 20 minutes. Coffee?'", "mood_effect": {"receptive": 20, "bold": 15}, "consequence": {"attraction": 25, "risk": 15}, "ending": "coffee_break", "choices": [
+      {"text": "Accept and ask where", "next": "accept_coffee"}
+    ]},
+    {"id": "invite_drink", "text": "Isabella: 'I'd love that. There's a staff bar downstairs. Very private after 11.'", "mood_effect": {"bold": 25, "receptive": 20}, "consequence": {"attraction": 30, "risk": 20}, "ending": "staff_bar", "choices": [
+      {"text": "Say he'll meet her there", "next": "meet_there"}
+    ]},
+    {"id": "rare_qualities", "text": "Isabella: 'I bet.' She finishes the check-in. 'Enjoy your stay, Senator. And... enjoy the city.'", "mood_effect": {"playful": 20, "receptive": 15}, "consequence": {"attraction": 25, "risk": 15}, "ending": "enjoy_city", "choices": [
+      {"text": "Ask if she'll be part of the enjoyment", "next": "part_enjoyment"}
+    ]},
+    {"id": "show_more", "text": "Isabella: 'I'd like that.' She slides an envelope under the desk. 'My schedule. I'm free most evenings.'", "mood_effect": {"bold": 30, "receptive": 20}, "consequence": {"attraction": 35, "risk": 20}, "ending": "schedule_shared", "choices": [
+      {"text": "Take the envelope and thank her", "next": "take_envelope"}
+    ]},
+    {"id": "vip_treatment", "text": "Isabella: 'Whatever you need, whenever you need it.' Her foot brushes yours under the desk.", "mood_effect": {"bold": 25, "receptive": 20}, "consequence": {"attraction": 30, "risk": 20}, "ending": "vip_promise", "choices": [
+      {"text": "Say he'll test that promise", "next": "test_promise"}
+    ]},
+    {"id": "vip_includes", "text": "Isabella: 'Late check-out, complimentary spa, and...' She lowers her voice. 'Personal concierge service. Me.'", "mood_effect": {"bold": 30, "receptive": 25}, "consequence": {"attraction": 40, "risk": 25}, "ending": "concierge_service", "choices": [
+      {"text": "Say that sounds perfect", "next": "sounds_perfect"}
+    ]},
+    {"id": "rooftop_bar", "text": "Isabella: 'Great choice. Meet me there at 9? I'll be off shift but I can make an exception.'", "mood_effect": {"receptive": 20, "bold": 15}, "consequence": {"attraction": 30, "risk": 20}, "ending": "rooftop_meetup", "choices": [
+      {"text": "Confirm and head to elevator", "next": "confirm_elevator"}
+    ]},
+    {"id": "joins_guests", "text": "Isabella: 'Sometimes. For the right guest.' She smiles. 'I finish at 9. If you're still interested...'", "mood_effect": {"bold": 25, "receptive": 20}, "consequence": {"attraction": 30, "risk": 20}, "ending": "right_guest", "choices": [
+      {"text": "Say he's definitely interested", "next": "definitely_interested"}
+    ]},
+    {"id": "take_napkin", "text": "Isabella: 'Call anytime. I'm usually free after 10.' She winks as you walk away.", "mood_effect": {"receptive": 20, "bold": 15}, "consequence": {"attraction": 30, "risk": 15}, "ending": "chapter_3_isabella_complete", "reputation_effect": {"scandal_risk": 15}},
+    {"id": "be_waiting", "text": "Isabella: 'Good. Room service will bring the food. I'll bring... dessert.'", "mood_effect": {"bold": 25, "receptive": 20}, "consequence": {"attraction": 35, "risk": 20}, "ending": "chapter_3_isabella_complete", "reputation_effect": {"scandal_risk": 20}},
+    {"id": "will_call", "text": "Isabella: 'I'll be waiting by the phone.' She smiles as you head to the elevator.", "mood_effect": {"receptive": 20, "bold": 15}, "consequence": {"attraction": 30, "risk": 15}, "ending": "chapter_3_isabella_complete", "reputation_effect": {"scandal_risk": 15}},
+    {"id": "accept_coffee", "text": "Isabella: 'Staff cafeteria, back corridor. Look for the green door.'", "mood_effect": {"receptive": 20, "bold": 15}, "consequence": {"attraction": 25, "risk": 15}, "ending": "chapter_3_isabella_complete", "reputation_effect": {"scandal_risk": 15}},
+    {"id": "meet_there", "text": "Isabella: 'Perfect. Ask for Isabella at the bar. They'll know.'", "mood_effect": {"bold": 20, "receptive": 15}, "consequence": {"attraction": 25, "risk": 15}, "ending": "chapter_3_isabella_complete", "reputation_effect": {"scandal_risk": 15}},
+    {"id": "part_enjoyment", "text": "Isabella: 'That depends on you, Senator.' She hands you the key. 'Suite 501. Enjoy your stay.'", "mood_effect": {"bold": 25, "receptive": 20}, "consequence": {"attraction": 30, "risk": 20}, "ending": "chapter_3_isabella_complete", "reputation_effect": {"scandal_risk": 20}},
+    {"id": "take_envelope", "text": "Inside: her schedule with several evenings circled. 'Those are my favorites,' she whispers.", "mood_effect": {"bold": 25, "receptive": 20}, "consequence": {"attraction": 35, "risk": 20}, "ending": "chapter_3_isabella_complete", "reputation_effect": {"scandal_risk": 20}},
+    {"id": "test_promise", "text": "Isabella: 'Anytime, Senator. Day or night.' She slides a master key under the desk. 'For VIP access.'", "mood_effect": {"bold": 30, "receptive": 25}, "consequence": {"attraction": 40, "risk": 25}, "ending": "chapter_3_isabella_complete", "reputation_effect": {"scandal_risk": 25}},
+    {"id": "sounds_perfect", "text": "Isabella: 'Then it's settled. I'll see you tonight.' She winks.", "mood_effect": {"bold": 25, "receptive": 20}, "consequence": {"attraction": 35, "risk": 20}, "ending": "chapter_3_isabella_complete", "reputation_effect": {"scandal_risk": 20}},
+    {"id": "confirm_elevator", "text": "Isabella: 'See you then, Senator.' She watches you walk away with a smile.", "mood_effect": {"receptive": 20, "bold": 15}, "consequence": {"attraction": 30, "risk": 15}, "ending": "chapter_3_isabella_complete", "reputation_effect": {"scandal_risk": 15}},
+    {"id": "definitely_interested", "text": "Isabella: 'Then I'll see you at the bar. Don't be late.'", "mood_effect": {"bold": 20, "receptive": 15}, "consequence": {"attraction": 25, "risk": 15}, "ending": "chapter_3_isabella_complete", "reputation_effect": {"scandal_risk": 15}}
+  ],
+  "endings": {
+    "number_exchanged": "Isabella gave you her personal number. Low risk, moderate reward.",
+    "special_delivery": "Isabella will deliver something special to your room. Moderate risk.",
+    "shift_ends": "Isabella is free after 10. Opportunity for private meeting.",
+    "coffee_break": "Coffee date during her break. Low risk.",
+    "staff_bar": "Meeting at the staff bar. Moderate risk.",
+    "enjoy_city": "Isabella hinted at possibilities. Low risk.",
+    "schedule_shared": "Isabella shared her availability. Moderate risk.",
+    "vip_promise": "VIP treatment promised. Moderate risk.",
+    "concierge_service": "Personal concierge service offered. High risk, high reward.",
+    "rooftop_meetup": "Rooftop bar date set. Moderate risk.",
+    "right_guest": "You qualify as the right guest. Moderate risk.",
+    "chapter_3_isabella_complete": "Chapter 3 Isabella storyline complete. Attraction increased, scandal risk elevated."
+  },
+  "metadata": {"estimated_duration_minutes": 12, "voice_lines": 30, "unique_sprites_needed": 3, "background_variations": 2}
+}
