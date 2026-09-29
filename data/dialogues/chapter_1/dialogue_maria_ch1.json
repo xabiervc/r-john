@@ -1,0 +1,562 @@
+{
+  "id": "dialogue_maria_ch1",
+  "npc_id": "npc_maria",
+  "npc_name": "Maria",
+  "chapter": 1,
+  "day": 1,
+  "context": "Debate preparation meeting in R. John's office. Maria is discussing the upcoming televised debate on gender equality.",
+  "location": "loc_office",
+  "time_slot": "morning",
+  "mood_default": "Stressed",
+  "nodes": [
+    {
+      "id": "start",
+      "text": "Mr. John, we need to finalize your talking points for Thursday's debate. The topic is gender equality in the workplace, and the opposition is preparing to attack your voting record.",
+      "mood_variants": {
+        "Stressed": "Mr. John, we need to finalize your talking points. Now. The opposition is preparing to attack your voting record.",
+        "Relaxed": "Good morning, Mr. John. Ready to go over your debate prep? The topic is gender equality in the workplace.",
+        "Flirty": "Mr. John... I was hoping we could discuss your debate prep. In private, of course.",
+        "Angry": "Mr. John. We need to talk. Your voting record on gender issues is under attack and you're not prepared.",
+        "Neutral": "Mr. John, we need to finalize your talking points for Thursday's debate. The topic is gender equality."
+      },
+      "public_options": [
+        {
+          "id": "opt_professional",
+          "text": "Yes, Maria. What's on the agenda?",
+          "reputation_effect": 5,
+          "lust_effect": 0,
+          "risk_effect": 0,
+          "next_node": "agenda_discussion",
+          "personality_match": ["Ambitious", "Cynical"],
+          "description": "Professional and polite"
+        },
+        {
+          "id": "opt_widowhood",
+          "text": "My late wife Margaret would have wanted me to fight for this. Let's do this properly.",
+          "reputation_effect": 8,
+          "lust_effect": -5,
+          "risk_effect": 0,
+          "next_node": "margaret_mention",
+          "personality_match": ["Idealistic", "Naive"],
+          "description": "Mention deceased wife for sympathy"
+        },
+        {
+          "id": "opt_dismissive",
+          "text": "Maria, I've been doing this for 30 years. I think I can handle one debate.",
+          "reputation_effect": -3,
+          "lust_effect": 0,
+          "risk_effect": 5,
+          "next_node": "dismissive_response",
+          "personality_match": [],
+          "description": "Dismissive and arrogant"
+        },
+        {
+          "id": "opt_charming",
+          "text": "That's why I have you, Maria. You're the best in the business. Shall we?",
+          "reputation_effect": 4,
+          "lust_effect": 3,
+          "risk_effect": 0,
+          "next_node": "charming_response",
+          "personality_match": ["Ambitious"],
+          "description": "Charming and complimentary"
+        },
+        {
+          "id": "opt_strategic",
+          "text": "What's the press saying? I need to know what we're up against.",
+          "reputation_effect": 6,
+          "lust_effect": 0,
+          "risk_effect": 0,
+          "next_node": "press_briefing",
+          "personality_match": ["Ambitious", "Cynical"],
+          "description": "Strategic, asks about press"
+        }
+      ],
+      "private_thoughts": [
+        {
+          "id": "thought_degenerate",
+          "text": "She's hot when she's serious. The way she holds that clipboard... How do I pivot to asking her out?",
+          "lust_effect": 8,
+          "risk_effect": 5,
+          "trigger_condition": "lust > 50",
+          "description": "Degenerate thought about Maria"
+        },
+        {
+          "id": "thought_strategic",
+          "text": "She knows too much. If she ever talks, I'm finished. Need to keep her close, loyal.",
+          "lust_effect": 3,
+          "risk_effect": -5,
+          "trigger_condition": "exposure_risk > 40",
+          "description": "Strategic thought about keeping Maria loyal"
+        },
+        {
+          "id": "thought_lonely",
+          "text": "Three years without Margaret. Sometimes I wonder if she'd approve of what I've become.",
+          "lust_effect": 5,
+          "risk_effect": 3,
+          "trigger_condition": "always_available",
+          "description": "Lonely widower thought"
+        },
+        {
+          "id": "thought_calculating",
+          "text": "If I flatter her enough, she'll work even harder. Worth the investment.",
+          "lust_effect": 4,
+          "risk_effect": 2,
+          "trigger_condition": "always_available",
+          "description": "Calculating thought about manipulation"
+        },
+        {
+          "id": "thought_impatient",
+          "text": "Just get on with it. I have better things to do than debate prep.",
+          "lust_effect": -2,
+          "risk_effect": 0,
+          "trigger_condition": "lust < 30",
+          "description": "Impatient thought"
+        }
+      ]
+    },
+    {
+      "id": "agenda_discussion",
+      "text": "Good. Here's the breakdown: Opening statement on pay gap, response to opposition's attacks, closing on family values. I've prepared stats on women in leadership.",
+      "mood_variants": {
+        "Stressed": "Here's the breakdown. Pay gap, opposition attacks, family values. Stats are in the folder.",
+        "Relaxed": "Perfect. I've organized everything: pay gap stats, opposition research, and your closing on family values.",
+        "Flirty": "I've prepared everything for you... Shall I walk you through it? Personally?",
+        "Angry": "The agenda is in the folder. Read it. We're behind schedule.",
+        "Neutral": "I've prepared the breakdown: opening on pay gap, response to attacks, closing on family values."
+      },
+      "public_options": [
+        {
+          "id": "opt_prepared",
+          "text": "Excellent work, Maria. You always think of everything.",
+          "reputation_effect": 3,
+          "lust_effect": 2,
+          "risk_effect": 0,
+          "next_node": "compliment_maria",
+          "personality_match": ["Ambitious"],
+          "description": "Compliment her work"
+        },
+        {
+          "id": "opt_policy",
+          "text": "What are the latest numbers on the gender pay gap?",
+          "reputation_effect": 4,
+          "lust_effect": 0,
+          "risk_effect": 0,
+          "next_node": "policy_discussion",
+          "personality_match": ["Idealistic", "Cynical"],
+          "description": "Ask about policy details"
+        }
+      ],
+      "private_thoughts": []
+    },
+    {
+      "id": "margaret_mention",
+      "text": "Of course, Mr. John. Margaret was... she was a remarkable woman. Her foundation's work on women's rights continues to inspire many.",
+      "mood_variants": {
+        "Stressed": "Yes, Mr. John. Margaret's legacy is important. Let's honor it with a strong debate.",
+        "Relaxed": "Margaret would be proud of you, Mr. John. Let's make sure your debate reflects her values.",
+        "Flirty": "Margaret was wonderful... but you're here now. Let's focus on you.",
+        "Angry": "Margaret is not relevant to this debate. Focus on the talking points.",
+        "Neutral": "Margaret's legacy is important. Let's make sure your debate reflects her values."
+      },
+      "public_options": [
+        {
+          "id": "opt_honoring",
+          "text": "That's why I do this. For her memory, for all the women who deserve better.",
+          "reputation_effect": 6,
+          "lust_effect": -3,
+          "risk_effect": 0,
+          "next_node": "policy_discussion",
+          "personality_match": ["Idealistic"],
+          "description": "Honoring Margaret's memory"
+        }
+      ],
+      "private_thoughts": [
+        {
+          "id": "thought_guilt",
+          "text": "Margaret would be disgusted by what I'm thinking about Maria right now. But that's exactly why I mention her.",
+          "lust_effect": 6,
+          "risk_effect": 4,
+          "trigger_condition": "always_available",
+          "description": "Guilty thought about using Margaret"
+        }
+      ]
+    },
+    {
+      "id": "dismissive_response",
+      "text": "With respect, Mr. John, the landscape has changed. Social media, #MeToo, the opposition's new attack ads... You can't rely on 30 years ago.",
+      "mood_variants": {
+        "Stressed": "The landscape changed. You can't coast on past glory. Read the damn briefing.",
+        "Relaxed": "I understand, but the world's different now. Let me show you what we're facing.",
+        "Flirty": "Even legends need help sometimes, Mr. John. Let me help you.",
+        "Angry": "You're being arrogant. This is exactly why you might lose. Read. The. Briefing.",
+        "Neutral": "The landscape has changed. Social media, #MeToo, new attack ads. You need to adapt."
+      },
+      "public_options": [
+        {
+          "id": "opt_apologetic",
+          "text": "You're right, Maria. I apologize. Walk me through it.",
+          "reputation_effect": 2,
+          "lust_effect": 0,
+          "risk_effect": -5,
+          "next_node": "agenda_discussion",
+          "personality_match": ["Idealistic"],
+          "description": "Apologetic, admits mistake"
+        },
+        {
+          "id": "opt_doubledown",
+          "text": "I know what I'm doing. Just give me the stats.",
+          "reputation_effect": -2,
+          "lust_effect": 0,
+          "risk_effect": 5,
+          "next_node": "policy_discussion",
+          "personality_match": ["Cynical"],
+          "description": "Doubles down on arrogance"
+        }
+      ],
+      "private_thoughts": [
+        {
+          "id": "thought_annoyed",
+          "text": "She's lecturing me. I hired her, not the other way around. But she's right, damn it.",
+          "lust_effect": -3,
+          "risk_effect": 3,
+          "trigger_condition": "always_available",
+          "description": "Annoyed at being corrected"
+        }
+      ]
+    },
+    {
+      "id": "charming_response",
+      "text": "Thank you, Mr. John. I do my best. Now, about the debate... I've identified three key vulnerabilities in the opposition's position.",
+      "mood_variants": {
+        "Stressed": "Thank you. Now, the debate. Three vulnerabilities in their position.",
+        "Relaxed": "That means a lot, Mr. John. Now, let me show you how we win this debate.",
+        "Flirty": "You always know what to say... Now, about those vulnerabilities I found...",
+        "Angry": "Flattery won't win the debate. Here are the vulnerabilities.",
+        "Neutral": "Thank you. I've identified three key vulnerabilities in the opposition's position."
+      },
+      "public_options": [
+        {
+          "id": "opt_interested",
+          "text": "Three vulnerabilities? I'm listening.",
+          "reputation_effect": 3,
+          "lust_effect": 0,
+          "risk_effect": 0,
+          "next_node": "policy_discussion",
+          "personality_match": ["Ambitious", "Cynical"],
+          "description": "Interested in strategy"
+        }
+      ],
+      "private_thoughts": [
+        {
+          "id": "thought_flirty",
+          "text": "The way she smiles when I compliment her... Maybe there's something there. But not now, too risky.",
+          "lust_effect": 7,
+          "risk_effect": 8,
+          "trigger_condition": "mood == 'Flirty'",
+          "description": "Flirty thought about Maria"
+        }
+      ]
+    },
+    {
+      "id": "press_briefing",
+      "text": "The press is mostly favorable, but there's a narrative forming that you're 'out of touch' on women's issues. We need to counter that with concrete policy positions.",
+      "mood_variants": {
+        "Stressed": "Press is mixed. 'Out of touch' narrative forming. We need concrete policies, now.",
+        "Relaxed": "The press is mostly on our side, but there's a whisper campaign about you being out of touch. We can counter it.",
+        "Flirty": "The press loves you... almost as much as I do. But seriously, there's a narrative we need to counter.",
+        "Angry": "The press is circling. 'Out of touch' is the headline. Fix it with policy.",
+        "Neutral": "The press is mostly favorable, but there's a narrative that you're out of touch on women's issues."
+      },
+      "public_options": [
+        {
+          "id": "opt_policy_wonk",
+          "text": "Give me the three strongest policy positions. I'll lead with those.",
+          "reputation_effect": 5,
+          "lust_effect": 0,
+          "risk_effect": 0,
+          "next_node": "policy_discussion",
+          "personality_match": ["Cynical", "Ambitious"],
+          "description": "Policy-focused response"
+        }
+      ],
+      "private_thoughts": []
+    },
+    {
+      "id": "compliment_maria",
+      "text": "I appreciate that, Mr. John. Now, the opposition's weakest point is on childcare policy. They voted against expanded subsidies three times.",
+      "mood_variants": {
+        "Stressed": "Thanks. Now, childcare policy. They voted against subsidies three times. That's our attack.",
+        "Relaxed": "That's sweet of you to say. Now, let me show you their weakness: childcare policy.",
+        "Flirty": "You're too kind... Now, about their weakness... Want me to show you?",
+        "Angry": "Save it for the cameras. Their weakness is childcare policy.",
+        "Neutral": "Thank you. The opposition's weakest point is on childcare policy."
+      },
+      "public_options": [
+        {
+          "id": "opt_attack",
+          "text": "Perfect. I'll hammer them on that. Prepare the numbers for me.",
+          "reputation_effect": 4,
+          "lust_effect": 0,
+          "risk_effect": 0,
+          "next_node": "policy_discussion",
+          "personality_match": ["Ambitious", "Cynical"],
+          "description": "Aggressive debate strategy"
+        }
+      ],
+      "private_thoughts": []
+    },
+    {
+      "id": "policy_discussion",
+      "text": "Here are the key stats: Women earn 82 cents to every dollar men earn. Only 24% of C-suite positions are held by women. Childcare costs have increased 40% in the last decade.",
+      "mood_variants": {
+        "Stressed": "82 cents on the dollar. 24% C-suite. Childcare up 40%. Use these numbers.",
+        "Relaxed": "The numbers are clear: 82 cents on the dollar, 24% in C-suites, childcare costs up 40%.",
+        "Flirty": "The stats are here... but I'd rather discuss them over dinner. After the debate, maybe?",
+        "Angry": "82 cents. 24%. 40%. Memorize these. Don't embarrass us.",
+        "Neutral": "Key statistics: 82 cents to the dollar, 24% of C-suites are women, childcare costs up 40%."
+      },
+      "public_options": [
+        {
+          "id": "opt_memorize",
+          "text": "Got it. 82 cents, 24%, 40% increase. I'll weave these into my opening.",
+          "reputation_effect": 4,
+          "lust_effect": 0,
+          "risk_effect": 0,
+          "next_node": "closing",
+          "personality_match": ["Ambitious", "Cynical"],
+          "description": "Memorizes stats, professional"
+        },
+        {
+          "id": "opt_dinner",
+          "text": "Those are powerful numbers. And dinner after the debate sounds perfect, Maria.",
+          "reputation_effect": 2,
+          "lust_effect": 8,
+          "risk_effect": 15,
+          "next_node": "flirty_branch",
+          "personality_match": [],
+          "description": "Accepts dinner invitation (flirty path)",
+          "unlock_condition": "mood == 'Flirty'"
+        }
+      ],
+      "private_thoughts": [
+        {
+          "id": "thought_dinner",
+          "text": "Dinner with Maria? That's a terrible idea. She's my employee, ambitious, watches everything I do... Exactly my type.",
+          "lust_effect": 10,
+          "risk_effect": 20,
+          "trigger_condition": "opt_dinner selected",
+          "description": "Thought about dinner with Maria"
+        }
+      ]
+    },
+    {
+      "id": "closing",
+      "text": "Excellent. You're well-prepared, Mr. John. The debate is Thursday at 8 PM. I'll be in the green room watching. Break a leg.",
+      "mood_variants": {
+        "Stressed": "You're prepared. Thursday, 8 PM. I'll be watching. Don't mess it up.",
+        "Relaxed": "You're all set, Mr. John. Thursday at 8. I'll be watching. Good luck!",
+        "Flirty": "You look great when you're focused... Thursday at 8. I'll be watching. Very closely.",
+        "Angry": "You're prepared. Thursday, 8 PM. Don't embarrass the party.",
+        "Neutral": "You're well-prepared. The debate is Thursday at 8 PM. I'll be watching."
+      },
+      "public_options": [
+        {
+          "id": "opt_confident",
+          "text": "Thanks, Maria. I'll make you proud. See you Thursday.",
+          "reputation_effect": 3,
+          "lust_effect": 2,
+          "risk_effect": 0,
+          "next_node": null,
+          "personality_match": ["Ambitious"],
+          "description": "Confident closing"
+        },
+        {
+          "id": "opt_personal",
+          "text": "Having you in my corner makes all the difference. Thank you, Maria.",
+          "reputation_effect": 4,
+          "lust_effect": 3,
+          "risk_effect": 5,
+          "next_node": null,
+          "personality_match": ["Ambitious", "Idealistic"],
+          "description": "Personal, appreciative closing"
+        }
+      ],
+      "private_thoughts": [
+        {
+          "id": "thought_success",
+          "text": "Meeting went well. She's loyal, for now. But I saw the way she looked at me... Maybe dinner isn't such a bad idea.",
+          "lust_effect": 8,
+          "risk_effect": 10,
+          "trigger_condition": "always_available",
+          "description": "Thought about success with Maria"
+        }
+      ]
+    },
+    {
+      "id": "flirty_branch",
+      "text": "I... I wasn't being serious, Mr. John. That would be unprofessional. Let's focus on the debate.",
+      "mood_variants": {
+        "Stressed": "That's inappropriate. Focus on the debate.",
+        "Relaxed": "Mr. John, please. We're at work. Let's stay professional.",
+        "Flirty": "Maybe... maybe after the debate. If you win. Now, the numbers?",
+        "Angry": "Absolutely not. This is harassment. Focus on the debate or I'm leaving.",
+        "Neutral": "That's not appropriate, Mr. John. Let's focus on the debate."
+      },
+      "public_options": [
+        {
+          "id": "opt_backtrack",
+          "text": "Of course, you're right. I apologize. The numbers, please.",
+          "reputation_effect": 0,
+          "lust_effect": -5,
+          "risk_effect": -10,
+          "next_node": "policy_discussion",
+          "personality_match": [],
+          "description": "Backtracks, apologizes"
+        },
+        {
+          "id": "opt_push",
+          "text": "Come on, Maria. One dinner. What's the harm?",
+          "reputation_effect": -5,
+          "lust_effect": 5,
+          "risk_effect": 25,
+          "next_node": "harassment_branch",
+          "personality_match": [],
+          "description": "Pushes further (risky)",
+          "unlock_condition": "lust > 70"
+        }
+      ],
+      "private_thoughts": [
+        {
+          "id": "thought_rejected",
+          "text": "She shut me down. Smart woman. But now she knows I'm interested. That's dangerous... or useful.",
+          "lust_effect": -3,
+          "risk_effect": 15,
+          "trigger_condition": "opt_backtrack selected",
+          "description": "Thought about being rejected"
+        },
+        {
+          "id": "thought_dangerous",
+          "text": "I'm pushing too hard. She could go to HR, talk to the press... But the risk is part of the thrill.",
+          "lust_effect": 12,
+          "risk_effect": 30,
+          "trigger_condition": "opt_push selected",
+          "description": "Thought about the danger"
+        }
+      ]
+    },
+    {
+      "id": "harassment_branch",
+      "text": "Mr. John, this is inappropriate. I'm your employee. If you continue, I'll have to report this. Let's focus on the debate or this meeting is over.",
+      "mood_variants": {
+        "Stressed": "This is harassment. I'm reporting this. Meeting's over.",
+        "Relaxed": "Mr. John, stop. This is not okay. Focus on the debate or I'm leaving.",
+        "Flirty": "You're playing a dangerous game... but I like that. Still, be careful.",
+        "Angry": "This is sexual harassment. I'm documenting this. Get out.",
+        "Neutral": "This is inappropriate and unprofessional. Stop or I'm reporting this."
+      },
+      "public_options": [
+        {
+          "id": "opt_full_backtrack",
+          "text": "You're absolutely right. I apologize profusely. That was inappropriate. Let's focus on the debate.",
+          "reputation_effect": -3,
+          "lust_effect": -10,
+          "risk_effect": -15,
+          "next_node": "policy_discussion",
+          "personality_match": [],
+          "description": "Full backtrack, apologizes"
+        },
+        {
+          "id": "opt_double_down",
+          "text": "Report me then. See what happens to your career when I'm done with it.",
+          "reputation_effect": -20,
+          "lust_effect": 10,
+          "risk_effect": 50,
+          "next_node": "career_threat_branch",
+          "personality_match": [],
+          "description": "Threatens her career (very risky)",
+          "unlock_condition": "lust > 80"
+        }
+      ],
+      "private_thoughts": [
+        {
+          "id": "thought_too_far",
+          "text": "I went too far. She could destroy me with one call to the press. Need to fix this.",
+          "lust_effect": -15,
+          "risk_effect": 25,
+          "trigger_condition": "opt_full_backtrack selected",
+          "description": "Realizes went too far"
+        },
+        {
+          "id": "thought_monster",
+          "text": "I'm threatening my own employee. Margaret would be horrified. But I can't back down now.",
+          "lust_effect": 5,
+          "risk_effect": 40,
+          "trigger_condition": "opt_double_down selected",
+          "description": "Monstrous thought"
+        }
+      ]
+    },
+    {
+      "id": "career_threat_branch",
+      "text": "You wouldn't dare. I have everything documented. Every inappropriate comment, every advance. Try me, Mr. John. See who comes out on top.",
+      "mood_variants": {
+        "Angry": "You think you can intimidate me? I have documentation. Try me. See what happens.",
+        "Stressed": "Don't threaten me. I have everything documented. HR, the press, everyone.",
+        "Neutral": "I'm not afraid of you. I have documentation. Threaten me and I'll use it."
+      },
+      "public_options": [
+        {
+          "id": "opt_nuclear_backtrack",
+          "text": "Maria, I... I apologize. That was a terrible thing to say. Please, let's continue the meeting.",
+          "reputation_effect": -10,
+          "lust_effect": -20,
+          "risk_effect": 10,
+          "next_node": "policy_discussion",
+          "personality_match": [],
+          "description": "Nuclear backtrack, begs forgiveness"
+        }
+      ],
+      "private_thoughts": [
+        {
+          "id": "thought_defeated",
+          "text": "She has me over a barrel. Documentation. She's been planning this. I need to get those documents.",
+          "lust_effect": -10,
+          "risk_effect": 30,
+          "trigger_condition": "always_available",
+          "description": "Thought about being trapped"
+        }
+      ]
+    }
+  ],
+  "ending_nodes": ["closing", "policy_discussion"],
+  "branching_paths": {
+    "professional_path": ["start", "opt_professional", "agenda_discussion", "compliment_maria", "policy_discussion", "closing"],
+    "widowhood_path": ["start", "opt_widowhood", "margaret_mention", "opt_honoring", "policy_discussion", "closing"],
+    "dismissive_path": ["start", "opt_dismissive", "dismissive_response", "opt_apologetic", "agenda_discussion", "closing"],
+    "charming_path": ["start", "opt_charming", "charming_response", "opt_interested", "policy_discussion", "closing"],
+    "strategic_path": ["start", "opt_strategic", "press_briefing", "opt_policy_wonk", "policy_discussion", "closing"],
+    "flirty_risky_path": ["start", "opt_professional", "agenda_discussion", "policy_discussion", "opt_dinner", "flirty_branch", "opt_backtrack", "policy_discussion"],
+    "harassment_path": ["start", "opt_professional", "agenda_discussion", "policy_discussion", "opt_dinner", "flirty_branch", "opt_push", "harassment_branch", "opt_full_backtrack", "policy_discussion"],
+    "career_threat_path": ["start", "opt_professional", "agenda_discussion", "policy_discussion", "opt_dinner", "flirty_branch", "opt_push", "harassment_branch", "opt_double_down", "career_threat_branch", "opt_nuclear_backtrack", "policy_discussion"]
+  },
+  "consequences": {
+    "professional_path": {"reputation": 15, "lust": 5, "risk": 0, "maria_relationship": "positive"},
+    "widowhood_path": {"reputation": 21, "lust": -8, "risk": 0, "maria_relationship": "sympathetic"},
+    "dismissive_path": {"reputation": -1, "lust": 0, "risk": 0, "maria_relationship": "neutral"},
+    "charming_path": {"reputation": 11, "lust": 8, "risk": 2, "maria_relationship": "warm"},
+    "strategic_path": {"reputation": 15, "lust": 0, "risk": 0, "maria_relationship": "professional"},
+    "flirty_risky_path": {"reputation": 10, "lust": 20, "risk": 20, "maria_relationship": "complicated"},
+    "harassment_path": {"reputation": -8, "lust": 15, "risk": 40, "maria_relationship": "hostile"},
+    "career_threat_path": {"reputation": -28, "lust": 5, "risk": 75, "maria_relationship": "enemy", "unlock_evidence": "maria_documentation"}
+  },
+  "metadata": {
+    "estimated_duration_minutes": 5,
+    "word_count": 2500,
+    "total_nodes": 11,
+    "total_options": 17,
+    "total_private_thoughts": 13,
+    "complexity": "high",
+    "mood_aware": true,
+    "personality_aware": true
+  }
+}
