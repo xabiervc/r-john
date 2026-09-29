@@ -1,0 +1,138 @@
+{
+  "story_objects": [
+    {
+      "id": "obj_margaret_photo",
+      "name": "Photo of Margaret",
+      "type": "sympathy_tool",
+      "description": "Framed photo of R. John's late wife Margaret. Used strategically for sympathy.",
+      "locations": ["loc_r_john_apartment", "loc_office"],
+      "function": "Can be mentioned in dialogue for +8 reputation",
+      "is_evidence": false
+    },
+    
+    {
+      "id": "obj_debate_notes",
+      "name": "Debate Preparation Notes",
+      "type": "story_item",
+      "description": "Notes and research for upcoming debates on gender equality.",
+      "locations": ["loc_office"],
+      "function": "Required for debate mini-game success",
+      "is_evidence": false
+    },
+    
+    {
+      "id": "obj_private_phone",
+      "name": "Private Phone",
+      "type": "private_item",
+      "description": "Separate phone for private communications. Contains dating apps, private messages.",
+      "locations": ["loc_r_john_apartment", "loc_hotel_room"],
+      "function": "Access to dating apps, private messages. High risk if discovered.",
+      "is_evidence": true,
+      "risk_if_found": 50
+    },
+    
+    {
+      "id": "obj_condoms",
+      "name": "Condoms",
+      "type": "private_item",
+      "description": "Various types of condoms. Required for conquests.",
+      "locations": ["loc_r_john_apartment", "loc_hotel_room"],
+      "function": "Required item for successful conquests",
+      "is_evidence": true,
+      "risk_if_found": 30
+    },
+    
+    {
+      "id": "obj_cash_stash",
+      "name": "Untraceable Cash",
+      "type": "private_item",
+      "description": "Cash stash for bribes and tips. Not linked to official accounts.",
+      "locations": ["loc_r_john_apartment", "loc_office"],
+      "function": "Used for bribes, tips, private payments",
+      "is_evidence": true,
+      "risk_if_found": 40
+    },
+    
+    {
+      "id": "obj_gift_jewelry",
+      "name": "Expensive Jewelry",
+      "type": "private_item",
+      "description": "Expensive jewelry for gifting to conquests.",
+      "locations": ["loc_r_john_apartment"],
+      "function": "Gift item for seduction (especially venal NPCs)",
+      "is_evidence": true,
+      "risk_if_found": 20
+    },
+    
+    {
+      "id": "obj_incriminating_photos",
+      "name": "Incriminating Photos",
+      "type": "leverage_item",
+      "description": "Photos that can be used as leverage on others. Blackmail material.",
+      "locations": ["loc_r_john_apartment"],
+      "function": "Can be used to silence hostile NPCs",
+      "is_evidence": true,
+      "risk_if_found": 100
+    },
+    
+    {
+      "id": "obj_hotel_key_card",
+      "name": "Hotel Key Card",
+      "type": "access_item",
+      "description": "Key card for hotel room during congress.",
+      "locations": ["loc_hotel_lobby"],
+      "function": "Access to private hotel room location",
+      "is_evidence": false
+    },
+    
+    {
+      "id": "obj_campaign_materials",
+      "name": "Campaign Materials",
+      "type": "public_item",
+      "description": "Posters, flyers, and materials for campaign and congress.",
+      "locations": ["loc_office", "loc_congress_hall"],
+      "function": "Flavor item, adds to public image",
+      "is_evidence": false
+    },
+    
+    {
+      "id": "obj_charity_auction_item",
+      "name": "Charity Auction Item",
+      "type": "public_item",
+      "description": "Item for charity auction at gala. Can be purchased for reputation.",
+      "locations": ["loc_charity_gala"],
+      "function": "Purchasing gives +10 reputation",
+      "is_evidence": false
+    },
+    
+    {
+      "id": "obj_sophie_notes",
+      "name": "Sophie's Investigation Notes",
+      "type": "evidence_item",
+      "description": "Journalist Sophie's notes and evidence about R. John's behavior.",
+      "locations": ["npc_sophie"],
+      "function": "If obtained, can be destroyed to reduce exposure risk",
+      "is_evidence": true,
+      "risk_if_found": 80,
+      "owner": "npc_sophie"
+    },
+    
+    {
+      "id": "obj_carlos_dirt",
+      "name": "Dirt on Carlos",
+      "type": "leverage_item",
+      "description": "Evidence of Carlos's own scandals. Can be used for mutual destruction threat.",
+      "locations": ["obtainable via investigation"],
+      "function": "Can be used to neutralize Carlos's investigation",
+      "is_evidence": false,
+      "owner": null
+    }
+  ],
+  
+  "total_story_objects": 12,
+  "public_items": 3,
+  "private_items": 4,
+  "evidence_items": 2,
+  "leverage_items": 2,
+  "sympathy_tools": 1
+}

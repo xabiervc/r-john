@@ -1,0 +1,185 @@
+{
+  "chapters": [
+    {
+      "id": "chapter_1",
+      "day": 1,
+      "title": "Debate Prep",
+      "type": "story-critical",
+      "duration_minutes": 45,
+      "mandatory_events": [
+        {
+          "id": "debate_prep_meeting",
+          "time_slot": "morning",
+          "location": "office",
+          "description": "Preparation meeting with Maria for upcoming debate"
+        },
+        {
+          "id": "press_conference",
+          "time_slot": "afternoon",
+          "location": "tv_studio",
+          "description": "Press conference on gender equality"
+        }
+      ],
+      "conquest_opportunities": ["npc_emma", "npc_laura"],
+      "key_npcs": ["npc_maria", "npc_emma", "npc_laura"],
+      "ending_triggers": []
+    },
+    {
+      "id": "chapter_2",
+      "day": 2,
+      "title": "TV Interview & Gala",
+      "type": "story-critical",
+      "duration_minutes": 45,
+      "mandatory_events": [
+        {
+          "id": "tv_interview",
+          "time_slot": "morning",
+          "location": "tv_studio",
+          "description": "Live TV interview on morning show"
+        },
+        {
+          "id": "charity_gala",
+          "time_slot": "evening",
+          "location": "charity_gala",
+          "description": "Charity gala appearance"
+        }
+      ],
+      "conquest_opportunities": ["npc_jessica", "npc_olivia"],
+      "key_npcs": ["npc_jessica", "npc_olivia", "npc_maria"],
+      "mini_games": ["debate_mini_game"],
+      "ending_triggers": []
+    },
+    {
+      "id": "chapter_3",
+      "day": 3,
+      "title": "Congress Travel",
+      "type": "sandbox",
+      "duration_minutes": 90,
+      "mandatory_events": [
+        {
+          "id": "travel_to_congress",
+          "time_slot": "morning",
+          "location": "travel",
+          "description": "Travel to party congress in another city"
+        }
+      ],
+      "conquest_opportunities": ["npc_isabella", "npc_emma", "npc_laura"],
+      "key_npcs": ["npc_isabella", "npc_laura"],
+      "ending_triggers": []
+    },
+    {
+      "id": "chapter_4",
+      "day": 4,
+      "title": "Congress Day 1",
+      "type": "story-critical",
+      "duration_minutes": 45,
+      "mandatory_events": [
+        {
+          "id": "keynote_speech",
+          "time_slot": "morning",
+          "location": "congress_hall",
+          "description": "Keynote speech at party congress"
+        },
+        {
+          "id": "panel_discussion",
+          "time_slot": "afternoon",
+          "location": "congress_hall",
+          "description": "Panel discussion on policy"
+        }
+      ],
+      "conquest_opportunities": ["npc_victoria", "npc_natalie"],
+      "key_npcs": ["npc_victoria", "npc_natalie", "npc_carlos"],
+      "ending_triggers": []
+    },
+    {
+      "id": "chapter_5",
+      "day": 5,
+      "title": "Congress Day 2",
+      "type": "sandbox",
+      "duration_minutes": 90,
+      "mandatory_events": [
+        {
+          "id": "congress_session",
+          "time_slot": "morning",
+          "location": "congress_hall",
+          "description": "Congress sessions and voting"
+        }
+      ],
+      "conquest_opportunities": ["npc_ashley", "npc_victoria", "npc_natalie", "npc_sophie"],
+      "key_npcs": ["npc_ashley", "npc_sophie", "npc_carlos"],
+      "ending_triggers": ["investigation_intensifies"]
+    },
+    {
+      "id": "chapter_6",
+      "day": 6,
+      "title": "Crisis Management",
+      "type": "story-critical",
+      "duration_minutes": 45,
+      "mandatory_events": [
+        {
+          "id": "return_to_capital",
+          "time_slot": "morning",
+          "location": "travel",
+          "description": "Return to capital"
+        },
+        {
+          "id": "crisis_meeting",
+          "time_slot": "afternoon",
+          "location": "office",
+          "description": "Emergency meeting about investigation"
+        }
+      ],
+      "conquest_opportunities": [],
+      "key_npcs": ["npc_maria", "npc_sophie", "npc_carlos"],
+      "ending_triggers": ["scandal_threshold_check"]
+    },
+    {
+      "id": "chapter_7",
+      "day": 7,
+      "title": "Final Debate & Vote",
+      "type": "sandbox/climax",
+      "duration_minutes": 90,
+      "mandatory_events": [
+        {
+          "id": "final_debate",
+          "time_slot": "afternoon",
+          "location": "tv_studio",
+          "description": "Televised debate on gender equality"
+        },
+        {
+          "id": "final_vote",
+          "time_slot": "evening",
+          "location": "parliament",
+          "description": "Parliament vote on the bill"
+        }
+      ],
+      "conquest_opportunities": ["npc_emma", "npc_jessica", "npc_olivia"],
+      "key_npcs": ["npc_sophie", "npc_carlos", "npc_maria"],
+      "mini_games": ["debate_mini_game_final"],
+      "ending_triggers": ["final_ending_calculation"]
+    }
+  ],
+  
+  "time_slots": {
+    "morning": {
+      "start": "6:00",
+      "end": "12:00",
+      "mood_modifier": "stressed"
+    },
+    "afternoon": {
+      "start": "12:00",
+      "end": "19:00",
+      "mood_modifier": "neutral"
+    },
+    "evening": {
+      "start": "19:00",
+      "end": "24:00",
+      "mood_modifier": "relaxed_flirty"
+    },
+    "night": {
+      "start": "24:00",
+      "end": "6:00",
+      "mood_modifier": "private_high_risk"
+    }
+  }
+}

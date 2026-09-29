@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Seduction Success Calculation Schema",
+  "description": "JSON Schema for seduction success chance calculation in R. John: Public Servant",
+  "type": "object",
+  "required": ["interest", "suspicion", "mood", "approach_match"],
+  "properties": {
+    "interest": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "NPC's interest level in R. John (0-100)"
+    },
+    "suspicion": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "NPC's suspicion of R. John's true nature (0-100)"
+    },
+    "mood": {
+      "type": "string",
+      "enum": ["Relaxed", "Stressed", "Flirty", "Angry", "Neutral"],
+      "description": "NPC's current mood state"
+    },
+    "approach_match": {
+      "type": "boolean",
+      "description": "Whether player's approach matches NPC's preferred approaches"
+    },
+    "calculated_success_chance": {
+      "type": "number",
+      "minimum": 5,
+      "maximum": 95,
+      "description": "Final success chance (5-95%), calculated as: min(95, max(5, base_success + mood_modifier))"
+    }
+  },
+  "formula": {
+    "base_success": "(interest / 100) * 50 + ((100 - suspicion) / 100) * 30 + (approach_match ? 20 : 0)",
+    "mood_modifiers": {
+      "Relaxed": 10,
+      "Stressed": -20,
+      "Flirty": 30,
+      "Angry": -40,
+      "Neutral": 0
+    },
+    "final_success": "min(95, max(5, base_success + mood_modifier))"
+  },
+  "examples": [
+    {
+      "interest": 60,
+      "suspicion": 30,
+      "mood": "Flirty",
+      "approach_match": true,
+      "base_success": 71,
+      "mood_modifier": 30,
+      "final_success": 95
+    },
+    {
+      "interest": 40,
+      "suspicion": 50,
+      "mood": "Stressed",
+      "approach_match": false,
+      "base_success": 35,
+      "mood_modifier": -20,
+      "final_success": 15
+    }
+  ]
+}

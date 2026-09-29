@@ -1,0 +1,169 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "NPC Profile Schema",
+  "description": "JSON Schema for NPC profiles in R. John: Public Servant",
+  "type": "object",
+  "required": ["id", "name", "role", "age", "gender", "personality", "risk_profile", "description", "is_playable", "is_seduceable"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^npc_[a-z_]+$",
+      "description": "Unique identifier for NPC (e.g., npc_maria)"
+    },
+    "name": {
+      "type": "string",
+      "description": "Display name of NPC"
+    },
+    "role": {
+      "type": "string",
+      "description": "NPC's role in the story (e.g., Press Secretary, Intern)"
+    },
+    "age": {
+      "type": "integer",
+      "minimum": 18,
+      "maximum": 80,
+      "description": "NPC's age"
+    },
+    "gender": {
+      "type": "string",
+      "enum": ["Male", "Female", "Non-binary"],
+      "description": "NPC's gender"
+    },
+    "personality": {
+      "type": "string",
+      "enum": ["Naive", "Ambitious", "Cynical", "Idealistic", "Venal"],
+      "description": "NPC's personality type for dialogue matching"
+    },
+    "risk_profile": {
+      "type": "string",
+      "enum": ["Low", "Medium", "High", "Highest", "N/A"],
+      "description": "Risk level if seduced (likelihood of talking)"
+    },
+    "description": {
+      "type": "string",
+      "description": "Brief description of NPC"
+    },
+    "backstory": {
+      "type": "string",
+      "description": "NPC's backstory and motivations"
+    },
+    "public_image": {
+      "type": "string",
+      "description": "How NPC appears publicly"
+    },
+    "private_reality": {
+      "type": "string",
+      "description": "NPC's true nature or private motivations"
+    },
+    "seduction_profile": {
+      "type": "object",
+      "nullable": true,
+      "properties": {
+        "base_interest": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Base interest level in R. John (0-100)"
+        },
+        "base_suspicion": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Base suspicion of R. John's true nature (0-100)"
+        },
+        "preferred_approaches": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["Flattery", "Career", "Power", "Attention", "Career Promises", "Intellectual Conversation", "Exclusives", "Insider Access", "Policy Talk", "Shared Values", "Direct", "Gifts", "Cash Tips", "Social Media Collabs", "Photo Ops", "Exclusive Access", "Mutual Benefit", "Quid Pro Quo", "Group Settings", "Parties", "Drinks", "Mentorship"]
+          },
+          "description": "Approaches that work best on this NPC"
+        },
+        "conquest_difficulty": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Difficulty multiplier (0 = easiest, 1 = hardest)"
+        }
+      }
+    },
+    "mood_profile": {
+      "type": "object",
+      "nullable": true,
+      "properties": {
+        "default_mood": {
+          "type": "string",
+          "enum": ["Relaxed", "Stressed", "Flirty", "Angry", "Neutral"]
+        },
+        "morning_mood": {
+          "type": "string",
+          "enum": ["Relaxed", "Stressed", "Flirty", "Angry", "Neutral", "Tired", "Nervous", "Excited"]
+        },
+        "evening_mood": {
+          "type": "string",
+          "enum": ["Relaxed", "Stressed", "Flirty", "Angry", "Neutral"]
+        },
+        "triggers": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "enum": ["Relaxed", "Stressed", "Flirty", "Angry", "Neutral", "Tired", "Nervous", "Excited"]
+          },
+          "description": "Event -> mood mappings"
+        }
+      }
+    },
+    "schedule": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["day", "time_slot", "location", "activity"],
+        "properties": {
+          "day": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 7
+          },
+          "time_slot": {
+            "type": "string",
+            "enum": ["morning", "afternoon", "evening", "night"]
+          },
+          "location": {
+            "type": "string"
+          },
+          "activity": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "is_playable": {
+      "type": "boolean",
+      "description": "Whether this NPC is playable (only R. John)"
+    },
+    "is_seduceable": {
+      "type": "boolean",
+      "description": "Whether this NPC can be seduced"
+    },
+    "is_deceased": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether this NPC is deceased (Margaret)"
+    },
+    "is_antagonist": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether this NPC is an antagonist (Carlos)"
+    },
+    "conquest_risk": {
+      "type": "string",
+      "nullable": true,
+      "description": "Description of risk if seduced"
+    },
+    "threat_level": {
+      "type": "string",
+      "nullable": true,
+      "description": "Threat level for antagonists"
+    }
+  }
+}

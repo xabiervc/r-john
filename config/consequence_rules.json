@@ -1,0 +1,252 @@
+{
+  "reputation_events": {
+    "gains": [
+      {
+        "event": "successful_debate_answer",
+        "base_value": 3,
+        "modifier_per_second_remaining": 0.5,
+        "max_bonus": 5,
+        "description": "Correct answer in debate mini-game"
+      },
+      {
+        "event": "charitable_act",
+        "base_value": 8,
+        "publicity_bonus": 5,
+        "description": "Donation or charity gala appearance"
+      },
+      {
+        "event": "widowhood_mention",
+        "base_value": 8,
+        "memorial_event_bonus": 2,
+        "description": "Mentioning late wife Margaret strategically"
+      },
+      {
+        "event": "policy_speech_success",
+        "base_value": 12,
+        "rehearsal_bonus": 5,
+        "description": "Successful policy speech"
+      },
+      {
+        "event": "positive_media_coverage",
+        "base_value": 8,
+        "national_press_bonus": 10,
+        "description": "Positive news article or TV segment"
+      },
+      {
+        "event": "help_npc",
+        "base_value": 5,
+        "influential_npc_bonus": 3,
+        "description": "Helping NPC with career favor or advice"
+      },
+      {
+        "event": "successful_coverup",
+        "base_value": 15,
+        "no_witnesses_bonus": 10,
+        "description": "Successfully hiding a scandal"
+      }
+    ],
+    
+    "losses": [
+      {
+        "event": "failed_seduction_witnessed",
+        "base_value": -15,
+        "influential_witness_penalty": -10,
+        "description": "Failed seduction attempt witnessed by others"
+      },
+      {
+        "event": "inappropriate_behavior_witnessed",
+        "base_value": -20,
+        "photographed_penalty": -15,
+        "description": "Inappropriate behavior witnessed or photographed"
+      },
+      {
+        "event": "bribe_discovered",
+        "base_value": -30,
+        "journalist_bribe_penalty": -20,
+        "description": "Bribe payment discovered by investigators"
+      },
+      {
+        "event": "failed_debate_answer",
+        "base_value": -3,
+        "time_over_penalty": -1,
+        "description": "Wrong answer or timeout in debate"
+      },
+      {
+        "event": "negative_media_coverage",
+        "base_value": -15,
+        "national_scandal_penalty": -10,
+        "description": "Negative news article or scandal"
+      },
+      {
+        "event": "scandal_exposed",
+        "base_value": -40,
+        "multiple_accusers_penalty": -20,
+        "description": "Scandal exposed by Sophie or Carlos"
+      },
+      {
+        "event": "missing_mandatory_event",
+        "base_value": -20,
+        "high_profile_penalty": -10,
+        "description": "Missing a mandatory story event"
+      }
+    ]
+  },
+  
+  "lust_events": {
+    "gains": [
+      {
+        "event": "time_passing_per_hour",
+        "base_value": 3,
+        "description": "Natural increase over time"
+      },
+      {
+        "event": "seeing_attractive_npc",
+        "base_value": 8,
+        "description": "Encountering an attractive NPC"
+      },
+      {
+        "event": "resisting_urge",
+        "base_value": 12,
+        "description": "Choosing not to pursue seduction"
+      },
+      {
+        "event": "widowhood_loneliness",
+        "base_value": 8,
+        "description": "Thinking about being lonely since Margaret died"
+      }
+    ],
+    
+    "losses": [
+      {
+        "event": "successful_conquest",
+        "base_value": -50,
+        "description": "Completing a seduction successfully"
+      },
+      {
+        "event": "viewing_private_content",
+        "base_value": -15,
+        "description": "Using dating apps or viewing private photos"
+      }
+    ]
+  },
+  
+  "exposure_risk_events": {
+    "gains": [
+      {
+        "event": "conquest_completed",
+        "base_value": 30,
+        "high_profile_npc_penalty": 20,
+        "description": "Each successful conquest creates evidence"
+      },
+      {
+        "event": "bribing_someone",
+        "base_value": 20,
+        "description": "Paying someone to stay silent"
+      },
+      {
+        "event": "seen_in_private_moment",
+        "base_value": 40,
+        "description": "Being witnessed in compromising situation"
+      },
+      {
+        "event": "failed_seduction",
+        "base_value": 20,
+        "description": "Failed seduction may lead to accusations"
+      }
+    ],
+    
+    "losses": [
+      {
+        "event": "destroying_evidence",
+        "base_value": -30,
+        "description": "Successfully destroying incriminating evidence"
+      },
+      {
+        "event": "silencing_witness",
+        "base_value": -25,
+        "description": "Successfully bribing or intimidating witness"
+      },
+      {
+        "event": "successful_coverup",
+        "base_value": -35,
+        "description": "Successfully covering up a scandal"
+      }
+    ]
+  },
+  
+  "ending_calculation": {
+    "victory_conditions": {
+      "ultimate_degenerate_victory": {
+        "conquests_required": 5,
+        "max_exposure_risk": 30,
+        "min_reputation": 70,
+        "description": "Maximum conquests with zero exposure"
+      },
+      "moderate_victory": {
+        "conquests_required": 3,
+        "max_exposure_risk": 60,
+        "min_reputation": 50,
+        "description": "Moderate conquests with low exposure"
+      },
+      "secret_president": {
+        "conquests_required": 7,
+        "max_exposure_risk": 20,
+        "min_reputation": 90,
+        "perfect_play_required": true,
+        "description": "Perfect playthrough, becomes head of government"
+      }
+    },
+    
+    "lose_conditions": {
+      "exposed_scandal": {
+        "exposure_risk_threshold": 100,
+        "or_reputation_below": 20,
+        "description": "Getting caught = career destroyed"
+      },
+      "metoo_headline": {
+        "accusers_required": 3,
+        "exposure_risk_threshold": 100,
+        "description": "Multiple accusers come forward"
+      },
+      "settled_down": {
+        "enter_stable_relationship": true,
+        "conquests_below": 2,
+        "description": "Entering stable relationship = personal failure"
+      },
+      "blackmailed_forever": {
+        "permanent_bribes_paid": 3,
+        "description": "Survives but trapped in cycle of bribes"
+      },
+      "forced_resignation": {
+        "reputation_below": 30,
+        "pressure_too_high": true,
+        "description": "Pressure too high, quietly steps down"
+      }
+    }
+  },
+  
+  "mood_triggers": {
+    "time_of_day": {
+      "morning": "Stressed",
+      "afternoon": "Neutral",
+      "evening": "Relaxed/Flirty",
+      "night": "Private/High Risk"
+    },
+    
+    "events": {
+      "recent_event_good": ["Relaxed", "Flirty"],
+      "recent_event_bad": ["Stressed", "Angry"],
+      "player_helped_earlier": "Relaxed",
+      "player_insulted_rejected": "Angry",
+      "alcohol_consumed": "Flirty",
+      "compliment_received": "Flirty"
+    },
+    
+    "locations": {
+      "office": ["Stressed", "Neutral"],
+      "bar_party": ["Relaxed", "Flirty"],
+      "hotel_room": ["Private", "Flirty"],
+      "public_event": ["Neutral", "Stressed"]
+    }
+  }
+}

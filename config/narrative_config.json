@@ -1,0 +1,108 @@
+{
+  "game_title": "R. John: Public Servant",
+  "genre": "Narrative Stealth Adventure / Dark Comedy / Political Satire",
+  "target_audience": "Adults (18+)",
+  "platforms": ["PC", "Mobile"],
+  "engine": "Unity or Godot (TBD)",
+  
+  "narrative_settings": {
+    "total_chapters": 7,
+    "chapters_are_days": true,
+    "sandbox_days": [3, 5, 7],
+    "story_critical_days": [1, 2, 4, 6],
+    "time_slots_per_day": 6,
+    "estimated_duration_hours": 7,
+    "replayability_target": 3
+  },
+  
+  "core_mechanics": {
+    "triple_bar_system": {
+      "reputation": {
+        "visible": true,
+        "range": [0, 100],
+        "tiers": ["Critical", "Low", "Medium", "High"],
+        "critical_threshold": 20
+      },
+      "lust": {
+        "visible": true,
+        "range": [0, 100],
+        "tiers": ["Critical", "Low", "Medium", "High"],
+        "critical_threshold": 20
+      },
+      "exposure_risk": {
+        "visible": false,
+        "ui_indicator": "Pressure",
+        "range": [0, 100],
+        "levels": ["Low", "Medium", "High", "Critical"],
+        "critical_threshold": 81
+      }
+    },
+    
+    "mask_system": {
+      "public_mask": {
+        "reputation_gain_per_min": 0.5,
+        "lust_loss_per_min": -1.0,
+        "risk_reduction_per_min": -0.3
+      },
+      "private_mask": {
+        "reputation_loss_if_seen": -30,
+        "lust_gain_per_min": 1.0,
+        "risk_increase_per_min": 0.5
+      },
+      "switch_duration_seconds": 2.0
+    },
+    
+    "mood_system": {
+      "moods": ["Relaxed", "Stressed", "Flirty", "Angry", "Neutral"],
+      "modifiers": {
+        "Relaxed": {"interest": 10, "suspicion": -10},
+        "Stressed": {"interest": -20, "suspicion": 15},
+        "Flirty": {"interest": 30, "suspicion": -20},
+        "Angry": {"interest": -40, "suspicion": 30},
+        "Neutral": {"interest": 0, "suspicion": 0}
+      }
+    },
+    
+    "seduction_system": {
+      "phases": ["Approach", "Conversation", "Escalation", "Climax", "Aftermath"],
+      "success_formula": {
+        "base_interest_weight": 50,
+        "base_suspicion_weight": 30,
+        "approach_match_bonus": 20,
+        "mood_modifiers": {
+          "Relaxed": 10,
+          "Stressed": -20,
+          "Flirty": 30,
+          "Angry": -40,
+          "Neutral": 0
+        },
+        "min_success": 5,
+        "max_success": 95
+      }
+    }
+  },
+  
+  "win_lose_conditions": {
+    "lose_a_exposed": "Getting caught = career destroyed, labeled misogynist",
+    "lose_b_settled": "Entering stable relationship = personal failure",
+    "win": "Maximize conquests while maintaining perfect public image"
+  },
+  
+  "endings": {
+    "total": 8,
+    "types": ["Victory", "Moderate Victory", "Exposed Scandal", "#MeToo Headline", "Settled Down", "Blackmailed Forever", "Forced Resignation", "Secret President"]
+  },
+  
+  "content_warnings": [
+    "Sexual content",
+    "Mature themes",
+    "Political satire",
+    "Dark comedy",
+    "Manipulation and deception"
+  ],
+  
+  "age_rating": {
+    "pegi": 18,
+    "esrb": "M (Mature 17+)"
+  }
+}

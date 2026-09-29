@@ -1,0 +1,162 @@
+{
+  "locations": [
+    {
+      "id": "loc_office",
+      "name": "R. John's Office",
+      "type": "public",
+      "description": "R. John's official office in parliament building. Sterile, professional, flags, portraits.",
+      "available_time_slots": ["morning", "afternoon", "evening"],
+      "available_chapters": [1, 2, 4, 6],
+      "mood_modifier": "stressed_neutral",
+      "risk_level": "low",
+      "witnesses_likely": true,
+      "seduction_allowed": false,
+      "key_events": ["debate_prep_meeting", "crisis_meeting"]
+    },
+    
+    {
+      "id": "loc_tv_studio",
+      "name": "TV Studio",
+      "type": "public",
+      "description": "Television studio for interviews and debates. Bright lights, cameras, green room.",
+      "available_time_slots": ["morning", "afternoon"],
+      "available_chapters": [2, 7],
+      "mood_modifier": "stressed",
+      "risk_level": "high",
+      "witnesses_likely": true,
+      "seduction_allowed": false,
+      "key_events": ["tv_interview", "final_debate"]
+    },
+    
+    {
+      "id": "loc_charity_gala",
+      "name": "Charity Gala Venue",
+      "type": "public",
+      "description": "Elegant venue for charity gala. Wealthy donors, auction items, champagne.",
+      "available_time_slots": ["evening"],
+      "available_chapters": [2],
+      "mood_modifier": "relaxed_flirty",
+      "risk_level": "medium",
+      "witnesses_likely": true,
+      "seduction_allowed": true,
+      "key_events": ["charity_gala"]
+    },
+    
+    {
+      "id": "loc_hotel_lobby",
+      "name": "Congress Hotel Lobby",
+      "type": "semi-private",
+      "description": "Luxurious hotel lobby where congress is held. Marble floors, chandeliers, concierge desk.",
+      "available_time_slots": ["morning", "afternoon", "evening"],
+      "available_chapters": [3, 4, 5],
+      "mood_modifier": "neutral",
+      "risk_level": "medium",
+      "witnesses_likely": true,
+      "seduction_allowed": true,
+      "key_events": ["hotel_check_in"]
+    },
+    
+    {
+      "id": "loc_hotel_room",
+      "name": "Hotel Room",
+      "type": "private",
+      "description": "R. John's hotel room during congress. Luxurious but generic, mini-bar, dim lighting.",
+      "available_time_slots": ["evening", "night"],
+      "available_chapters": [3, 4, 5],
+      "mood_modifier": "private_flirty",
+      "risk_level": "low",
+      "witnesses_likely": false,
+      "seduction_allowed": true,
+      "key_events": []
+    },
+    
+    {
+      "id": "loc_congress_hall",
+      "name": "Congress Hall",
+      "type": "public",
+      "description": "Main hall where party congress is held. Podium, seating, banners, cameras.",
+      "available_time_slots": ["morning", "afternoon"],
+      "available_chapters": [4, 5],
+      "mood_modifier": "stressed_neutral",
+      "risk_level": "high",
+      "witnesses_likely": true,
+      "seduction_allowed": false,
+      "key_events": ["keynote_speech", "panel_discussion", "congress_session"]
+    },
+    
+    {
+      "id": "loc_congress_party",
+      "name": "Congress After-Party",
+      "type": "semi-private",
+      "description": "Evening party during congress. Dim lighting, music, drinks, networking.",
+      "available_time_slots": ["evening", "night"],
+      "available_chapters": [5],
+      "mood_modifier": "flirty_relaxed",
+      "risk_level": "medium",
+      "witnesses_likely": true,
+      "seduction_allowed": true,
+      "key_events": ["evening_party"]
+    },
+    
+    {
+      "id": "loc_parliament",
+      "name": "Parliament Chamber",
+      "type": "public",
+      "description": "Parliament chamber where final vote takes place. Formal, solemn, high stakes.",
+      "available_time_slots": ["evening"],
+      "available_chapters": [7],
+      "mood_modifier": "stressed",
+      "risk_level": "high",
+      "witnesses_likely": true,
+      "seduction_allowed": false,
+      "key_events": ["final_vote"]
+    },
+    
+    {
+      "id": "loc_r_john_apartment",
+      "name": "R. John's Apartment",
+      "type": "private",
+      "description": "R. John's modern minimalist apartment. Photos of Margaret (strategic), empty feeling.",
+      "available_time_slots": ["evening", "night"],
+      "available_chapters": [1, 2, 3, 4, 5, 6, 7],
+      "mood_modifier": "private_lonely",
+      "risk_level": "low",
+      "witnesses_likely": false,
+      "seduction_allowed": true,
+      "key_events": []
+    },
+    
+    {
+      "id": "loc_upscale_bar",
+      "name": "Upscale Bar",
+      "type": "semi-private",
+      "description": "Dim, intimate upscale bar. Expensive drinks, jazz music, private booths.",
+      "available_time_slots": ["evening", "night"],
+      "available_chapters": [1, 2, 3, 4, 5, 6, 7],
+      "mood_modifier": "relaxed_flirty",
+      "risk_level": "medium",
+      "witnesses_likely": true,
+      "seduction_allowed": true,
+      "key_events": []
+    },
+    
+    {
+      "id": "loc_private_office",
+      "name": "Private Office (After Hours)",
+      "type": "private",
+      "description": "R. John's office after hours. Desk cleared, door locked, personal items hidden.",
+      "available_time_slots": ["evening", "night"],
+      "available_chapters": [1, 2, 4, 6],
+      "mood_modifier": "private",
+      "risk_level": "low",
+      "witnesses_likely": false,
+      "seduction_allowed": true,
+      "key_events": []
+    }
+  ],
+  
+  "total_locations": 11,
+  "public_locations": 5,
+  "private_locations": 4,
+  "semi_private_locations": 2
+}

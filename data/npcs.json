@@ -1,0 +1,476 @@
+{
+  "npcs": [
+    {
+      "id": "npc_r_john",
+      "name": "R. John",
+      "role": "Protagonist",
+      "age": 52,
+      "gender": "Male",
+      "personality": "Ambitious",
+      "risk_profile": "N/A",
+      "description": "52-year-old charismatic politician with flawless public image as grieving widower and feminist ally. In private, degenerate predator obsessed with conquest.",
+      "backstory": "Wife Margaret died 3 years ago in car accident. No recognized children. Uses widowhood as sympathy card and excuse for loneliness.",
+      "public_image": "Intellectual, progressive, feminist ally, grieving widower, lonely but dedicated",
+      "private_reality": "Degenerate predator, manipulative, selfish, obsessed with sexual conquest",
+      "seduction_profile": null,
+      "mood_profile": null,
+      "is_playable": true,
+      "is_seduceable": false
+    },
+    
+    {
+      "id": "npc_margaret",
+      "name": "Margaret",
+      "role": "Deceased Wife (Mentioned Only)",
+      "age": 50,
+      "gender": "Female",
+      "personality": "N/A",
+      "risk_profile": "N/A",
+      "description": "R. John's late wife, died 3 years ago in car accident. Used strategically as sympathy tool.",
+      "backstory": "Married to R. John for 25 years. May have known about his behavior before death (optional lore).",
+      "public_image": "Beloved wife, tragic loss",
+      "private_reality": "Unknown",
+      "seduction_profile": null,
+      "mood_profile": null,
+      "is_playable": false,
+      "is_seduceable": false,
+      "is_deceased": true
+    },
+    
+    {
+      "id": "npc_maria",
+      "name": "Maria",
+      "role": "Press Secretary",
+      "age": 34,
+      "gender": "Female",
+      "personality": "Ambitious",
+      "risk_profile": "High",
+      "description": "Efficient, loyal, increasingly suspicious. Manages R. John's public image 24/7.",
+      "backstory": "Worked for R. John for 5 years. Ambitious, wants to advance her career. Knows his schedule intimately.",
+      "public_image": "Professional, competent, loyal",
+      "private_reality": "Suspicious, ambitious, may be blackmailed or seduced",
+      "seduction_profile": {
+        "base_interest": 30,
+        "base_suspicion": 40,
+        "preferred_approaches": ["Career", "Flattery", "Power"],
+        "conquest_difficulty": 0.8
+      },
+      "mood_profile": {
+        "default_mood": "Neutral",
+        "morning_mood": "Stressed",
+        "evening_mood": "Relaxed",
+        "triggers": {
+          "player_helped": "Relaxed",
+          "player_rejected": "Angry",
+          "before_deadline": "Stressed",
+          "after_compliment": "Flirty"
+        }
+      },
+      "schedule": [
+        {"day": 1, "time_slot": "morning", "location": "office", "activity": "Debate prep meeting"},
+        {"day": 1, "time_slot": "afternoon", "location": "office", "activity": "Press conference prep"},
+        {"day": 2, "time_slot": "evening", "location": "charity_gala", "activity": "Managing press"}
+      ],
+      "is_playable": false,
+      "is_seduceable": true,
+      "conquest_risk": "High - knows too much"
+    },
+    
+    {
+      "id": "npc_laura",
+      "name": "Laura",
+      "role": "Personal Assistant",
+      "age": 26,
+      "gender": "Female",
+      "personality": "Naive",
+      "risk_profile": "Medium-High",
+      "description": "Competent, naive, ambitious, eager to please. Posts on social media.",
+      "backstory": "Young assistant, new to politics. Eager to prove herself. May talk to friends about work.",
+      "public_image": "Helpful, friendly, efficient",
+      "private_reality": "Naive, ambitious, may be manipulated",
+      "seduction_profile": {
+        "base_interest": 40,
+        "base_suspicion": 20,
+        "preferred_approaches": ["Attention", "Flattery", "Career Promises"],
+        "conquest_difficulty": 0.4
+      },
+      "mood_profile": {
+        "default_mood": "Neutral",
+        "morning_mood": "Stressed",
+        "evening_mood": "Relaxed",
+        "triggers": {
+          "praised": "Flirty",
+          "before_deadline": "Stressed",
+          "given_attention": "Flirty"
+        }
+      },
+      "schedule": [
+        {"day": 1, "time_slot": "morning", "location": "office", "activity": "Managing schedule"},
+        {"day": 1, "time_slot": "afternoon", "location": "office", "activity": "Organizing press conference"},
+        {"day": 3, "time_slot": "morning", "location": "travel", "activity": "Travel arrangements"}
+      ],
+      "is_playable": false,
+      "is_seduceable": true,
+      "conquest_risk": "Medium-High - social media presence"
+    },
+    
+    {
+      "id": "npc_carlos",
+      "name": "Carlos",
+      "role": "Political Rival",
+      "age": 55,
+      "gender": "Male",
+      "personality": "Cynical",
+      "risk_profile": "N/A (Antagonist)",
+      "description": "Ruthless, cunning, wealthy opposition politician. Seeks to destroy R. John.",
+      "backstory": "Long-time political rival. Has resources to hire investigators. Has own secrets.",
+      "public_image": "Strong leader, experienced politician",
+      "private_reality": "Ruthless, manipulative, will use any means to destroy opponents",
+      "seduction_profile": null,
+      "mood_profile": null,
+      "is_playable": false,
+      "is_seduceable": false,
+      "is_antagonist": true,
+      "threat_level": "Constant - actively investigates"
+    },
+    
+    {
+      "id": "npc_sophie",
+      "name": "Sophie",
+      "role": "Investigative Journalist",
+      "age": 32,
+      "gender": "Female",
+      "personality": "Cynical",
+      "risk_profile": "Highest",
+      "description": "Tenacious, intelligent, morally ambitious. Writing exposé on R. John.",
+      "backstory": "Award-winning journalist. Has editorial support and resources. Persistent investigator.",
+      "public_image": "Respected journalist, truth-seeker",
+      "private_reality": "Morally ambiguous, will use any means to get story",
+      "seduction_profile": {
+        "base_interest": 35,
+        "base_suspicion": 50,
+        "preferred_approaches": ["Intellectual Conversation", "Exclusives", "Insider Access"],
+        "conquest_difficulty": 0.9
+      },
+      "mood_profile": {
+        "default_mood": "Neutral",
+        "morning_mood": "Neutral",
+        "evening_mood": "Relaxed",
+        "triggers": {
+          "given_exclusive": "Flirty",
+          "blocked_investigation": "Angry",
+          "intellectual_stimulation": "Flirty"
+        }
+      },
+      "schedule": [
+        {"day": 5, "time_slot": "afternoon", "location": "congress_hall", "activity": "Investigating R. John"},
+        {"day": 6, "time_slot": "morning", "location": "office", "activity": "Writing exposé"},
+        {"day": 7, "time_slot": "evening", "location": "parliament", "activity": "Covering final vote"}
+      ],
+      "is_playable": false,
+      "is_seduceable": true,
+      "conquest_risk": "Highest - has resources, contacts, persistence"
+    },
+    
+    {
+      "id": "npc_emma",
+      "name": "Emma",
+      "role": "Young Intern",
+      "age": 24,
+      "gender": "Female",
+      "personality": "Naive",
+      "risk_profile": "Low",
+      "description": "Naive, idealistic, eager to learn. Nervous around authority.",
+      "backstory": "College intern, first time in politics. Starstruck by powerful politicians.",
+      "public_image": "Eager intern, hard worker",
+      "private_reality": "Naive, impressionable, easily flattered",
+      "seduction_profile": {
+        "base_interest": 50,
+        "base_suspicion": 15,
+        "preferred_approaches": ["Flattery", "Mentorship", "Career Promises"],
+        "conquest_difficulty": 0.3
+      },
+      "mood_profile": {
+        "default_mood": "Neutral",
+        "morning_mood": "Nervous",
+        "evening_mood": "Relaxed",
+        "triggers": {
+          "praised": "Flirty",
+          "around_authority": "Stressed",
+          "given_responsibility": "Flirty"
+        }
+      },
+      "schedule": [
+        {"day": 1, "time_slot": "morning", "location": "office", "activity": "Intern work"},
+        {"day": 1, "time_slot": "afternoon", "location": "office", "activity": "Fetching coffee, organizing"}
+      ],
+      "is_playable": false,
+      "is_seduceable": true,
+      "conquest_risk": "Low - inexperienced, unlikely to talk"
+    },
+    
+    {
+      "id": "npc_jessica",
+      "name": "Jessica",
+      "role": "TV Journalist",
+      "age": 29,
+      "gender": "Female",
+      "personality": "Ambitious",
+      "risk_profile": "Medium",
+      "description": "Ambitious, cynical, media-trained. Stressed before broadcasts.",
+      "backstory": "Rising TV journalist. Wants big breaks and exclusives. Professional but ambitious.",
+      "public_image": "Professional broadcaster, polished",
+      "private_reality": "Ambitious, will trade access for career advancement",
+      "seduction_profile": {
+        "base_interest": 40,
+        "base_suspicion": 35,
+        "preferred_approaches": ["Exclusive Interviews", "Insider Info", "Career Opportunities"],
+        "conquest_difficulty": 0.6
+      },
+      "mood_profile": {
+        "default_mood": "Neutral",
+        "morning_mood": "Stressed",
+        "evening_mood": "Relaxed",
+        "triggers": {
+          "before_broadcast": "Stressed",
+          "given_scoop": "Flirty",
+          "career_opportunity": "Flirty"
+        }
+      },
+      "schedule": [
+        {"day": 2, "time_slot": "morning", "location": "tv_studio", "activity": "Morning show interview"},
+        {"day": 2, "time_slot": "evening", "location": "charity_gala", "activity": "Covering event"}
+      ],
+      "is_playable": false,
+      "is_seduceable": true,
+      "conquest_risk": "Medium - media connections, but ambitious"
+    },
+    
+    {
+      "id": "npc_olivia",
+      "name": "Olivia",
+      "role": "Party Colleague",
+      "age": 35,
+      "gender": "Female",
+      "personality": "Idealistic",
+      "risk_profile": "Medium",
+      "description": "Professional, guarded, policy-focused. Neutral in office, relaxed at events.",
+      "backstory": "Fellow politician in same party. Shares R. John's progressive values publicly.",
+      "public_image": "Professional, policy-wonk, principled",
+      "private_reality": "Guarded, professional, may be swayed by intellectual conversation",
+      "seduction_profile": {
+        "base_interest": 30,
+        "base_suspicion": 40,
+        "preferred_approaches": ["Intellectual Conversation", "Policy Talk", "Shared Values"],
+        "conquest_difficulty": 0.7
+      },
+      "mood_profile": {
+        "default_mood": "Neutral",
+        "morning_mood": "Neutral",
+        "evening_mood": "Relaxed",
+        "triggers": {
+          "policy_discussion": "Relaxed",
+          "at_event": "Relaxed",
+          "intellectual_stimulation": "Flirty"
+        }
+      },
+      "schedule": [
+        {"day": 2, "time_slot": "afternoon", "location": "office", "activity": "Policy meeting"},
+        {"day": 2, "time_slot": "evening", "location": "charity_gala", "activity": "Networking"}
+      ],
+      "is_playable": false,
+      "is_seduceable": true,
+      "conquest_risk": "Medium - colleague, but professional"
+    },
+    
+    {
+      "id": "npc_isabella",
+      "name": "Isabella",
+      "role": "Hotel Staff (Congress)",
+      "age": 27,
+      "gender": "Female",
+      "personality": "Venal",
+      "risk_profile": "Low",
+      "description": "Friendly, flirty, works at congress hotel. Tired in mornings, flirty on evening shifts.",
+      "backstory": "Hotel concierge at congress venue. Used to politicians and their requests.",
+      "public_image": "Helpful hotel staff",
+      "private_reality": "Flirty, pragmatic, appreciates gifts and tips",
+      "seduction_profile": {
+        "base_interest": 60,
+        "base_suspicion": 10,
+        "preferred_approaches": ["Direct", "Gifts", "Cash Tips"],
+        "conquest_difficulty": 0.2
+      },
+      "mood_profile": {
+        "default_mood": "Neutral",
+        "morning_mood": "Tired",
+        "evening_mood": "Flirty",
+        "triggers": {
+          "evening_shift": "Flirty",
+          "given_tip": "Flirty",
+          "given_gift": "Flirty"
+        }
+      },
+      "schedule": [
+        {"day": 3, "time_slot": "evening", "location": "hotel_lobby", "activity": "Evening shift"},
+        {"day": 4, "time_slot": "evening", "location": "hotel_lobby", "activity": "Evening shift"}
+      ],
+      "is_playable": false,
+      "is_seduceable": true,
+      "conquest_risk": "Low - hotel staff, unlikely to talk"
+    },
+    
+    {
+      "id": "npc_victoria",
+      "name": "Victoria",
+      "role": "Influencer/Activist",
+      "age": 31,
+      "gender": "Female",
+      "personality": "Ambitious",
+      "risk_profile": "High",
+      "description": "Image-conscious, savvy, social media influencer. Flirty at parties, stressed before events.",
+      "backstory": "Social media influencer and activist. Collaborates with politicians for exposure.",
+      "public_image": "Activist, influencer, voice for women",
+      "private_reality": "Image-conscious, will trade access for followers and collabs",
+      "seduction_profile": {
+        "base_interest": 35,
+        "base_suspicion": 45,
+        "preferred_approaches": ["Social Media Collabs", "Photo Ops", "Exclusive Access"],
+        "conquest_difficulty": 0.7
+      },
+      "mood_profile": {
+        "default_mood": "Neutral",
+        "morning_mood": "Stressed",
+        "evening_mood": "Flirty",
+        "triggers": {
+          "before_event": "Stressed",
+          "at_party": "Flirty",
+          "offered_collab": "Flirty"
+        }
+      },
+      "schedule": [
+        {"day": 4, "time_slot": "afternoon", "location": "congress_hall", "activity": "Covering congress"},
+        {"day": 5, "time_slot": "evening", "location": "congress_party", "activity": "Party appearance"}
+      ],
+      "is_playable": false,
+      "is_seduceable": true,
+      "conquest_risk": "High - social media presence, image-conscious"
+    },
+    
+    {
+      "id": "npc_rachel",
+      "name": "Rachel",
+      "role": "Campaign Volunteer",
+      "age": 26,
+      "gender": "Female",
+      "personality": "Naive",
+      "risk_profile": "Low",
+      "description": "Eager, starstruck, volunteer for campaign. Flirty when alone, nervous in groups.",
+      "backstory": "Young volunteer, believes in the cause. Starstruck by politicians.",
+      "public_image": "Dedicated volunteer, true believer",
+      "private_reality": "Eager to please, starstruck, easily impressed",
+      "seduction_profile": {
+        "base_interest": 55,
+        "base_suspicion": 15,
+        "preferred_approaches": ["Attention", "Promises of Access", "Flattery"],
+        "conquest_difficulty": 0.3
+      },
+      "mood_profile": {
+        "default_mood": "Neutral",
+        "morning_mood": "Excited",
+        "evening_mood": "Relaxed",
+        "triggers": {
+          "alone_with_r_john": "Flirty",
+          "in_group": "Nervous",
+          "given_responsibility": "Flirty"
+        }
+      },
+      "schedule": [
+        {"day": 3, "time_slot": "afternoon", "location": "congress_hall", "activity": "Volunteer work"},
+        {"day": 5, "time_slot": "evening", "location": "congress_party", "activity": "Party volunteer"}
+      ],
+      "is_playable": false,
+      "is_seduceable": true,
+      "conquest_risk": "Low - young volunteer, unlikely to talk"
+    },
+    
+    {
+      "id": "npc_natalie",
+      "name": "Natalie",
+      "role": "Lobbyist",
+      "age": 33,
+      "gender": "Female",
+      "personality": "Cynical",
+      "risk_profile": "High",
+      "description": "Calculating, experienced lobbyist. Neutral in meetings, flirty in private.",
+      "backstory": "Professional lobbyist for corporate interests. Experienced with politicians.",
+      "public_image": "Professional lobbyist, connected",
+      "private_reality": "Calculating, experienced, understands quid pro quo",
+      "seduction_profile": {
+        "base_interest": 40,
+        "base_suspicion": 50,
+        "preferred_approaches": ["Mutual Benefit", "Quid Pro Quo", "Direct"],
+        "conquest_difficulty": 0.8
+      },
+      "mood_profile": {
+        "default_mood": "Neutral",
+        "morning_mood": "Neutral",
+        "evening_mood": "Flirty",
+        "triggers": {
+          "in_meeting": "Neutral",
+          "in_private": "Flirty",
+          "offered_deal": "Flirty"
+        }
+      },
+      "schedule": [
+        {"day": 4, "time_slot": "afternoon", "location": "congress_hall", "activity": "Lobbying"},
+        {"day": 5, "time_slot": "evening", "location": "congress_party", "activity": "Networking"}
+      ],
+      "is_playable": false,
+      "is_seduceable": true,
+      "conquest_risk": "High - experienced, calculating, may have leverage"
+    },
+    
+    {
+      "id": "npc_ashley",
+      "name": "Ashley",
+      "role": "Maria's Friend",
+      "age": 25,
+      "gender": "Female",
+      "personality": "Venal",
+      "risk_profile": "Medium-High",
+      "description": "Social, gossipy, friend of Maria. Flirty at parties, stressed at work.",
+      "backstory": "Friend of Maria, works in adjacent field. Social, likes to gossip.",
+      "public_image": "Friendly, social",
+      "private_reality": "Gossipy, may talk to Maria about encounters",
+      "seduction_profile": {
+        "base_interest": 50,
+        "base_suspicion": 25,
+        "preferred_approaches": ["Group Settings", "Parties", "Drinks"],
+        "conquest_difficulty": 0.5
+      },
+      "mood_profile": {
+        "default_mood": "Neutral",
+        "morning_mood": "Stressed",
+        "evening_mood": "Flirty",
+        "triggers": {
+          "at_party": "Flirty",
+          "with_friends": "Flirty",
+          "after_drinks": "Flirty"
+        }
+      },
+      "schedule": [
+        {"day": 5, "time_slot": "evening", "location": "congress_party", "activity": "Party with Maria"}
+      ],
+      "is_playable": false,
+      "is_seduceable": true,
+      "conquest_risk": "Medium-High - friend of Maria, gossipy"
+    }
+  ],
+  
+  "total_npcs": 14,
+  "playable_npcs": 1,
+  "seduceable_npcs": 11,
+  "antagonists": 1,
+  "deceased_npcs": 1
+}
