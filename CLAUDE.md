@@ -1,112 +1,173 @@
-# R. John: Public Servant - Claude Context
+# Claude Instructions - R. John: Public Servant
+
+**Project:** R. John: Public Servant - Narrative Stealth Adventure  
+**Version:** 1.0  
+**Last Updated:** 2026-09-29
+
+---
 
 ## Project Overview
 
-**R. John: Public Servant** is a narrative stealth adventure / dark comedy / political satire.
+R. John: Public Servant is a narrative stealth adventure where you play as a 52-year-old widower politician with a perfect public image and a degenerate private life. The goal: sleep with as many women as possible without getting caught, while maintaining your career and avoiding #MeToo scandals.
 
-**Premise:** You play as R. John, a 52-year-old widower politician with a perfect public image (intellectual, feminist ally, grieving widower) but a degenerate private life obsessed with sexual conquest.
+**Key Mechanics:**
+- Triple Bar System: Reputation (public), Lust (private), Exposure Risk (hidden)
+- Mask System: Switch between public persona and private degenerate
+- Mood System: NPCs have dynamic moods (Relaxed, Stressed, Flirty, Angry, Neutral)
+- Seduction System: 5-phase mini-game (Approach, Conversation, Escalation, Climax, Aftermath)
+- Bribery & Cover-Up: Pay off witnesses, destroy evidence, blackmail investigators
+- 7 Chapters: One per day, with days 3, 5, 7 as sandbox (more freedom)
+- 8 Endings: From "Ultimate Degenerate Victory" to "#MeToo Headline"
 
-**Goal:** Maximize conquests without getting exposed (career destruction) or settling down (personal failure).
+---
 
-## Key Files
+## Repository Structure
 
-- `GDD_v3_lean.md` - Full game design document
-- `config/` - Game configuration (narrative, chapters, consequences)
-- `data/` - World data (NPCs, locations, story objects)
-- `schemas/` - JSON schemas for validation
-- `prompts/` - Prompts for Claude Opus 5.5
-
-## Core Mechanics
-
-### Triple Bar System
-- **Reputation (0-100, visible):** Public image. Critical if <20.
-- **Lust (0-100, visible):** Sexual frustration. Critical if <20 (reckless).
-- **Exposure Risk (0-100, hidden):** Shown as "Pressure" (Low/Med/High/Crit). Scandal if >=81.
-
-### Mask System
-- **Public Mask:** +Rep, -Lust, -Risk. Cannot seduce.
-- **Private Mask:** -Rep (if seen), +Lust, +Risk. Can seduce.
-- Switch takes 2 seconds, cannot switch in front of witnesses.
-
-### Mood System (5 states)
-- **Relaxed:** Interest +10, Suspicion -10
-- **Stressed:** Interest -20, Suspicion +15
-- **Flirty:** Interest +30, Suspicion -20 (golden opportunity)
-- **Angry:** Interest -40, Suspicion +30 (DO NOT approach)
-- **Neutral:** No modifiers
-
-### Seduction (5 Phases)
-1. **Approach:** Check location, mood, risk
-2. **Conversation:** Personality-based dialogue
-3. **Escalation:** Gradual advances, watch for resistance
-4. **Climax:** Roll success chance (5-95%)
-5. **Aftermath:** Manage evidence, exit cleanly
-
-**Success Formula:**
 ```
-Base = (Interest/100)*50 + ((100-Suspicion)/100)*30 + (ApproachMatch?20:0)
-Mood Modifier: Relaxed +10, Stressed -20, Flirty +30, Angry -40, Neutral 0
-Final = min(95, max(5, Base + Mood Modifier))
+/r-john
+├── CLAUDE.md                    ← This file
+├── GDD_v3_lean.md              ← Full Game Design Document
+├── README.md                    ← Project overview
+├── /data
+│   ├── characters.json          ← All 13 NPCs with complete profiles
+│   ├── locations.json           ← 12 locations (public/private)
+│   ├── chapters.json            ← 7 chapters (days) with events
+│   └── endings.json             ← 8 endings with conditions
+├── /prompts
+│   ├── README.md                ← How to use prompts
+│   ├── phase_00_core_systems.md
+│   ├── phase_01_day1_debate_prep.md
+│   ├── phase_02_day2_gala.md
+│   ├── phase_03_day3_congress_travel.md
+│   ├── phase_04_day4_congress_keynote.md
+│   ├── phase_05_day5_party.md
+│   ├── phase_06_day6_crisis.md
+│   ├── phase_07_day7_final.md
+│   └── phase_08_endings.md
+├── /schemas
+│   ├── character.schema.json
+│   ├── location.schema.json
+│   ├── chapter.schema.json
+│   └── dialogue.schema.json
+└── /tests
+    └── narrative_consistency.md
 ```
 
-### Win/Lose Conditions
-- **LOSE A:** Exposure Risk >=100 OR Reputation <20 (exposed, career destroyed)
-- **LOSE B:** Enter stable relationship (personal failure)
-- **WIN:** 5+ conquests, Exposure <30, Reputation >70 (ultimate degenerate victory)
+---
 
-## NPCs (11 seduceable)
+## How to Use This Repo
 
-| Name | Age | Role | Personality | Risk | Difficulty |
-|------|-----|------|-------------|------|------------|
-| Emma | 24 | Intern | Naive | Low | 0.3 (easy) |
-| Laura | 26 | Assistant | Naive | Med-High | 0.4 |
-| Isabella | 27 | Hotel Staff | Venal | Low | 0.2 (easiest) |
-| Rachel | 26 | Volunteer | Naive | Low | 0.3 |
-| Ashley | 25 | Maria's Friend | Venal | Med-High | 0.5 |
-| Jessica | 29 | TV Journalist | Ambitious | Medium | 0.6 |
-| Olivia | 35 | Colleague | Idealistic | Medium | 0.7 |
-| Victoria | 31 | Influencer | Ambitious | High | 0.7 |
-| Natalie | 33 | Lobbyist | Cynical | High | 0.8 (hard) |
-| Maria | 34 | Press Secretary | Ambitious | High | 0.8 (hard) |
-| Sophie | 32 | Journalist | Cynical | Highest | 0.9 (hardest) |
+### For Pre-Implementation (Current Phase)
 
-## Structure
+1. **Start with GDD_v3_lean.md** - Understand the full vision
+2. **Review data files** - characters.json, locations.json, chapters.json, endings.json
+3. **Follow prompts in order** - phase_00 → phase_08
+4. **Validate against schemas** - Ensure all outputs match JSON schemas
+5. **Test narrative consistency** - Run tests in /tests
 
-- **7 Chapters** (one per day)
-- **Days 1, 2, 4, 6:** Story-critical (linear, mandatory events)
-- **Days 3, 5, 7:** Sandbox (open-ended, player chooses pace)
-- **Duration:** 6-7 hours first playthrough, 18-25 hours completionist
-- **8 Endings:** From "Ultimate Degenerate Victory" to "#MeToo Headline"
+### For Implementation (Future Phase)
 
-## Tone & Content Warnings
+1. **Reference GDD section 6** - Technical specifications
+2. **Use Claude_Opus_Prompts.md** - Code generation prompts
+3. **Implement systems in order:**
+   - Core: GameManager, Reputation, Lust, Exposure Risk
+   - Mechanics: Mask, Mood, Seduction, Bribery, Evidence
+   - UI: HUD, Dialogue, Phone Menu
+   - Content: Chapters, Endings
 
-**Tone:** Dark comedy, political satire, moral complexity
-**Warnings:** Sexual content, mature themes, manipulation, deception
-**Rating:** PEGI 18 / ESRB M
-
-## How to Help
-
-When I ask for help with R. John:
-
-1. **Reference the GDD:** Check `GDD_v3_lean.md` for design details
-2. **Use the schemas:** Validate JSON against `schemas/`
-3. **Follow the prompts:** Use `prompts/` for structured generation
-4. **Maintain consistency:** Keep character voices, tone, and mechanics consistent
-5. **Think strategically:** Every choice has consequences (Reputation, Lust, Risk)
-
-## Example Prompts
-
-See `prompts/` directory for ready-to-use prompts for:
-- Generating C# code (systems, mechanics)
-- Creating dialogue trees (JSON)
-- Designing NPC profiles
-- Balancing formulas
-- Writing test cases
+---
 
 ## Key Design Principles
 
-1. **Player agency:** Multiple paths to victory, meaningful choices
-2. **Consequences:** Every action affects Rep/Lust/Risk
-3. **Tension:** Risk vs reward, exposure always looming
-4. **Satire:** Political hypocrisy, public vs private selves
-5. **Replayability:** 8 endings, different conquests each run
+### 1. Player Agency
+- Multiple paths through each chapter
+- Meaningful choices with real consequences
+- 8 distinct endings encourage replayability
+
+### 2. Tension & Risk
+- Triple bar system creates constant trade-offs
+- Hidden risk meter adds uncertainty
+- Every conquest brings you closer to exposure
+
+### 3. Satire & Tone
+- Dark comedy, not preachy
+- Political satire (The Boys effect)
+- Self-aware degeneracy (Larry, but modern)
+
+### 4. Narrative Consistency
+- All NPCs have consistent personalities, moods, schedules
+- Events in chapters align with character profiles
+- Endings match player actions throughout the week
+
+---
+
+## Current Status
+
+**Phase:** Pre-Implementation Complete  
+**Completed:**
+- ✅ GDD v3.0 (Lean)
+- ✅ characters.json (13 NPCs)
+- ✅ locations.json (12 locations)
+- ✅ chapters.json (7 chapters)
+- ✅ endings.json (8 endings)
+- ✅ Prompts phase_00 to phase_08
+
+**Next Steps:**
+- [ ] Generate dialogue trees for all NPCs (phase_01-07)
+- [ ] Create art briefs for characters and locations
+- [ ] Write full narrative script for each chapter
+- [ ] Implement in Unity/Godot (future phase)
+
+---
+
+## Claude Best Practices
+
+### When Generating Content
+
+1. **Always reference the GDD** - Start prompts with "Based on GDD section X.X..."
+2. **Use data files as source of truth** - characters.json, locations.json, chapters.json
+3. **Follow schemas strictly** - Validate output against /schemas
+4. **Maintain consistency** - Cross-reference NPCs, locations, events
+5. **Iterate** - Generate → Review → Refine → Regenerate
+
+### Example Prompts
+
+```
+Based on GDD section 2.2 (Characters - Maria) and data/characters.json,
+generate a complete dialogue tree for Maria in Chapter 1 (Debate Preparation).
+
+Requirements:
+- 5 public dialogue options with reputation effects
+- 5 private thoughts (inner monologue) with lust effects
+- Mood-based variations (Stressed morning vs Relaxed evening)
+- Personality-based responses (Maria is Ambitious type)
+- Branching paths based on player choices
+
+Output: JSON matching schemas/dialogue.schema.json
+```
+
+```
+Based on data/chapters.json (Day 2: Charity Gala) and data/locations.json,
+generate a detailed narrative script for the gala sequence.
+
+Requirements:
+- Opening scene: R. John arrives at gala
+- Mandatory event: TV interview with Jessica
+- Optional events: Seduce Jessica, Olivia, or Victoria
+- Crisis point: Paparazzi photos
+- Closing scene: End of gala, reputation/risk update
+
+Output: Markdown narrative script with dialogue, descriptions, and choices
+```
+
+---
+
+## Contact
+
+- **GitHub:** @xabiervc
+- **Project:** r-john
+- **GDD Reference:** GDD_v3_lean.md
+
+---
+
+*Last updated: September 29, 2026*
