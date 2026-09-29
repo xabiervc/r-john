@@ -1,0 +1,269 @@
+{
+  "dialogue_id": "maria_chapter_6_crisis",
+  "npc_id": "npc_maria",
+  "chapter": 6,
+  "day": 6,
+  "location": "office",
+  "title": "Crisis Management - Maria",
+  "description": "R. John meets Maria for emergency crisis meeting about the investigation.",
+  "mood_baseline": {"receptive": 20, "playful": 10, "bold": 15},
+  "nodes": [
+    {"id": "start", "text": "Maria is waiting in your office when you arrive. She looks stressed, papers everywhere. 'We have a problem. A big one.'", "choices": [
+      {"text": "Ask what kind of problem", "next": "ask_problem"},
+      {"text": "Say he can handle it", "next": "handle_it"},
+      {"text": "Sit down and listen", "next": "sit_listen"}
+    ]},
+    {"id": "ask_problem", "text": "Maria: 'Sophie Chen is writing an exposé. About you. About... everything.' She won't meet your eyes.", "mood_effect": {"stressed": 30, "receptive": -10}, "consequence": {"attraction": -10, "risk": 40}, "choices": [
+      {"text": "Ask how she knows", "next": "how_knows"},
+      {"text": "Say it's just rumors", "next": "just_rumors"}
+    ]},
+    {"id": "handle_it", "text": "Maria: 'Can you? Because this is bigger than spin. This is... career-ending.' Her voice shakes.", "mood_effect": {"stressed": 35, "receptive": -15}, "consequence": {"attraction": -15, "risk": 45}, "choices": [
+      {"text": "Say he's handled worse", "next": "worse_before"},
+      {"text": "Ask what she recommends", "next": "recommends"}
+    ]},
+    {"id": "sit_listen", "text": "Maria: 'Thank you for sitting. This is... difficult.' She takes a deep breath.", "mood_effect": {"stressed": 25, "receptive": 10}, "consequence": {"attraction": 5, "risk": 35}, "choices": [
+      {"text": "Say he's listening", "next": "listening_maria"},
+      {"text": "Offer her a drink", "next": "offer_drink"}
+    ]},
+    {"id": "how_knows", "text": "Maria: 'She approached my source. Someone who knows... a lot.' Maria finally looks at you. 'Did you?'", "mood_effect": {"stressed": 30, "receptive": -5}, "consequence": {"attraction": -5, "risk": 40}, "choices": [
+      {"text": "Deny everything", "next": "deny_all"},
+      {"text": "Admit some truths", "next": "admit_some"},
+      {"text": "Deflect the question", "next": "deflect"}
+    ]},
+    {"id": "just_rumors", "text": "Maria: 'I wish. She has photos. Messages. Names.' She slides a folder across the desk.", "mood_effect": {"stressed": 40, "receptive": -20}, "consequence": {"attraction": -20, "risk": 50}, "choices": [
+      {"text": "Look at the folder", "next": "look_folder"},
+      {"text": "Push it away", "next": "push_away"}
+    ]},
+    {"id": "worse_before", "text": "Maria: 'Have you? Because I've been your press secretary for three years. This is the worst.'", "mood_effect": {"stressed": 35, "receptive": -15}, "consequence": {"attraction": -15, "risk": 45}, "choices": [
+      {"text": "Say this time is different", "next": "different_time"},
+      {"text": "Ask for her help", "next": "need_help"}
+    ]},
+    {"id": "recommends", "text": "Maria: 'We need to get ahead of this. Issue a statement. Or... silence her.' She looks uncomfortable.", "mood_effect": {"stressed": 30, "bold": 20}, "consequence": {"attraction": 10, "risk": 40}, "choices": [
+      {"text": "Ask how to silence her", "next": "silence_her"},
+      {"text": "Say a statement is better", "next": "statement_better"}
+    ]},
+    {"id": "listening_maria", "text": "Maria: 'Sophie Chen is publishing in 48 hours. Unless we stop her.'", "mood_effect": {"stressed": 30, "receptive": 5}, "consequence": {"attraction": 0, "risk": 35}, "choices": [
+      {"text": "Ask what stopping her costs", "next": "costs_stop"},
+      {"text": "Say they'll find a way", "next": "find_way"}
+    ]},
+    {"id": "offer_drink", "text": "Maria: 'No. I need to be clear for this.' She stands up straighter.", "mood_effect": {"stressed": 25, "receptive": 10}, "consequence": {"attraction": 5, "risk": 30}, "choices": [
+      {"text": "Say he appreciates her honesty", "next": "appreciate_honesty"},
+      {"text": "Ask what her plan is", "next": "her_plan"}
+    ]},
+    {"id": "deny_all", "text": "Maria: 'Then we need proof you're telling the truth. Because right now... I'm not sure.'", "mood_effect": {"stressed": 35, "receptive": -10}, "consequence": {"attraction": -10, "risk": 40}, "choices": [
+      {"text": "Say she has to trust him", "next": "trust_him"},
+      {"text": "Provide an alibi", "next": "provide_alibi"}
+    ]},
+    {"id": "admit_some", "text": "Maria: 'How much? Because she claims to have... extensive evidence.' Her hands shake.", "mood_effect": {"stressed": 40, "receptive": -15}, "consequence": {"attraction": -15, "risk": 50}, "choices": [
+      {"text": "Admit everything", "next": "admit_all"},
+      {"text": "Minimize the damage", "next": "minimize"}
+    ]},
+    {"id": "deflect", "text": "Maria: 'Don't. Just... don't. This is too serious for games.'", "mood_effect": {"stressed": 40, "receptive": -20}, "consequence": {"attraction": -20, "risk": 45}, "choices": [
+      {"text": "Apologize and get serious", "next": "apologize_serious"},
+      {"text": "Ask what she wants from him", "next": "wants_from"}
+    ]},
+    {"id": "look_folder", "text": "Inside: photos, screenshots, witness statements. It's all there. 'This is... comprehensive.'", "mood_effect": {"stressed": 45, "receptive": -25}, "consequence": {"attraction": -25, "risk": 60}, "choices": [
+      {"text": "Ask who betrayed him", "next": "who_betrayed"},
+      {"text": "Say they need damage control", "next": "damage_control"}
+    ]},
+    {"id": "push_away", "text": "Maria: 'You can't ignore this. It's going to be front page in two days.'", "mood_effect": {"stressed": 40, "receptive": -20}, "consequence": {"attraction": -20, "risk": 55}, "choices": [
+      {"text": "Say he has a plan", "next": "have_plan"},
+      {"text": "Ask for her advice", "next": "her_advice"}
+    ]},
+    {"id": "different_time", "text": "Maria: 'How? Because from where I'm sitting, it looks like the same pattern. Just worse.'", "mood_effect": {"stressed": 35, "receptive": -15}, "consequence": {"attraction": -15, "risk": 45}, "choices": [
+      {"text": "Explain the difference", "next": "explain_diff"},
+      {"text": "Say he needs her on his side", "next": "on_side"}
+    ]},
+    {"id": "need_help", "text": "Maria: 'Then you'll get it. But you need to be honest with me. Everything.'", "mood_effect": {"stressed": 30, "receptive": 15}, "consequence": {"attraction": 10, "risk": 40}, "choices": [
+      {"text": "Promise full honesty", "next": "promise_honesty"},
+      {"text": "Ask what she needs to know", "next": "needs_to_know"}
+    ]},
+    {"id": "silence_her", "text": "Maria: '€100k. Or... you could offer her an exclusive. Something bigger.'", "mood_effect": {"stressed": 25, "bold": 30}, "consequence": {"attraction": 15, "risk": 50}, "choices": [
+      {"text": "Ask what exclusive", "next": "what_exclusive"},
+      {"text": "Say he'll pay", "next": "will_pay"}
+    ]},
+    {"id": "statement_better", "text": "Maria: 'Maybe. But statements don't stop investigations. They just... delay.'", "mood_effect": {"stressed": 30, "receptive": 10}, "consequence": {"attraction": 5, "risk": 35}, "choices": [
+      {"text": "Ask for a draft", "next": "draft_statement"},
+      {"text": "Say they need both options", "next": "both_options"}
+    ]},
+    {"id": "costs_stop", "text": "Maria: 'Legally? €50k minimum. Ethically? Your soul.' She tries to smile but fails.", "mood_effect": {"stressed": 30, "bold": 20}, "consequence": {"attraction": 10, "risk": 40}, "choices": [
+      {"text": "Say he'll pay any price", "next": "any_price"},
+      {"text": "Ask for the legal option", "next": "legal_option"}
+    ]},
+    {"id": "find_way", "text": "Maria: 'There is one way. But it's... complicated.' She hesitates.", "mood_effect": {"stressed": 25, "receptive": 15}, "consequence": {"attraction": 10, "risk": 35}, "choices": [
+      {"text": "Ask her to explain", "next": "explain_way"},
+      {"text": "Say he trusts her", "next": "trust_her_way"}
+    ]},
+    {"id": "appreciate_honesty", "text": "Maria: 'Someone has to be. Even if it's just me.' She looks at you directly.", "mood_effect": {"stressed": 25, "receptive": 15}, "consequence": {"attraction": 10, "risk": 30}, "choices": [
+      {"text": "Say she's always been loyal", "next": "always_loyal"},
+      {"text": "Ask what comes next", "next": "what_next"}
+    ]},
+    {"id": "her_plan", "text": "Maria: 'Three options. All bad. Pick your poison.' She slides over three folders.", "mood_effect": {"stressed": 30, "receptive": 10}, "consequence": {"attraction": 5, "risk": 35}, "choices": [
+      {"text": "Review the options", "next": "review_options"}
+    ]},
+    {"id": "trust_him", "text": "Maria: 'I want to. But trust doesn't stop headlines. Evidence does.'", "mood_effect": {"stressed": 30, "receptive": 5}, "consequence": {"attraction": 0, "risk": 35}, "choices": [
+      {"text": "Provide evidence", "next": "provide_evidence"},
+      {"text": "Ask what evidence she needs", "next": "what_evidence"}
+    ]},
+    {"id": "provide_alibi", "text": "Maria: 'For which night? Because she has multiple dates. Multiple women.'", "mood_effect": {"stressed": 40, "receptive": -20}, "consequence": {"attraction": -20, "risk": 55}, "choices": [
+      {"text": "Focus on one incident", "next": "one_incident"},
+      {"text": "Say they need a different strategy", "next": "different_strategy"}
+    ]},
+    {"id": "admit_all", "text": "Maria is quiet for a long moment. 'Okay. Okay. Now we can work with reality.'", "mood_effect": {"stressed": 35, "receptive": 20}, "consequence": {"attraction": 15, "risk": 50}, "choices": [
+      {"text": "Ask what her plan is now", "next": "plan_now"},
+      {"text": "Say he'll do whatever she says", "next": "whatever_says"}
+    ]},
+    {"id": "minimize", "text": "Maria: 'It doesn't matter. One is enough for the headline. Three is a career-ender.'", "mood_effect": {"stressed": 40, "receptive": -15}, "consequence": {"attraction": -15, "risk": 50}, "choices": [
+      {"text": "Accept the reality", "next": "accept_reality"},
+      {"text": "Ask for damage control", "next": "damage_ctrl"}
+    ]},
+    {"id": "apologize_serious", "text": "Maria: 'Thank you. Now. Here's what we're dealing with.' She opens the folder.", "mood_effect": {"stressed": 35, "receptive": 15}, "consequence": {"attraction": 10, "risk": 40}, "choices": [
+      {"text": "Listen carefully", "next": "listen_carefully"}
+    ]},
+    {"id": "wants_from", "text": "Maria: 'I want you to be honest. I want to help you. And I want to keep my job.'", "mood_effect": {"stressed": 30, "receptive": 20}, "consequence": {"attraction": 15, "risk": 35}, "choices": [
+      {"text": "Say he can give her all three", "next": "give_three"},
+      {"text": "Ask what she needs from him", "next": "needs_from_her"}
+    ]},
+    {"id": "who_betrayed", "text": "Maria: 'I don't know. Maybe Laura. Maybe someone else. Does it matter?'", "mood_effect": {"stressed": 35, "receptive": -10}, "consequence": {"attraction": -10, "risk": 45}, "choices": [
+      {"text": "Say it matters a lot", "next": "matters_lot"},
+      {"text": "Focus on the solution", "next": "focus_solution"}
+    ]},
+    {"id": "damage_control", "text": "Maria: 'Too late for that. This is damage containment. We need to limit the blast radius.'", "mood_effect": {"stressed": 40, "receptive": 5}, "consequence": {"attraction": 0, "risk": 50}, "choices": [
+      {"text": "Ask how", "next": "ask_how"},
+      {"text": "Let her take the lead", "next": "let_lead"}
+    ]},
+    {"id": "have_plan", "text": "Maria: 'Then tell me. Because I'm out of ideas.' She looks defeated.", "mood_effect": {"stressed": 40, "receptive": -10}, "consequence": {"attraction": -10, "risk": 45}, "choices": [
+      {"text": "Share the plan", "next": "share_plan"},
+      {"text": "Say he needs time to think", "next": "time_think"}
+    ]},
+    {"id": "her_advice", "text": "Maria: 'My advice? Come clean. Or prepare for the fallout. Those are the options.'", "mood_effect": {"stressed": 35, "receptive": 15}, "consequence": {"attraction": 10, "risk": 40}, "choices": [
+      {"text": "Consider coming clean", "next": "consider_clean"},
+      {"text": "Ask about the fallout scenario", "next": "fallout_scenario"}
+    ]},
+    {"id": "explain_diff", "text": "Maria: 'Then explain. Because I need to know what I'm defending.'", "mood_effect": {"stressed": 30, "receptive": 15}, "consequence": {"attraction": 10, "risk": 40}, "choices": [
+      {"text": "Explain the situation", "next": "explain_situation"},
+      {"text": "Say it's complicated", "next": "complicated_maria"}
+    ]},
+    {"id": "on_side", "text": "Maria: 'I am. But being on your side doesn't mean I'll lie for you.'", "mood_effect": {"stressed": 30, "receptive": 20}, "consequence": {"attraction": 15, "risk": 35}, "choices": [
+      {"text": "Say he wouldn't ask her to", "next": "wouldnt_ask"},
+      {"text": "Ask what she will do", "next": "will_do"}
+    ]},
+    {"id": "promise_honesty", "text": "Maria: 'Then start talking. And don't stop until I know everything.'", "mood_effect": {"stressed": 30, "receptive": 20}, "consequence": {"attraction": 15, "risk": 40}, "choices": [
+      {"text": "Tell her everything", "next": "tell_everything"}
+    ]},
+    {"id": "needs_to_know", "text": "Maria: 'Everything. Every name. Every date. Every lie you told.'", "mood_effect": {"stressed": 35, "receptive": 15}, "consequence": {"attraction": 10, "risk": 40}, "choices": [
+      {"text": "Start from the beginning", "next": "from_beginning"}
+    ]},
+    {"id": "what_exclusive", "text": "Maria: 'A policy scoop. Something huge. Something that makes her career.'", "mood_effect": {"stressed": 25, "bold": 25}, "consequence": {"attraction": 15, "risk": 45}, "choices": [
+      {"text": "Offer a policy announcement", "next": "policy_announce"},
+      {"text": "Ask if there's another way", "next": "another_way"}
+    ]},
+    {"id": "will_pay", "text": "Maria: 'Then I'll arrange it. But this comes from your personal fund. Not the campaign.'", "mood_effect": {"stressed": 25, "bold": 20}, "consequence": {"attraction": 10, "risk": 40}, "choices": [
+      {"text": "Agree to the terms", "next": "agree_terms"}
+    ]},
+    {"id": "draft_statement", "text": "Maria hands you a draft. 'It's not great. But it's something.'", "mood_effect": {"stressed": 30, "receptive": 15}, "consequence": {"attraction": 10, "risk": 35}, "choices": [
+      {"text": "Review the statement", "next": "review_statement"},
+      {"text": "Ask for changes", "next": "ask_changes"}
+    ]},
+    {"id": "both_options", "text": "Maria: 'Then we do both. Statement today. Silence attempt tomorrow.'", "mood_effect": {"stressed": 30, "receptive": 15}, "consequence": {"attraction": 10, "risk": 40}, "choices": [
+      {"text": "Agree to the plan", "next": "agree_plan"}
+    ]},
+    {"id": "any_price", "text": "Maria: 'Then we're clear. I'll make the call.' She picks up her phone.", "mood_effect": {"stressed": 25, "bold": 20}, "consequence": {"attraction": 15, "risk": 45}, "choices": [
+      {"text": "Wait for her to finish", "next": "wait_finish"}
+    ]},
+    {"id": "legal_option", "text": "Maria: 'Then we go the legal route. It's slower but... cleaner.'", "mood_effect": {"stressed": 25, "receptive": 15}, "consequence": {"attraction": 10, "risk": 35}, "choices": [
+      {"text": "Ask what the next step is", "next": "next_step"}
+    ]},
+    {"id": "explain_way", "text": "Maria: 'We offer Sophie something bigger. A real scoop. She drops this story.'", "mood_effect": {"stressed": 25, "bold": 25}, "consequence": {"attraction": 15, "risk": 45}, "choices": [
+      {"text": "Ask what scoop", "next": "what_scoop"},
+      {"text": "Say it's worth considering", "next": "worth_consider"}
+    ]},
+    {"id": "trust_her_way", "text": "Maria: 'Then trust me when I say this is the only way.'", "mood_effect": {"stressed": 25, "receptive": 20}, "consequence": {"attraction": 15, "risk": 40}, "choices": [
+      {"text": "Agree to follow her lead", "next": "follow_lead"}
+    ]},
+    {"id": "always_loyal", "text": "Maria: 'Even when you didn't deserve it. Remember that.'", "mood_effect": {"stressed": 25, "receptive": 20}, "consequence": {"attraction": 15, "risk": 35}, "choices": [
+      {"text": "Say he'll never forget", "next": "never_forget"},
+      {"text": "Ask how to repay that loyalty", "next": "repay_loyalty"}
+    ]},
+    {"id": "what_next", "text": "Maria: 'We decide. Now. Fight or fold. Which is it?'", "mood_effect": {"stressed": 30, "receptive": 15}, "consequence": {"attraction": 10, "risk": 35}, "choices": [
+      {"text": "Say fight", "next": "say_fight"},
+      {"text": "Ask what folding means", "next": "folding_means"}
+    ]},
+    {"id": "review_options", "text": "Option 1: Deny and fight. Option 2: Partial admission. Option 3: Full confession.", "mood_effect": {"stressed": 30, "receptive": 15}, "consequence": {"attraction": 10, "risk": 40}, "choices": [
+      {"text": "Choose option 1", "next": "choose_opt1"},
+      {"text": "Choose option 2", "next": "choose_opt2"},
+      {"text": "Choose option 3", "next": "choose_opt3"}
+    ]},
+    {"id": "provide_evidence", "text": "Maria: 'Then provide it. Alibis. Witnesses. Anything.'", "mood_effect": {"stressed": 30, "receptive": 15}, "consequence": {"attraction": 10, "risk": 40}, "choices": [
+      {"text": "Gather the evidence", "next": "gather_evidence"}
+    ]},
+    {"id": "what_evidence", "text": "Maria: 'Anything that contradicts her story. Dates, locations, witnesses.'", "mood_effect": {"stressed": 30, "receptive": 15}, "consequence": {"attraction": 10, "risk": 40}, "choices": [
+      {"text": "Say he'll compile it", "next": "compile_it"}
+    ]},
+    {"id": "one_incident", "text": "Maria: 'Fine. Which one? Pick the most defensible.'", "mood_effect": {"stressed": 35, "receptive": 10}, "consequence": {"attraction": 5, "risk": 45}, "choices": [
+      {"text": "Pick an incident", "next": "pick_incident"}
+    ]},
+    {"id": "different_strategy", "text": "Maria: 'Then what? Because denial isn't working.'", "mood_effect": {"stressed": 40, "receptive": 5}, "consequence": {"attraction": 0, "risk": 50}, "choices": [
+      {"text": "Propose a new strategy", "next": "new_strategy"}
+    ]},
+    {"id": "plan_now", "text": "Maria: 'Damage control. Containment. And preparation for the worst.'", "mood_effect": {"stressed": 35, "receptive": 20}, "consequence": {"attraction": 15, "risk": 45}, "choices": [
+      {"text": "Ask for specifics", "next": "specifics_plan"}
+    ]},
+    {"id": "whatever_says", "text": "Maria: 'Then listen carefully. This is how we survive this.'", "mood_effect": {"stressed": 30, "receptive": 25}, "consequence": {"attraction": 20, "risk": 40}, "choices": [
+      {"text": "Listen intently", "next": "listen_intently"}
+    ]},
+    {"id": "accept_reality", "text": "Maria: 'Good. Now we can actually help you.'", "mood_effect": {"stressed": 35, "receptive": 20}, "consequence": {"attraction": 15, "risk": 45}, "choices": [
+      {"text": "Ask what the plan is", "next": "plan_is"}
+    ]},
+    {"id": "damage_ctrl", "text": "Maria: 'Then we contain. Limit the damage. Prepare for the fallout.'", "mood_effect": {"stressed": 40, "receptive": 15}, "consequence": {"attraction": 10, "risk": 50}, "choices": [
+      {"text": "Ask for the containment plan", "next": "containment_plan"}
+    ]},
+    {"id": "listen_carefully", "text": "Maria outlines the situation. It's worse than you thought.", "mood_effect": {"stressed": 40, "receptive": 20}, "consequence": {"attraction": 15, "risk": 50}, "ending": "chapter_6_maria_crisis_complete", "reputation_effect": {"scandal_risk": 50}},
+    {"id": "give_three", "text": "Maria: 'Then prove it. Starting with honesty. Now.'", "mood_effect": {"stressed": 30, "receptive": 25}, "consequence": {"attraction": 20, "risk": 40}, "ending": "chapter_6_maria_crisis_complete", "reputation_effect": {"scandal_risk": 40}},
+    {"id": "needs_from_her", "text": "Maria: 'Your cooperation. Your honesty. And your trust.'", "mood_effect": {"stressed": 30, "receptive": 25}, "consequence": {"attraction": 20, "risk": 35}, "ending": "chapter_6_maria_crisis_complete", "reputation_effect": {"scandal_risk": 35}},
+    {"id": "matters_lot", "text": "Maria: 'Then find out. But don't blame me when you do.'", "mood_effect": {"stressed": 35, "receptive": 5}, "consequence": {"attraction": 0, "risk": 45}, "ending": "chapter_6_maria_crisis_complete", "reputation_effect": {"scandal_risk": 45}},
+    {"id": "focus_solution", "text": "Maria: 'Finally. Here's what we do.' She pulls out a notepad.", "mood_effect": {"stressed": 35, "receptive": 20}, "consequence": {"attraction": 15, "risk": 40}, "ending": "chapter_6_maria_crisis_complete", "reputation_effect": {"scandal_risk": 40}},
+    {"id": "ask_how", "text": "Maria: 'We control the narrative. We limit the exposure. We prepare for war.'", "mood_effect": {"stressed": 40, "receptive": 15}, "consequence": {"attraction": 10, "risk": 50}, "ending": "chapter_6_maria_crisis_complete", "reputation_effect": {"scandal_risk": 50}},
+    {"id": "let_lead", "text": "Maria takes the lead. Her plan is aggressive but might work.", "mood_effect": {"stressed": 40, "receptive": 20}, "consequence": {"attraction": 15, "risk": 50}, "ending": "chapter_6_maria_crisis_complete", "reputation_effect": {"scandal_risk": 50}},
+    {"id": "share_plan", "text": "You share your plan. Maria listens, then nods slowly.", "mood_effect": {"stressed": 35, "receptive": 25}, "consequence": {"attraction": 20, "risk": 45}, "ending": "chapter_6_maria_crisis_complete", "reputation_effect": {"scandal_risk": 45}},
+    {"id": "time_think", "text": "Maria: 'You have until tomorrow. Then I act without you.'", "mood_effect": {"stressed": 40, "receptive": 5}, "consequence": {"attraction": -5, "risk": 50}, "ending": "chapter_6_maria_crisis_complete", "reputation_effect": {"scandal_risk": 50}},
+    {"id": "consider_clean", "text": "Maria: 'It's the cleanest option. But the hardest.'", "mood_effect": {"stressed": 30, "receptive": 20}, "consequence": {"attraction": 15, "risk": 40}, "ending": "chapter_6_maria_crisis_complete", "reputation_effect": {"scandal_risk": 40}},
+    {"id": "fallout_scenario", "text": "Maria: 'Resignation. In disgrace. Probably criminal charges.'", "mood_effect": {"stressed": 40, "receptive": 5}, "consequence": {"attraction": -5, "risk": 60}, "ending": "chapter_6_maria_crisis_complete", "reputation_effect": {"scandal_risk": 60}},
+    {"id": "explain_situation", "text": "You explain. Maria takes notes, her expression unreadable.", "mood_effect": {"stressed": 35, "receptive": 20}, "consequence": {"attraction": 15, "risk": 45}, "ending": "chapter_6_maria_crisis_complete", "reputation_effect": {"scandal_risk": 45}},
+    {"id": "complicated_maria", "text": "Maria: 'Everything is complicated until it's not. Then it's just over.'", "mood_effect": {"stressed": 35, "receptive": 15}, "consequence": {"attraction": 10, "risk": 45}, "ending": "chapter_6_maria_crisis_complete", "reputation_effect": {"scandal_risk": 45}},
+    {"id": "wouldnt_ask", "text": "Maria: 'Good. Because I won't. But I will defend you. Within reason.'", "mood_effect": {"stressed": 30, "receptive": 25}, "consequence": {"attraction": 20, "risk": 35}, "ending": "chapter_6_maria_crisis_complete", "reputation_effect": {"scandal_risk": 35}},
+    {"id": "will_do", "text": "Maria: 'Whatever it takes. Short of perjury.'", "mood_effect": {"stressed": 30, "receptive": 20}, "consequence": {"attraction": 15, "risk": 40}, "ending": "chapter_6_maria_crisis_complete", "reputation_effect": {"scandal_risk": 40}},
+    {"id": "tell_everything", "text": "You tell her everything. Maria listens without interrupting.", "mood_effect": {"stressed": 35, "receptive": 30}, "consequence": {"attraction": 25, "risk": 50}, "ending": "chapter_6_maria_crisis_complete", "reputation_effect": {"scandal_risk": 50}},
+    {"id": "from_beginning", "text": "You start from the beginning. Maria takes detailed notes.", "mood_effect": {"stressed": 35, "receptive": 25}, "consequence": {"attraction": 20, "risk": 45}, "ending": "chapter_6_maria_crisis_complete", "reputation_effect": {"scandal_risk": 45}},
+    {"id": "policy_announce", "text": "Maria: 'That could work. But it has to be big. Really big.'", "mood_effect": {"stressed": 25, "bold": 25}, "consequence": {"attraction": 15, "risk": 45}, "ending": "chapter_6_maria_crisis_complete", "reputation_effect": {"scandal_risk": 45}},
+    {"id": "another_way", "text": "Maria: 'There's always another way. But they all cost something.'", "mood_effect": {"stressed": 30, "receptive": 20}, "consequence": {"attraction": 15, "risk": 40}, "ending": "chapter_6_maria_crisis_complete", "reputation_effect": {"scandal_risk": 40}},
+    {"id": "agree_terms", "text": "Maria: 'Then it's done. I'll arrange the transfer.'", "mood_effect": {"stressed": 25, "bold": 20}, "consequence": {"attraction": 15, "risk": 40}, "ending": "chapter_6_maria_crisis_complete", "reputation_effect": {"scandal_risk": 40}},
+    {"id": "review_statement", "text": "The statement is carefully worded. It might work.", "mood_effect": {"stressed": 30, "receptive": 20}, "consequence": {"attraction": 15, "risk": 35}, "ending": "chapter_6_maria_crisis_complete", "reputation_effect": {"scandal_risk": 35}},
+    {"id": "ask_changes", "text": "Maria suggests changes. You agree to all of them.", "mood_effect": {"stressed": 30, "receptive": 20}, "consequence": {"attraction": 15, "risk": 35}, "ending": "chapter_6_maria_crisis_complete", "reputation_effect": {"scandal_risk": 35}},
+    {"id": "agree_plan", "text": "Maria: 'Then let's get to work. We have 48 hours.'", "mood_effect": {"stressed": 30, "receptive": 20}, "consequence": {"attraction": 15, "risk": 40}, "ending": "chapter_6_maria_crisis_complete", "reputation_effect": {"scandal_risk": 40}},
+    {"id": "wait_finish", "text": "Maria makes the call. It's done.", "mood_effect": {"stressed": 25, "bold": 20}, "consequence": {"attraction": 15, "risk": 45}, "ending": "chapter_6_maria_crisis_complete", "reputation_effect": {"scandal_risk": 45}},
+    {"id": "next_step", "text": "Maria: 'Lawyers. Now. I'll call mine, you call yours.'", "mood_effect": {"stressed": 25, "receptive": 20}, "consequence": {"attraction": 15, "risk": 35}, "ending": "chapter_6_maria_crisis_complete", "reputation_effect": {"scandal_risk": 35}},
+    {"id": "what_scoop", "text": "Maria: 'The healthcare bill. Or the education reform. Your choice.'", "mood_effect": {"stressed": 25, "bold": 25}, "consequence": {"attraction": 20, "risk": 45}, "ending": "chapter_6_maria_crisis_complete", "reputation_effect": {"scandal_risk": 45}},
+    {"id": "worth_consider", "text": "Maria: 'It is. Think about it. I'll wait.'", "mood_effect": {"stressed": 25, "receptive": 20}, "consequence": {"attraction": 15, "risk": 40}, "ending": "chapter_6_maria_crisis_complete", "reputation_effect": {"scandal_risk": 40}},
+    {"id": "follow_lead", "text": "Maria leads. You follow. It's your only chance.", "mood_effect": {"stressed": 25, "receptive": 25}, "consequence": {"attraction": 20, "risk": 40}, "ending": "chapter_6_maria_crisis_complete", "reputation_effect": {"scandal_risk": 40}},
+    {"id": "never_forget", "text": "Maria: 'See that you don't. Now let's get to work.'", "mood_effect": {"stressed": 25, "receptive": 25}, "consequence": {"attraction": 20, "risk": 35}, "ending": "chapter_6_maria_crisis_complete", "reputation_effect": {"scandal_risk": 35}},
+    {"id": "repay_loyalty", "text": "Maria: 'By not making me regret it. Now. The plan.'", "mood_effect": {"stressed": 25, "receptive": 25}, "consequence": {"attraction": 20, "risk": 35}, "ending": "chapter_6_maria_crisis_complete", "reputation_effect": {"scandal_risk": 35}},
+    {"id": "say_fight", "text": "Maria: 'Then fight it is. Here's how we win.'", "mood_effect": {"stressed": 30, "receptive": 20}, "consequence": {"attraction": 15, "risk": 40}, "ending": "chapter_6_maria_crisis_complete", "reputation_effect": {"scandal_risk": 40}},
+    {"id": "folding_means", "text": "Maria: 'Resignation. Today. Before they publish.'", "mood_effect": {"stressed": 40, "receptive": 5}, "consequence": {"attraction": -5, "risk": 60}, "ending": "chapter_6_maria_crisis_complete", "reputation_effect": {"scandal_risk": 60}},
+    {"id": "choose_opt1", "text": "Maria: 'Aggressive. Risky. But it could work.'", "mood_effect": {"stressed": 35, "bold": 25}, "consequence": {"attraction": 15, "risk": 50}, "ending": "chapter_6_maria_crisis_complete", "reputation_effect": {"scandal_risk": 50}},
+    {"id": "choose_opt2", "text": "Maria: 'Middle ground. Admit some, deny others. Classic damage control.'", "mood_effect": {"stressed": 30, "receptive": 20}, "consequence": {"attraction": 15, "risk": 40}, "ending": "chapter_6_maria_crisis_complete", "reputation_effect": {"scandal_risk": 40}},
+    {"id": "choose_opt3", "text": "Maria: 'Bold. Clean. But you'll never recover politically.'", "mood_effect": {"stressed": 25, "receptive": 30}, "consequence": {"attraction": 25, "risk": 35}, "ending": "chapter_6_maria_crisis_complete", "reputation_effect": {"scandal_risk": 35}},
+    {"id": "gather_evidence", "text": "You gather what you can. It's not enough, but it's something.", "mood_effect": {"stressed": 35, "receptive": 20}, "consequence": {"attraction": 15, "risk": 45}, "ending": "chapter_6_maria_crisis_complete", "reputation_effect": {"scandal_risk": 45}},
+    {"id": "compile_it", "text": "Maria: 'Good. Compile it. Fast.'", "mood_effect": {"stressed": 30, "receptive": 20}, "consequence": {"attraction": 15, "risk": 40}, "ending": "chapter_6_maria_crisis_complete", "reputation_effect": {"scandal_risk": 40}},
+    {"id": "pick_incident", "text": "You pick the most defensible incident. Maria nods.", "mood_effect": {"stressed": 35, "receptive": 15}, "consequence": {"attraction": 10, "risk": 45}, "ending": "chapter_6_maria_crisis_complete", "reputation_effect": {"scandal_risk": 45}},
+    {"id": "new_strategy", "text": "You propose a new strategy. Maria considers it carefully.", "mood_effect": {"stressed": 35, "receptive": 20}, "consequence": {"attraction": 15, "risk": 45}, "ending": "chapter_6_maria_crisis_complete", "reputation_effect": {"scandal_risk": 45}},
+    {"id": "specifics_plan", "text": "Maria outlines the specifics. It's a comprehensive crisis plan.", "mood_effect": {"stressed": 35, "receptive": 25}, "consequence": {"attraction": 20, "risk": 45}, "ending": "chapter_6_maria_crisis_complete", "reputation_effect": {"scandal_risk": 45}},
+    {"id": "listen_intently", "text": "You listen. Maria's plan is ruthless but effective.", "mood_effect": {"stressed": 30, "receptive": 30}, "consequence": {"attraction": 25, "risk": 40}, "ending": "chapter_6_maria_crisis_complete", "reputation_effect": {"scandal_risk": 40}},
+    {"id": "plan_is", "text": "Maria outlines the plan. It involves lawyers, silence, and sacrifice.", "mood_effect": {"stressed": 35, "receptive": 25}, "consequence": {"attraction": 20, "risk": 45}, "ending": "chapter_6_maria_crisis_complete", "reputation_effect": {"scandal_risk": 45}},
+    {"id": "containment_plan", "text": "Maria presents the containment plan. It's drastic but might work.", "mood_effect": {"stressed": 40, "receptive": 20}, "consequence": {"attraction": 15, "risk": 50}, "ending": "chapter_6_maria_crisis_complete", "reputation_effect": {"scandal_risk": 50}}
+  ],
+  "endings": {
+    "chapter_6_maria_crisis_complete": "Chapter 6 Maria crisis meeting complete. Scandal risk elevated. Crisis management initiated."
+  },
+  "metadata": {"estimated_duration_minutes": 20, "voice_lines": 60, "unique_sprites_needed": 3, "background_variations": 2}
+}
