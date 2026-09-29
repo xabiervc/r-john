@@ -1,0 +1,482 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2026-09-29",
+    "description": "All NPCs with complete profiles for R. John: Public Servant"
+  },
+  "characters": [
+    {
+      "id": "r_john",
+      "name": "R. John",
+      "role": "Protagonist",
+      "age": 52,
+      "party": "Forward Together",
+      "position": "Senior Politician",
+      "public_image": {
+        "description": "Intellectual, progressive, feminist ally, grieving widower",
+        "traits": ["charismatic", "sympathetic", "dedicated", "lonely"],
+        "signature_phrase": "My late wife Margaret would have supported this"
+      },
+      "private_reality": {
+        "description": "Degenerate predator obsessed with conquest",
+        "traits": ["manipulative", "selfish", "calculating", "predatory"],
+        "goal": "Sleep with as many women as possible without getting caught"
+      },
+      "backstory": {
+        "wife_name": "Margaret",
+        "wife_death": "Car accident 3 years ago",
+        "children": "None recognized",
+        "years_in_politics": 25,
+        "scandals_covered_up": 3
+      },
+      "mechanics": {
+        "mask_system": true,
+        "starting_reputation": 60,
+        "starting_lust": 50,
+        "starting_risk": 10
+      }
+    },
+    {
+      "id": "maria",
+      "name": "Maria",
+      "role": "Press Secretary",
+      "age": 34,
+      "party": "Forward Together",
+      "personality": "Ambitious",
+      "risk_profile": "High",
+      "seduction_profile": {
+        "base_interest": 30,
+        "base_suspicion": 40,
+        "preferred_approaches": ["Career", "Flattery", "Power"],
+        "conquest_difficulty": 0.8
+      },
+      "mood_profile": {
+        "default": "Neutral",
+        "morning": "Stressed",
+        "evening": "Relaxed",
+        "triggers": {
+          "player_helped": "Relaxed",
+          "player_rejected": "Angry",
+          "before_deadline": "Stressed",
+          "after_compliment": "Flirty"
+        }
+      },
+      "schedule": {
+        "Day1": ["Morning: Office", "Afternoon: Press Conference", "Evening: Free"],
+        "Day2": ["Morning: Free", "Afternoon: Gala", "Evening: Free"],
+        "Day3": ["Morning: Travel", "Afternoon: Hotel", "Evening: Free"],
+        "Day4": ["Morning: Congress", "Afternoon: Congress", "Evening: Free"],
+        "Day5": ["Morning: Congress", "Afternoon: Free", "Evening: Party"],
+        "Day6": ["Morning: Travel", "Afternoon: Office", "Evening: Free"],
+        "Day7": ["Morning: Debate Prep", "Afternoon: Debate", "Evening: Vote"]
+      },
+      "dialogue_tree": "dialogue_maria.json",
+      "conquest_target": true,
+      "endings": ["Ally", "Enemy", "Conquest", "Bribed"]
+    },
+    {
+      "id": "laura",
+      "name": "Laura",
+      "role": "Personal Assistant",
+      "age": 26,
+      "party": "Forward Together",
+      "personality": "Naive",
+      "risk_profile": "Medium-High",
+      "seduction_profile": {
+        "base_interest": 40,
+        "base_suspicion": 20,
+        "preferred_approaches": ["Attention", "Flattery", "Career Promises"],
+        "conquest_difficulty": 0.4
+      },
+      "mood_profile": {
+        "default": "Neutral",
+        "morning": "Stressed",
+        "evening": "Relaxed",
+        "triggers": {
+          "praised": "Flirty",
+          "before_deadline": "Stressed",
+          "given_gift": "Flirty"
+        }
+      },
+      "schedule": {
+        "Day1": ["Morning: Office", "Afternoon: Office", "Evening: Free"],
+        "Day2": ["Morning: Office", "Afternoon: Gala Setup", "Evening: Gala"],
+        "Day3": ["Morning: Travel", "Afternoon: Hotel", "Evening: Free"],
+        "Day4": ["Morning: Congress", "Afternoon: Congress", "Evening: Free"],
+        "Day5": ["Morning: Congress", "Afternoon: Free", "Evening: Party"],
+        "Day6": ["Morning: Travel", "Afternoon: Office", "Evening: Free"],
+        "Day7": ["Morning: Debate Setup", "Afternoon: Debate", "Evening: Vote"]
+      },
+      "dialogue_tree": "dialogue_laura.json",
+      "conquest_target": true,
+      "endings": ["Ally", "Enemy", "Conquest", "Bribed"]
+    },
+    {
+      "id": "carlos",
+      "name": "Carlos",
+      "role": "Political Rival",
+      "age": 55,
+      "party": "Opposition Party",
+      "personality": "Cynical",
+      "risk_profile": "High",
+      "seduction_profile": null,
+      "mood_profile": {
+        "default": "Neutral",
+        "morning": "Neutral",
+        "evening": "Neutral",
+        "triggers": {
+          "scandal_opportunity": "Flirty",
+          "player_success": "Angry",
+          "player_weakness": "Flirty"
+        }
+      },
+      "schedule": {
+        "Day1": ["Morning: Office", "Afternoon: Meetings", "Evening: Free"],
+        "Day2": ["Morning: Free", "Afternoon: Media", "Evening: Gala"],
+        "Day3": ["Morning: Travel", "Afternoon: Congress", "Evening: Free"],
+        "Day4": ["Morning: Congress", "Afternoon: Congress", "Evening: Free"],
+        "Day5": ["Morning: Congress", "Afternoon: Free", "Evening: Party"],
+        "Day6": ["Morning: Travel", "Afternoon: Office", "Evening: Free"],
+        "Day7": ["Morning: Debate Prep", "Afternoon: Debate", "Evening: Vote"]
+      },
+      "dialogue_tree": "dialogue_carlos.json",
+      "conquest_target": false,
+      "antagonist": true,
+      "endings": ["Victory", "Mutual Destruction", "Defeat"]
+    },
+    {
+      "id": "sophie",
+      "name": "Sophie",
+      "role": "Investigative Journalist",
+      "age": 32,
+      "party": "Independent",
+      "personality": "Cynical",
+      "risk_profile": "High",
+      "seduction_profile": {
+        "base_interest": 50,
+        "base_suspicion": 60,
+        "preferred_approaches": ["Intellectual", "Exclusives", "Insider Access"],
+        "conquest_difficulty": 0.7
+      },
+      "mood_profile": {
+        "default": "Neutral",
+        "morning": "Neutral",
+        "evening": "Relaxed",
+        "triggers": {
+          "given_exclusive": "Flirty",
+          "blocked_investigation": "Angry",
+          "intellectual_conversation": "Flirty"
+        }
+      },
+      "schedule": {
+        "Day1": ["Morning: Research", "Afternoon: Interviews", "Evening: Free"],
+        "Day2": ["Morning: Free", "Afternoon: Gala", "Evening: Free"],
+        "Day3": ["Morning: Travel", "Afternoon: Congress", "Evening: Free"],
+        "Day4": ["Morning: Congress", "Afternoon: Congress", "Evening: Free"],
+        "Day5": ["Morning: Congress", "Afternoon: Free", "Evening: Party"],
+        "Day6": ["Morning: Travel", "Afternoon: Research", "Evening: Free"],
+        "Day7": ["Morning: Debate Prep", "Afternoon: Debate", "Evening: Vote"]
+      },
+      "dialogue_tree": "dialogue_sophie.json",
+      "conquest_target": true,
+      "investigator": true,
+      "endings": ["Ally", "Enemy", "Conquest", "Bribed", "Published Expose"]
+    },
+    {
+      "id": "emma",
+      "name": "Emma",
+      "role": "Young Intern",
+      "age": 24,
+      "party": "Forward Together",
+      "personality": "Naive",
+      "risk_profile": "Low",
+      "seduction_profile": {
+        "base_interest": 50,
+        "base_suspicion": 10,
+        "preferred_approaches": ["Flattery", "Mentorship", "Career Promises"],
+        "conquest_difficulty": 0.3
+      },
+      "mood_profile": {
+        "default": "Neutral",
+        "morning": "Nervous",
+        "evening": "Relaxed",
+        "triggers": {
+          "praised": "Flirty",
+          "around_authority": "Stressed",
+          "given_advice": "Flirty"
+        }
+      },
+      "schedule": {
+        "Day1": ["Morning: Office", "Afternoon: Office", "Evening: Free"],
+        "Day2": ["Morning: Office", "Afternoon: Gala Setup", "Evening: Gala"],
+        "Day3": ["Morning: Travel", "Afternoon: Hotel", "Evening: Free"],
+        "Day4": ["Morning: Congress", "Afternoon: Congress", "Evening: Free"],
+        "Day5": ["Morning: Congress", "Afternoon: Free", "Evening: Party"],
+        "Day6": ["Morning: Travel", "Afternoon: Office", "Evening: Free"],
+        "Day7": ["Morning: Debate Setup", "Afternoon: Debate", "Evening: Vote"]
+      },
+      "dialogue_tree": "dialogue_emma.json",
+      "conquest_target": true,
+      "endings": ["Ally", "Enemy", "Conquest"]
+    },
+    {
+      "id": "jessica",
+      "name": "Jessica",
+      "role": "TV Journalist",
+      "age": 29,
+      "party": "Independent",
+      "personality": "Ambitious",
+      "risk_profile": "Medium",
+      "seduction_profile": {
+        "base_interest": 45,
+        "base_suspicion": 35,
+        "preferred_approaches": ["Exclusive Interviews", "Insider Info", "Career Help"],
+        "conquest_difficulty": 0.5
+      },
+      "mood_profile": {
+        "default": "Neutral",
+        "morning": "Stressed",
+        "evening": "Relaxed",
+        "triggers": {
+          "before_broadcast": "Stressed",
+          "given_scoop": "Flirty",
+          "career_opportunity": "Flirty"
+        }
+      },
+      "schedule": {
+        "Day1": ["Morning: Research", "Afternoon: Studio", "Evening: Free"],
+        "Day2": ["Morning: Studio", "Afternoon: Gala", "Evening: Gala"],
+        "Day3": ["Morning: Travel", "Afternoon: Congress", "Evening: Free"],
+        "Day4": ["Morning: Congress", "Afternoon: Congress", "Evening: Free"],
+        "Day5": ["Morning: Congress", "Afternoon: Free", "Evening: Party"],
+        "Day6": ["Morning: Travel", "Afternoon: Studio", "Evening: Free"],
+        "Day7": ["Morning: Debate Prep", "Afternoon: Debate", "Evening: Vote"]
+      },
+      "dialogue_tree": "dialogue_jessica.json",
+      "conquest_target": true,
+      "endings": ["Ally", "Enemy", "Conquest", "Bribed"]
+    },
+    {
+      "id": "olivia",
+      "name": "Olivia",
+      "role": "Party Colleague",
+      "age": 35,
+      "party": "Forward Together",
+      "personality": "Professional",
+      "risk_profile": "Medium",
+      "seduction_profile": {
+        "base_interest": 35,
+        "base_suspicion": 30,
+        "preferred_approaches": ["Intellectual Conversation", "Policy Talk", "Shared Values"],
+        "conquest_difficulty": 0.6
+      },
+      "mood_profile": {
+        "default": "Neutral",
+        "morning": "Neutral",
+        "evening": "Relaxed",
+        "triggers": {
+          "in_office": "Neutral",
+          "at_events": "Relaxed",
+          "policy_discussion": "Flirty"
+        }
+      },
+      "schedule": {
+        "Day1": ["Morning: Office", "Afternoon: Meetings", "Evening: Free"],
+        "Day2": ["Morning: Free", "Afternoon: Gala", "Evening: Gala"],
+        "Day3": ["Morning: Travel", "Afternoon: Congress", "Evening: Free"],
+        "Day4": ["Morning: Congress", "Afternoon: Congress", "Evening: Free"],
+        "Day5": ["Morning: Congress", "Afternoon: Free", "Evening: Party"],
+        "Day6": ["Morning: Travel", "Afternoon: Office", "Evening: Free"],
+        "Day7": ["Morning: Debate Prep", "Afternoon: Debate", "Evening: Vote"]
+      },
+      "dialogue_tree": "dialogue_olivia.json",
+      "conquest_target": true,
+      "endings": ["Ally", "Enemy", "Conquest"]
+    },
+    {
+      "id": "isabella",
+      "name": "Isabella",
+      "role": "Hotel Staff (Congress)",
+      "age": 27,
+      "party": "None",
+      "personality": "Friendly",
+      "risk_profile": "Low",
+      "seduction_profile": {
+        "base_interest": 55,
+        "base_suspicion": 15,
+        "preferred_approaches": ["Direct", "Gifts", "Cash Tips"],
+        "conquest_difficulty": 0.3
+      },
+      "mood_profile": {
+        "default": "Neutral",
+        "morning": "Tired",
+        "evening": "Flirty",
+        "triggers": {
+          "evening_shift": "Flirty",
+          "morning_shift": "Tired",
+          "given_tip": "Flirty"
+        }
+      },
+      "schedule": {
+        "Day1": ["Morning: Off", "Afternoon: Off", "Evening: Off"],
+        "Day2": ["Morning: Off", "Afternoon: Off", "Evening: Off"],
+        "Day3": ["Morning: Hotel", "Afternoon: Hotel", "Evening: Hotel"],
+        "Day4": ["Morning: Hotel", "Afternoon: Hotel", "Evening: Hotel"],
+        "Day5": ["Morning: Hotel", "Afternoon: Hotel", "Evening: Hotel"],
+        "Day6": ["Morning: Off", "Afternoon: Off", "Evening: Off"],
+        "Day7": ["Morning: Off", "Afternoon: Off", "Evening: Off"]
+      },
+      "dialogue_tree": "dialogue_isabella.json",
+      "conquest_target": true,
+      "endings": ["Ally", "Enemy", "Conquest"]
+    },
+    {
+      "id": "victoria",
+      "name": "Victoria",
+      "role": "Influencer/Activist",
+      "age": 31,
+      "party": "Independent",
+      "personality": "Image-conscious",
+      "risk_profile": "High",
+      "seduction_profile": {
+        "base_interest": 40,
+        "base_suspicion": 45,
+        "preferred_approaches": ["Social Media Collabs", "Photo Ops", "Publicity"],
+        "conquest_difficulty": 0.7
+      },
+      "mood_profile": {
+        "default": "Neutral",
+        "morning": "Neutral",
+        "evening": "Flirty",
+        "triggers": {
+          "at_parties": "Flirty",
+          "before_events": "Stressed",
+          "photo_opportunity": "Flirty"
+        }
+      },
+      "schedule": {
+        "Day1": ["Morning: Content", "Afternoon: Meetings", "Evening: Free"],
+        "Day2": ["Morning: Free", "Afternoon: Gala", "Evening: Gala"],
+        "Day3": ["Morning: Travel", "Afternoon: Congress", "Evening: Free"],
+        "Day4": ["Morning: Congress", "Afternoon: Congress", "Evening: Free"],
+        "Day5": ["Morning: Congress", "Afternoon: Free", "Evening: Party"],
+        "Day6": ["Morning: Travel", "Afternoon: Content", "Evening: Free"],
+        "Day7": ["Morning: Debate Prep", "Afternoon: Debate", "Evening: Vote"]
+      },
+      "dialogue_tree": "dialogue_victoria.json",
+      "conquest_target": true,
+      "endings": ["Ally", "Enemy", "Conquest", "Bribed"]
+    },
+    {
+      "id": "rachel",
+      "name": "Rachel",
+      "role": "Campaign Volunteer",
+      "age": 26,
+      "party": "Forward Together",
+      "personality": "Eager",
+      "risk_profile": "Low",
+      "seduction_profile": {
+        "base_interest": 60,
+        "base_suspicion": 10,
+        "preferred_approaches": ["Attention", "Promises of Access", "Flattery"],
+        "conquest_difficulty": 0.3
+      },
+      "mood_profile": {
+        "default": "Neutral",
+        "morning": "Excited",
+        "evening": "Flirty",
+        "triggers": {
+          "alone": "Flirty",
+          "in_groups": "Nervous",
+          "given_attention": "Flirty"
+        }
+      },
+      "schedule": {
+        "Day1": ["Morning: Office", "Afternoon: Campaign", "Evening: Free"],
+        "Day2": ["Morning: Free", "Afternoon: Gala Setup", "Evening: Gala"],
+        "Day3": ["Morning: Travel", "Afternoon: Congress", "Evening: Free"],
+        "Day4": ["Morning: Congress", "Afternoon: Congress", "Evening: Free"],
+        "Day5": ["Morning: Congress", "Afternoon: Free", "Evening: Party"],
+        "Day6": ["Morning: Travel", "Afternoon: Campaign", "Evening: Free"],
+        "Day7": ["Morning: Debate Setup", "Afternoon: Debate", "Evening: Vote"]
+      },
+      "dialogue_tree": "dialogue_rachel.json",
+      "conquest_target": true,
+      "endings": ["Ally", "Enemy", "Conquest"]
+    },
+    {
+      "id": "natalie",
+      "name": "Natalie",
+      "role": "Lobbyist",
+      "age": 33,
+      "party": "Independent",
+      "personality": "Calculating",
+      "risk_profile": "High",
+      "seduction_profile": {
+        "base_interest": 45,
+        "base_suspicion": 50,
+        "preferred_approaches": ["Mutual Benefit", "Quid Pro Quo", "Business"],
+        "conquest_difficulty": 0.7
+      },
+      "mood_profile": {
+        "default": "Neutral",
+        "morning": "Neutral",
+        "evening": "Flirty",
+        "triggers": {
+          "in_meetings": "Neutral",
+          "in_private": "Flirty",
+          "business_opportunity": "Flirty"
+        }
+      },
+      "schedule": {
+        "Day1": ["Morning: Meetings", "Afternoon: Meetings", "Evening: Free"],
+        "Day2": ["Morning: Free", "Afternoon: Gala", "Evening: Gala"],
+        "Day3": ["Morning: Travel", "Afternoon: Congress", "Evening: Free"],
+        "Day4": ["Morning: Congress", "Afternoon: Congress", "Evening: Free"],
+        "Day5": ["Morning: Congress", "Afternoon: Free", "Evening: Party"],
+        "Day6": ["Morning: Travel", "Afternoon: Meetings", "Evening: Free"],
+        "Day7": ["Morning: Debate Prep", "Afternoon: Debate", "Evening: Vote"]
+      },
+      "dialogue_tree": "dialogue_natalie.json",
+      "conquest_target": true,
+      "endings": ["Ally", "Enemy", "Conquest", "Business Partner"]
+    },
+    {
+      "id": "ashley",
+      "name": "Ashley",
+      "role": "Maria's Friend",
+      "age": 25,
+      "party": "Independent",
+      "personality": "Social",
+      "risk_profile": "Medium-High",
+      "seduction_profile": {
+        "base_interest": 50,
+        "base_suspicion": 25,
+        "preferred_approaches": ["Group Settings", "Parties", "Drinks"],
+        "conquest_difficulty": 0.5
+      },
+      "mood_profile": {
+        "default": "Neutral",
+        "morning": "Neutral",
+        "evening": "Flirty",
+        "triggers": {
+          "at_parties": "Flirty",
+          "at_work": "Stressed",
+          "with_drinks": "Flirty"
+        }
+      },
+      "schedule": {
+        "Day1": ["Morning: Work", "Afternoon: Work", "Evening: Free"],
+        "Day2": ["Morning: Free", "Afternoon: Free", "Evening: Gala"],
+        "Day3": ["Morning: Free", "Afternoon: Free", "Evening: Free"],
+        "Day4": ["Morning: Free", "Afternoon: Free", "Evening: Party"],
+        "Day5": ["Morning: Free", "Afternoon: Free", "Evening: Party"],
+        "Day6": ["Morning: Work", "Afternoon: Work", "Evening: Free"],
+        "Day7": ["Morning: Free", "Afternoon: Free", "Evening: Vote Party"]
+      },
+      "dialogue_tree": "dialogue_ashley.json",
+      "conquest_target": true,
+      "endings": ["Ally", "Enemy", "Conquest", "Friend"]
+    }
+  ]
+}
