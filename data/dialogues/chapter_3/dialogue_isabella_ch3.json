@@ -1,1 +1,74 @@
-{"id":"dialogue_isabella_ch3","npcId":"isabella","chapter":3,"context":"Campaign office. Debate prep.","nodes":[{"id":"start","text":"Senator, three hours until the debate. Briefing ready.","moodVariations":{"Stressed":"Three hours. Briefing ready.","Relaxed":"Three hours! Ready!","Neutral":"Three hours until the debate."},"publicOptions":[{"id":"confident","text":"Ready, Isabella. Let's see it.","reputationEffect":5,"lustEffect":0,"riskEffect":0,"nextNode":"closing"},{"id":"flirt","text":"Better now that you're here.","reputationEffect":-2,"lustEffect":10,"riskEffect":10,"nextNode":"closing","setFlag":"isabella_interest_+10"}],"privateThoughts":[{"id":"strategic","text":"Best campaign manager.","lustEffect":3,"riskEffect":-5,"mood":"Strategic"},{"id":"lonely","text":"Her dedication attractive.","lustEffect":5,"riskEffect":3,"mood":"Lonely"}]},{"id":"closing","text":"Let's run through opening statement.","moodVariations":{"Stressed":"Opening statement.","Relaxed":"Let's do this!","Neutral":"Review opening statement."},"publicOptions":[{"id":"ready","text":"Ready.","reputationEffect":3,"nextNode":null}]}]}
+{
+  "id": "dialogue_isabella_ch3",
+  "npc": "isabella",
+  "chapter": 3,
+  "title": "The Campaign Manager",
+  "setting": "Campaign Office, Afternoon",
+  "mood": "strategic_intense",
+  
+  "opening": {
+    "text": "Isabella Rodriguez, your campaign manager, is reviewing polling data when you enter the campaign office.",
+    "speaker": "narrator"
+  },
+  
+  "segments": [
+    {
+      "id": "strategy_session",
+      "speaker": "isabella",
+      "text": "The polls are tight. Your vote on the Education Reform Bill could make or break this campaign. What's your read on the situation?",
+      "choices": [
+        {
+          "text": "\"I'm voting my conscience. The polls will follow.\"",
+          "effect": {"reputation": 5, "isabella_respect": 5, "risk": 5},
+          "next": "principled"
+        },
+        {
+          "text": "\"What do the numbers say we should do?\"",
+          "effect": {"isabella_trust": 5},
+          "next": "pragmatic"
+        },
+        {
+          "text": "\"I need more time to think about it.\"",
+          "effect": {"risk": 10},
+          "next": "hesitant"
+        }
+      ]
+    },
+    {
+      "id": "principled",
+      "speaker": "isabella",
+      "text": "She looks at you with a mix of frustration and respect. \"That's either courageous or suicidal. Time will tell.\"",
+      "choices": [
+        {
+          "text": "\"I'll take that risk.\"",
+          "effect": {"isabella_respect": 10, "risk": 5},
+          "next": "bold"
+        },
+        {
+          "text": "\"Trust me on this.\"",
+          "effect": {"isabella_trust": 5},
+          "next": "confident"
+        }
+      ]
+    },
+    {
+      "id": "closing",
+      "speaker": "isabella",
+      "text": "\"Make your vote. I'll manage the fallout. That's my job.\" She gives you a look that says she's got your back, no matter what.",
+      "choices": [
+        {
+          "text": "\"Thanks, Isabella.\"",
+          "effect": {"isabella_trust": 10},
+          "next": "grateful_exit"
+        }
+      ]
+    }
+  ],
+  
+  "flags_set": ["isabella_ch3_met", "isabella_strategy_discussed"],
+  "consequences": {
+    "high_respect": "Isabella will defend your decisions publicly",
+    "high_trust": "Isabella will provide honest counsel even when uncomfortable",
+    "low_trust": "Isabella may question your judgment in crisis"
+  }
+}
