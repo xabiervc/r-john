@@ -1,1 +1,75 @@
-{"id":"dialogue_olivia_ch2","npcId":"olivia","chapter":2,"context":"Charity Gala. Olivia discussing policy.","nodes":[{"id":"start","text":"Senator John, read your workplace equality proposal. Impressive.","moodVariations":{"Stressed":"Read your proposal. Impressive.","Relaxed":"Your proposal is impressive!","Neutral":"I read your workplace equality proposal."},"publicOptions":[{"id":"professional","text":"Thank you, Olivia. It's a priority.","reputationEffect":7,"lustEffect":0,"riskEffect":0,"nextNode":"closing"},{"id":"flirt","text":"Thank you. More interested in your thoughts.","reputationEffect":0,"lustEffect":10,"riskEffect":15,"nextNode":"closing","setFlag":"olivia_interest_+15"},{"id":"intellectual","text":"The economic data is clear—equality drives growth.","reputationEffect":6,"lustEffect":5,"riskEffect":0,"nextNode":"closing"}],"privateThoughts":[{"id":"strategic","text":"Well-connected. Valuable ally.","lustEffect":3,"riskEffect":-5,"mood":"Strategic"},{"id":"lonely","text":"Her intellect is stimulating.","lustEffect":5,"riskEffect":3,"mood":"Lonely"},{"id":"calculating","text":"Engage intellectually and she'll be receptive.","lustEffect":4,"riskEffect":2,"mood":"Calculating"}]},{"id":"closing","text":"Let's discuss policy further.","moodVariations":{"Stressed":"Discuss policy.","Relaxed":"Let's talk policy!","Neutral":"We should discuss this further."},"publicOptions":[{"id":"continue","text":"Agreed.","reputationEffect":3,"nextNode":null}]}]}
+{
+  "id": "dialogue_olivia_ch2",
+  "npc": "olivia",
+  "chapter": 2,
+  "title": "The Party Colleague",
+  "setting": "Capitol Hill, Hallway",
+  "mood": "friendly_political",
+  
+  "opening": {
+    "text": "Olivia Parker, your fellow party member, spots you in the hallway and waves you over.",
+    "speaker": "narrator"
+  },
+  
+  "segments": [
+    {
+      "id": "hallway_chat",
+      "speaker": "olivia",
+      "text": "Hey! I heard you're supporting the Education Reform Bill. That's bold. How's your district reacting?",
+      "choices": [
+        {
+          "text": "\"Mixed reactions, but I think it's the right call.\"",
+          "effect": {"reputation": 5, "olivia_trust": 5},
+          "next": "honest"
+        },
+        {
+          "text": "\"Politics aside, it's good policy.\"",
+          "effect": {"reputation": 5, "olivia_respect": 5},
+          "next": "principled"
+        },
+        {
+          "text": "\"Still gauging the political winds.\"",
+          "effect": {"risk": 5},
+          "next": "cautious"
+        }
+      ]
+    },
+    
+    {
+      "id": "honest",
+      "speaker": "olivia",
+      "text": "She nods understandingly. \"I get it. Sometimes you have to vote your conscience even when it's hard. That's why I respect you.\"",
+      "choices": [
+        {
+          "text": "\"Thanks, Olivia. That means a lot.\"",
+          "effect": {"olivia_trust": 10, "olivia_respect": 5},
+          "next": "grateful"
+        },
+        {
+          "text": "\"We should stick together on this.\"",
+          "effect": {"olivia_trust": 10},
+          "next": "alliance"
+        }
+      ]
+    },
+    
+    {
+      "id": "closing",
+      "speaker": "olivia",
+      "text": "\"Let me know if you need backup on the vote. We're stronger together.\" She gives you a warm smile before heading to her next meeting.",
+      "choices": [
+        {
+          "text": "\"Will do. Thanks, Olivia.\"",
+          "effect": {"olivia_trust": 5},
+          "next": "friendly_exit"
+        }
+      ]
+    }
+  ],
+  
+  "flags_set": ["olivia_ch2_met", "olivia_alliance_offered"],
+  "consequences": {
+    "high_trust": "Olivia will support you on key votes",
+    "low_trust": "Olivia may vote differently, weakening your position"
+  }
+}
