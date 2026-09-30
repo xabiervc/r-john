@@ -1,1 +1,94 @@
-{"id":"dialogue_emma_ch1","npcId":"emma","chapter":1,"context":"Morning. Emma is organizing research files.","nodes":[{"id":"start","text":"G-Good morning, Mr. John! Research files are ready.","moodVariations":{"Stressed":"M-Morning. Files almost ready.","Relaxed":"Hi Mr. John! Files organized!","Neutral":"Good morning, Mr. John. Files are ready."},"publicOptions":[{"id":"professional","text":"Good morning, Emma. Thank you.","reputationEffect":5,"lustEffect":0,"riskEffect":0,"nextNode":"closing"},{"id":"charming","text":"You're working so hard, Emma.","reputationEffect":4,"lustEffect":8,"riskEffect":0,"nextNode":"closing","setFlag":"emma_interest_+20"}],"privateThoughts":[{"id":"strategic","text":"Young intern. Worth investing in.","lustEffect":3,"riskEffect":-5,"mood":"Strategic"},{"id":"lonely","text":"Her enthusiasm is refreshing.","lustEffect":5,"riskEffect":3,"mood":"Lonely"}]},{"id":"closing","text":"Thank you for the research, Emma.","moodVariations":{"Stressed":"Thanks.","Relaxed":"Thanks, Emma!","Neutral":"Thank you, Emma."},"publicOptions":[{"id":"thank_and_leave","text":"Thanks, Emma.","reputationEffect":3,"nextNode":null}]}]}
+{
+  "id": "dialogue_emma_ch1",
+  "npc": "emma",
+  "chapter": 1,
+  "title": "The Intern",
+  "setting": "Senator's Office, Morning",
+  "mood": "eager_nervous",
+  
+  "opening": {
+    "text": "Emma, the newest intern, approaches your desk with a stack of papers. She's clearly trying to make a good impression.",
+    "speaker": "narrator"
+  },
+  
+  "segments": [
+    {
+      "id": "introduction",
+      "speaker": "emma",
+      "text": "Senator, I've prepared the constituent correspondence you requested. I highlighted the most urgent ones in yellow.",
+      "choices": [
+        {
+          "text": "\"Thank you, Emma. I appreciate your initiative.\"",
+          "effect": {"reputation": 5, "emma_trust": 5},
+          "next": "professional_thanks"
+        },
+        {
+          "text": "\"You're doing great. Keep it up.\"",
+          "effect": {"emma_respect": 5, "emma_attraction": 5, "lust": 5},
+          "next": "warm_encouragement"
+        },
+        {
+          "text": "\"Just leave them on my desk.\"",
+          "effect": {},
+          "next": "dismissive"
+        }
+      ]
+    },
+    
+    {
+      "id": "professional_thanks",
+      "speaker": "emma",
+      "text": "She beams at your thanks, clearly pleased. \"I'm happy to help. Is there anything else you need before the press conference?\"",
+      "choices": [
+        {
+          "text": "\"No, that's all. Thanks again.\"",
+          "effect": {"emma_trust": 5},
+          "next": "polite_exit"
+        },
+        {
+          "text": "\"Actually, could you grab me a coffee?\"",
+          "effect": {"risk": 5},
+          "next": "personal_request"
+        }
+      ]
+    },
+    
+    {
+      "id": "warm_encouragement",
+      "speaker": "emma",
+      "text": "Her face lights up at your encouragement. \"Thank you, Senator. I'm really learning a lot here.\" She lingers a moment longer than necessary.",
+      "choices": [
+        {
+          "text": "\"You're a quick learner. I'm glad you're here.\"",
+          "effect": {"lust": 10, "emma_attraction": 10, "risk": 15},
+          "next": "flirtation"
+        },
+        {
+          "text": "\"Keep working hard. You'll go far.\"",
+          "effect": {"emma_respect": 10},
+          "next": "mentor_exit"
+        }
+      ]
+    },
+    
+    {
+      "id": "closing",
+      "speaker": "emma",
+      "text": "\"I'll be at my desk if you need anything.\" She gives you one last look before heading back to her workspace.",
+      "choices": [
+        {
+          "text": "\"Thanks, Emma.\"",
+          "effect": {},
+          "next": "standard_exit"
+        }
+      ]
+    }
+  ],
+  
+  "flags_set": ["emma_ch1_met", "emma_introduction_complete"],
+  "consequences": {
+    "high_attraction": "Emma may have complicated feelings (power dynamic issues in Chapter 6-7)",
+    "high_respect": "Emma will be loyal and hardworking throughout",
+    "low_engagement": "Emma may not go above and beyond later"
+  }
+}
