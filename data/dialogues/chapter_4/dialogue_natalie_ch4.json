@@ -1,1 +1,73 @@
-{"id":"dialogue_natalie_ch4","npcId":"natalie","chapter":4,"context":"Capitol Hill. Legislation discussion.","nodes":[{"id":"start","text":"John, reviewed your workplace equality bill.","moodVariations":{"Stressed":"Reviewed your bill.","Relaxed":"Reviewed your bill!","Neutral":"I've reviewed your bill."},"publicOptions":[{"id":"open","text":"What concerns, Natalie?","reputationEffect":5,"lustEffect":0,"riskEffect":0,"nextNode":"closing"},{"id":"flirt","text":"You reviewing my work? Flattered.","reputationEffect":-2,"lustEffect":10,"riskEffect":10,"nextNode":"closing","setFlag":"natalie_interest_+10"}],"privateThoughts":[{"id":"strategic","text":"Her support crucial.","lustEffect":3,"riskEffect":-5,"mood":"Strategic"},{"id":"lonely","text":"Intellect stimulating.","lustEffect":5,"riskEffect":3,"mood":"Lonely"}]},{"id":"closing","text":"Let's strengthen it together.","moodVariations":{"Stressed":"Strengthen it.","Relaxed":"Together!","Neutral":"Work together."},"publicOptions":[{"id":"agree","text":"Agreed.","reputationEffect":3,"nextNode":null}]}]}
+{
+  "id": "dialogue_natalie_ch4",
+  "npc": "natalie",
+  "chapter": 4,
+  "title": "The Fellow Senator",
+  "setting": "Senate Office Building, Corridor",
+  "mood": "collegial_strategic",
+  
+  "opening": {
+    "text": "Natalie Foster, a fellow senator, catches up with you in the corridor.",
+    "speaker": "narrator"
+  },
+  
+  "segments": [
+    {
+      "id": "corridor_conversation",
+      "speaker": "natalie",
+      "text": "I heard about your position on the Education Reform Bill. That's going to be a tough vote. How are you leaning?",
+      "choices": [
+        {
+          "text": "\"I'm leaning toward support. It's the right policy.\"",
+          "effect": {"reputation": 5, "natalie_trust": 5},
+          "next": "honest"
+        },
+        {
+          "text": "\"Still weighing the political implications.\"",
+          "effect": {"risk": 5},
+          "next": "cautious"
+        },
+        {
+          "text": "\"Why do you ask?\"",
+          "effect": {"natalie_respect": 5},
+          "next": "curious"
+        }
+      ]
+    },
+    {
+      "id": "honest",
+      "speaker": "natalie",
+      "text": "She nods. \"I respect that. Sometimes you have to vote your conscience, even when it's hard.\"",
+      "choices": [
+        {
+          "text": "\"Exactly. Thanks for understanding.\"",
+          "effect": {"natalie_trust": 10},
+          "next": "mutual_respect"
+        },
+        {
+          "text": "\"Will you support it too?\"",
+          "effect": {"natalie_trust": 5},
+          "next": "alliance_building"
+        }
+      ]
+    },
+    {
+      "id": "closing",
+      "speaker": "natalie",
+      "text": "\"Let me know if you need me to lobby a few colleagues. We're stronger together.\" She gives you a supportive smile before heading off.",
+      "choices": [
+        {
+          "text": "\"I'll take you up on that. Thanks, Natalie.\"",
+          "effect": {"natalie_trust": 10},
+          "next": "alliance_exit"
+        }
+      ]
+    }
+  ],
+  
+  "flags_set": ["natalie_ch4_met", "natalie_alliance_offered"],
+  "consequences": {
+    "high_trust": "Natalie will lobby colleagues on your behalf",
+    "low_trust": "Natalie may vote differently, weakening your position"
+  }
+}
