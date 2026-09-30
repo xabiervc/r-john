@@ -1,1 +1,99 @@
-{"id":"dialogue_laura_ch1","npcId":"laura","chapter":1,"context":"Morning in the Senator's office. Laura is organizing John's schedule.","nodes":[{"id":"start","text":"Good morning, Senator! I've organized your schedule for the week.","moodVariations":{"Stressed":"Morning. Schedule ready.","Relaxed":"Good morning! Schedule's all set!","Neutral":"Good morning, Senator. Schedule is ready."},"publicOptions":[{"id":"appreciative","text":"Excellent work, Laura. I don't know what I'd do without you.","reputationEffect":5,"lustEffect":5,"riskEffect":0,"nextNode":"closing"},{"id":"charming","text":"You always take such good care of me, Laura.","reputationEffect":4,"lustEffect":8,"riskEffect":0,"nextNode":"closing","setFlag":"laura_interest_+20"}],"privateThoughts":[{"id":"strategic","text":"Loyal assistant. Keep her happy.","lustEffect":3,"riskEffect":-5,"mood":"Strategic"},{"id":"lonely","text":"Her warmth reminds me what I'm missing.","lustEffect":5,"riskEffect":3,"mood":"Lonely"}]},{"id":"closing","text":"Your schedule is all set, Senator.","moodVariations":{"Stressed":"Schedule set.","Relaxed":"All set!","Neutral":"Schedule is complete."},"publicOptions":[{"id":"thank_and_leave","text":"Thank you, Laura.","reputationEffect":3,"nextNode":null}]}]}
+{
+  "id": "dialogue_laura_ch1",
+  "npc": "laura",
+  "chapter": 1,
+  "title": "The Personal Assistant",
+  "setting": "Senator's Office, Morning",
+  "mood": "efficient_personal",
+  
+  "opening": {
+    "text": "Laura, your personal assistant, is already at your desk organizing your schedule. She looks up with her characteristic efficiency.",
+    "speaker": "narrator"
+  },
+  
+  "segments": [
+    {
+      "id": "schedule_review",
+      "speaker": "laura",
+      "text": "Your schedule for today is packed. Press conference at 10, committee meeting at 2, fundraiser at 7. I've moved your lunch to 1:30 so you can actually eat.",
+      "choices": [
+        {
+          "text": "\"You're a lifesaver, Laura.\"",
+          "effect": {"reputation": 3, "laura_trust": 5, "laura_respect": 5},
+          "next": "appreciative"
+        },
+        {
+          "text": "\"I don't know how you keep track of everything.\"",
+          "effect": {"laura_respect": 5, "lust": 5},
+          "next": "admiring"
+        },
+        {
+          "text": "\"Thanks.\" (distracted, already checking phone)",
+          "effect": {"laura_trust": -3},
+          "next": "distracted"
+        }
+      ]
+    },
+    
+    {
+      "id": "appreciative",
+      "speaker": "laura",
+      "text": "She smiles at your appreciation. \"It's my job to make sure you're prepared. Speaking of which, you should review the talking points Maria sent over.\"",
+      "choices": [
+        {
+          "text": "\"On it. Thanks, Laura.\"",
+          "effect": {"laura_trust": 5},
+          "next": "professional_exit"
+        },
+        {
+          "text": "\"You always think of everything.\"",
+          "effect": {"lust": 10, "laura_attraction": 10, "risk": 15},
+          "next": "personal_compliment"
+        }
+      ]
+    },
+    
+    {
+      "id": "admiring",
+      "speaker": "laura",
+      "text": "\"Years of practice.\" There's a hint of something in her tone—pride, maybe, or something more personal. \"Try not to be late to the press conference.\"",
+      "choices": [
+        {
+          "text": "\"I'll be there. Wouldn't want to disappoint you.\"",
+          "effect": {"lust": 10, "laura_attraction": 10, "risk": 15},
+          "next": "flirtation"
+        },
+        {
+          "text": "\"I'm always on time.\"",
+          "effect": {"reputation": 3},
+          "next": "professional_exit"
+        }
+      ]
+    },
+    
+    {
+      "id": "closing",
+      "speaker": "laura",
+      "text": "\"I'll have your lunch ready at 1:30. Don't skip it.\" She gives you a look that's half professional concern, half something else.",
+      "choices": [
+        {
+          "text": "\"Yes, ma'am.\"",
+          "effect": {"laura_respect": 5},
+          "next": "playful_exit"
+        },
+        {
+          "text": "\"Thanks, Laura.\"",
+          "effect": {},
+          "next": "standard_exit"
+        }
+      ]
+    }
+  ],
+  
+  "flags_set": ["laura_ch1_met", "laura_schedule_reviewed"],
+  "consequences": {
+    "high_attraction": "Laura may have complicated feelings (power dynamic issues in Chapter 6-7)",
+    "high_trust": "Laura will be exceptionally loyal and supportive",
+    "low_engagement": "Laura may be less personally invested in your success"
+  }
+}
