@@ -1,1 +1,76 @@
-{"id":"dialogue_jessica_ch2","npcId":"jessica","chapter":2,"context":"TV Studio before gala. Jessica preparing broadcast.","nodes":[{"id":"start","text":"Senator John, thanks for coming. We're live in five.","moodVariations":{"Stressed":"Senator, live in five.","Relaxed":"Senator John! Live in five!","Neutral":"Senator John, we're live in five."},"publicOptions":[{"id":"professional","text":"Happy to be here, Jessica.","reputationEffect":5,"lustEffect":0,"riskEffect":0,"nextNode":"closing"},{"id":"flirt","text":"Looking forward to it. Especially meeting you.","reputationEffect":0,"lustEffect":10,"riskEffect":15,"nextNode":"closing","setFlag":"jessica_interest_+15"},{"id":"exclusive","text":"I might have an exclusive for you, Jessica.","reputationEffect":3,"lustEffect":5,"riskEffect":10,"nextNode":"closing","setFlag":"jessica_exclusive_available"}],"privateThoughts":[{"id":"strategic","text":"She's a journalist. Could be useful.","lustEffect":3,"riskEffect":-5,"mood":"Strategic"},{"id":"degenerate","text":"Sharp and ambitious. Intoxicating.","lustEffect":8,"riskEffect":5,"mood":"Degenerate"},{"id":"lonely","text":"Her confidence is attractive.","lustEffect":5,"riskEffect":3,"mood":"Lonely"},{"id":"calculating","text":"Feed her a story and she'll go easy.","lustEffect":4,"riskEffect":2,"mood":"Calculating"},{"id":"impatient","text":"Just get to the interview.","lustEffect":-2,"riskEffect":0,"mood":"Impatient"}]},{"id":"closing","text":"We're live. Let's begin.","moodVariations":{"Stressed":"Live.","Relaxed":"Let's begin!","Neutral":"We're on air."},"publicOptions":[{"id":"ready","text":"Ready.","reputationEffect":3,"nextNode":null}]}]}
+{
+  "id": "dialogue_jessica_ch2",
+  "npc": "jessica",
+  "chapter": 2,
+  "title": "The TV Journalist",
+  "setting": "TV Studio, Green Room",
+  "mood": "professional_sharp",
+  
+  "opening": {
+    "text": "Jessica Chen, the sharp and ambitious TV journalist, greets you in the green room before the interview.",
+    "speaker": "narrator"
+  },
+  
+  "segments": [
+    {
+      "id": "pre_interview",
+      "speaker": "jessica",
+      "text": "Senator, thanks for coming on the show. My viewers want to know where you stand on the Education Reform Bill. Are you ready for some tough questions?",
+      "choices": [
+        {
+          "text": "\"Always ready, Jessica. Let's do this.\"",
+          "effect": {"reputation": 5},
+          "next": "confident"
+        },
+        {
+          "text": "\"I appreciate the opportunity to speak directly to voters.\"",
+          "effect": {"reputation": 5, "jessica_respect": 5},
+          "next": "diplomatic"
+        },
+        {
+          "text": "\"Just give me the easy questions, okay?\"",
+          "effect": {"reputation": -5, "risk": 5},
+          "next": "joking"
+        }
+      ]
+    },
+    
+    {
+      "id": "confident",
+      "speaker": "jessica",
+      "text": "She grins. \"That's what I like to hear. No softballs today, Senator. My audience wants real answers.\"",
+      "choices": [
+        {
+          "text": "\"Wouldn't have it any other way.\"",
+          "effect": {"reputation": 5, "jessica_respect": 5},
+          "next": "mutual_respect"
+        },
+        {
+          "text": "\"You're enjoying this, aren't you?\"",
+          "effect": {"lust": 5, "jessica_attraction": 5},
+          "next": "playful"
+        }
+      ]
+    },
+    
+    {
+      "id": "closing",
+      "speaker": "jessica",
+      "text": "\"Let's head to the set. Remember, no dodging the tough questions.\" She gives you a challenging look as you walk toward the cameras.",
+      "choices": [
+        {
+          "text": "\"Wouldn't dream of it.\"",
+          "effect": {"reputation": 5},
+          "next": "professional_exit"
+        }
+      ]
+    }
+  ],
+  
+  "flags_set": ["jessica_ch2_interview", "jessica_interview_complete"],
+  "consequences": {
+    "high_respect": "Jessica will be fair but tough in future coverage",
+    "high_attraction": "Jessica may seek exclusive interviews (complicated dynamic)",
+    "low_reputation": "Jessica may be more aggressive in future coverage"
+  }
+}
