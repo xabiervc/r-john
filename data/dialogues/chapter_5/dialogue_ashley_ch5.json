@@ -1,1 +1,84 @@
-{"id":"dialogue_ashley_ch5","npcId":"ashley","chapter":5,"context":"Fundraiser. Ashley being flirtatious.","nodes":[{"id":"start","text":"Senator John! You look excellent tonight.","moodVariations":{"Stressed":"You look excellent.","Relaxed":"You look excellent!","Neutral":"You look excellent tonight."},"publicOptions":[{"id":"professional","text":"Thank you, Ashley.","reputationEffect":5,"lustEffect":0,"riskEffect":0,"nextNode":"closing"},{"id":"flirt","text":"You're the one who looks stunning.","reputationEffect":-2,"lustEffect":10,"riskEffect":10,"nextNode":"closing","setFlag":"ashley_interest_+10"}],"privateThoughts":[{"id":"degenerate","text":"Beautiful and bold.","lustEffect":8,"riskEffect":5,"mood":"Degenerate"},{"id":"strategic","text":"Major donors. Keep close.","lustEffect":3,"riskEffect":-5,"mood":"Strategic"}]},{"id":"closing","text":"Fundraiser needs more donors.","moodVariations":{"Stressed":"Needs donors.","Relaxed":"Needs donors!","Neutral":"Needs additional donors."},"publicOptions":[{"id":"acknowledge","text":"Of course.","reputationEffect":3,"nextNode":null}]}]}
+{
+  "id": "dialogue_ashley_ch5",
+  "npc": "ashley",
+  "chapter": 5,
+  "title": "The Lobbyist",
+  "setting": "Fundraiser, Private Room",
+  "mood": "charming_influential",
+  
+  "opening": {
+    "text": "Ashley Monroe, the charming and influential lobbyist, finds you in a quieter room at the fundraiser.",
+    "speaker": "narrator"
+  },
+  
+  "segments": [
+    {
+      "id": "private_meeting",
+      "speaker": "ashley",
+      "text": "Senator, I represent some clients who are very interested in the Education Reform Bill. I'd like to discuss how we might work together.",
+      "choices": [
+        {
+          "text": "\"I'm listening. What do you have in mind?\"",
+          "effect": {"risk": 10, "ashley_trust": 5},
+          "next": "open"
+        },
+        {
+          "text": "\"I make my decisions based on policy, not lobbying.\"",
+          "effect": {"reputation": 5, "ashley_respect": 5},
+          "next": "principled"
+        },
+        {
+          "text": "\"This seems inappropriate. We should talk publicly.\"",
+          "effect": {"reputation": 3, "risk": -5},
+          "next": "cautious"
+        }
+      ]
+    },
+    {
+      "id": "open",
+      "speaker": "ashley",
+      "text": "She smiles. \"My clients are prepared to be... generous... to those who see things their way. Let's just say your campaign could benefit.\"",
+      "choices": [
+        {
+          "text": "\"Are you offering a campaign contribution?\"",
+          "effect": {"risk": 15},
+          "next": "direct"
+        },
+        {
+          "text": "\"I can't accept that kind of support.\"",
+          "effect": {"reputation": 5, "risk": -5},
+          "next": "refusal"
+        },
+        {
+          "text": "\"Tell me more about your clients' position.\"",
+          "effect": {"risk": 10, "ashley_trust": 5},
+          "next": "information_gathering"
+        }
+      ]
+    },
+    {
+      "id": "closing",
+      "speaker": "ashley",
+      "text": "\"Think about it, Senator. My clients have long memories, and they reward their friends.\" She hands you a card and glides away, leaving you to ponder her offer.",
+      "choices": [
+        {
+          "text": "\"I'll keep it in mind.\"",
+          "effect": {"risk": 5},
+          "next": "ambiguous_exit"
+        },
+        {
+          "text": "\"Thank you for the information.\"",
+          "effect": {},
+          "next": "polite_exit"
+        }
+      ]
+    }
+  ],
+  
+  "flags_set": ["ashley_ch5_met", "ashley_offer_made"],
+  "consequences": {
+    "accepted_offer": "Ashley's clients will support your campaign (but Risk increases)",
+    "refused_offer": "Ashley may work against you (but Risk decreases)",
+    "high_attraction": "Ashley may pursue personal relationship (complicated dynamic)"
+  }
+}
