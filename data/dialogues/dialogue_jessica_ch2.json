@@ -1,0 +1,41 @@
+{
+  "id": "dialogue_jessica_ch2",
+  "npcId": "jessica",
+  "chapter": 2,
+  "context": "TV Studio before gala. Jessica preparing broadcast.",
+  "nodes": [
+    {
+      "id": "start",
+      "text": "Senator John, thanks for coming. We're live in five.",
+      "moodVariations": {
+        "Stressed": "Senator, live in five.",
+        "Relaxed": "Senator John! Live in five!",
+        "Neutral": "Senator John, we're live in five."
+      },
+      "publicOptions": [
+        {"id": "professional", "text": "Happy to be here, Jessica.", "reputationEffect": 5, "lustEffect": 0, "riskEffect": 0, "nextNode": "closing"},
+        {"id": "flirt", "text": "Looking forward to it. Especially meeting you.", "reputationEffect": 0, "lustEffect": 10, "riskEffect": 15, "nextNode": "closing", "setFlag": "jessica_interest_+15"},
+        {"id": "exclusive", "text": "I might have an exclusive for you, Jessica.", "reputationEffect": 3, "lustEffect": 5, "riskEffect": 10, "nextNode": "closing", "setFlag": "jessica_exclusive_available"}
+      ],
+      "privateThoughts": [
+        {"id": "strategic", "text": "She's a journalist. Could be useful.", "lustEffect": 3, "riskEffect": -5, "mood": "Strategic"},
+        {"id": "degenerate", "text": "Sharp and ambitious. Intoxicating.", "lustEffect": 8, "riskEffect": 5, "mood": "Degenerate"},
+        {"id": "lonely", "text": "Her confidence is attractive.", "lustEffect": 5, "riskEffect": 3, "mood": "Lonely"},
+        {"id": "calculating", "text": "Feed her a story and she'll go easy.", "lustEffect": 4, "riskEffect": 2, "mood": "Calculating"},
+        {"id": "impatient", "text": "Just get to the interview.", "lustEffect": -2, "riskEffect": 0, "mood": "Impatient"}
+      ]
+    },
+    {
+      "id": "closing",
+      "text": "We're live. Let's begin.",
+      "moodVariations": {
+        "Stressed": "Live.",
+        "Relaxed": "Let's begin!",
+        "Neutral": "We're on air."
+      },
+      "publicOptions": [
+        {"id": "ready", "text": "Ready.", "reputationEffect": 3, "nextNode": null}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "id": "dialogue_laura_ch6",
+  "npcId": "laura",
+  "chapter": 6,
+  "context": "Crisis mode. Laura worried about John.",
+  "nodes": [
+    {
+      "id": "start",
+      "text": "Senator... I heard about the story. Are you okay?",
+      "moodVariations": {
+        "Stressed": "Heard about the story. Okay?",
+        "Relaxed": "Are you okay?",
+        "Neutral": "I heard about the story."
+      },
+      "publicOptions": [
+        {"id": "reassure", "text": "I'm fine, Laura. Thank you.", "reputationEffect": 3, "lustEffect": 3, "riskEffect": 0, "nextNode": "closing"},
+        {"id": "honest", "text": "Honestly? No. But I'll get through this.", "reputationEffect": 3, "lustEffect": 5, "riskEffect": 0, "nextNode": "closing"},
+        {"id": "distant", "text": "I need to focus on the response.", "reputationEffect": 0, "lustEffect": -3, "riskEffect": 0, "nextNode": "closing"}
+      ],
+      "privateThoughts": [
+        {"id": "worried", "text": "He looks terrible. Want to help.", "lustEffect": 3, "riskEffect": 0, "mood": "Stressed"},
+        {"id": "loyal", "text": "Believe in him. No matter what.", "lustEffect": 5, "riskEffect": -3, "mood": "Neutral"}
+      ]
+    },
+    {
+      "id": "closing",
+      "text": "I'm here if you need anything.",
+      "moodVariations": {
+        "Stressed": "Here if needed.",
+        "Relaxed": "I'm here!",
+        "Neutral": "I'm available."
+      },
+      "publicOptions": [
+        {"id": "thanks", "text": "Thank you, Laura.", "reputationEffect": 3, "nextNode": null}
+      ]
+    }
+  ]
+}

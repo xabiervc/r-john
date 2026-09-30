@@ -1,0 +1,38 @@
+{
+  "id": "dialogue_maria_ch6",
+  "npcId": "maria",
+  "chapter": 6,
+  "context": "Crisis mode. Scandal breaks.",
+  "nodes": [
+    {
+      "id": "start",
+      "text": "Senator, we have a situation. A story is about to drop.",
+      "moodVariations": {
+        "Stressed": "We have a situation.",
+        "Relaxed": "Story about to drop.",
+        "Neutral": "We have a situation."
+      },
+      "publicOptions": [
+        {"id": "deny", "text": "Deny everything. Full statement.", "reputationEffect": 5, "lustEffect": 0, "riskEffect": 10, "nextNode": "closing"},
+        {"id": "admit", "text": "Admit to some, deny the rest.", "reputationEffect": -5, "lustEffect": 0, "riskEffect": -5, "nextNode": "closing"},
+        {"id": "no_comment", "text": "No comment. Let it blow over.", "reputationEffect": -10, "lustEffect": 0, "riskEffect": 5, "nextNode": "closing"}
+      ],
+      "privateThoughts": [
+        {"id": "stressed", "text": "Nightmare. But I can manage.", "lustEffect": 0, "riskEffect": -5, "mood": "Stressed"},
+        {"id": "strategic", "text": "How we handle this determines everything.", "lustEffect": 0, "riskEffect": -3, "mood": "Strategic"}
+      ]
+    },
+    {
+      "id": "closing",
+      "text": "I'll get the statement out.",
+      "moodVariations": {
+        "Stressed": "Statement out.",
+        "Relaxed": "Getting it out.",
+        "Neutral": "I'll prepare the statement."
+      },
+      "publicOptions": [
+        {"id": "thanks", "text": "Thank you, Maria.", "reputationEffect": 3, "nextNode": null}
+      ]
+    }
+  ]
+}

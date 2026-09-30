@@ -1,0 +1,39 @@
+{
+  "id": "dialogue_isabella_ch3",
+  "npcId": "isabella",
+  "chapter": 3,
+  "context": "Campaign office. Isabella prepping John for debate.",
+  "nodes": [
+    {
+      "id": "start",
+      "text": "Senator, we have three hours until the debate. Your briefing is ready.",
+      "moodVariations": {
+        "Stressed": "Three hours to debate. Briefing ready.",
+        "Relaxed": "Three hours! Briefing's ready!",
+        "Neutral": "We have three hours until the debate."
+      },
+      "publicOptions": [
+        {"id": "confident", "text": "Ready, Isabella. Let's see it.", "reputationEffect": 5, "lustEffect": 0, "riskEffect": 0, "nextNode": "closing"},
+        {"id": "flirt", "text": "Better now that you're here, Isabella.", "reputationEffect": -2, "lustEffect": 10, "riskEffect": 10, "nextNode": "closing", "setFlag": "isabella_interest_+10"},
+        {"id": "honest", "text": "Nervous, if I'm honest. But that's why I have you.", "reputationEffect": 3, "lustEffect": 5, "riskEffect": 0, "nextNode": "closing"}
+      ],
+      "privateThoughts": [
+        {"id": "strategic", "text": "Best campaign manager. Keep her happy.", "lustEffect": 3, "riskEffect": -5, "mood": "Strategic"},
+        {"id": "lonely", "text": "Her dedication is attractive.", "lustEffect": 5, "riskEffect": 3, "mood": "Lonely"},
+        {"id": "calculating", "text": "Confident candidate performs better.", "lustEffect": 4, "riskEffect": 2, "mood": "Calculating"}
+      ]
+    },
+    {
+      "id": "closing",
+      "text": "Let's run through your opening statement.",
+      "moodVariations": {
+        "Stressed": "Opening statement.",
+        "Relaxed": "Let's do this!",
+        "Neutral": "Let's review your opening statement."
+      },
+      "publicOptions": [
+        {"id": "ready", "text": "Ready.", "reputationEffect": 3, "nextNode": null}
+      ]
+    }
+  ]
+}
