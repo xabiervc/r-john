@@ -1,39 +1,74 @@
 {
   "id": "dialogue_victoria_ch2",
-  "npcId": "victoria",
+  "npc": "victoria",
   "chapter": 2,
-  "context": "Charity Gala. Victoria evaluating John.",
-  "nodes": [
+  "title": "The Wealthy Donor",
+  "setting": "Fundraiser, Private Club",
+  "mood": "sophisticated_influential",
+  
+  "opening": {
+    "text": "Victoria Ashford, the wealthy and influential donor, approaches you at the fundraiser with a glass of champagne.",
+    "speaker": "narrator"
+  },
+  
+  "segments": [
     {
-      "id": "start",
-      "text": "Senator John. I've been watching your career. Impressive trajectory.",
-      "moodVariations": {
-        "Stressed": "Watching your career. Impressive.",
-        "Relaxed": "Your career is impressive!",
-        "Neutral": "I've been observing your career."
-      },
-      "publicOptions": [
-        {"id": "visionary", "text": "Building a legacy, Victoria.", "reputationEffect": 8, "lustEffect": 0, "riskEffect": 0, "nextNode": "closing"},
-        {"id": "flirt", "text": "Building connections. With the right people.", "reputationEffect": -3, "lustEffect": 10, "riskEffect": 15, "nextNode": "closing", "setFlag": "victoria_interest_+10"},
-        {"id": "ambitious", "text": "Building power. The kind that gets things done.", "reputationEffect": 5, "lustEffect": 5, "riskEffect": 5, "nextNode": "closing"}
-      ],
-      "privateThoughts": [
-        {"id": "calculating", "text": "Evaluating as investment.", "lustEffect": 4, "riskEffect": 2, "mood": "Calculating"},
-        {"id": "strategic", "text": "Controls millions. Critical relationship.", "lustEffect": 3, "riskEffect": -5, "mood": "Strategic"},
-        {"id": "degenerate", "text": "Powerful and wealthy. Intoxicating.", "lustEffect": 8, "riskEffect": 5, "mood": "Degenerate"}
+      "id": "fundraiser_approach",
+      "speaker": "victoria",
+      "text": "Senator, I've been following your work on the Education Reform Bill. It's... interesting. Tell me, what's your real position on school choice?",
+      "choices": [
+        {
+          "text": "\"I believe in giving families options, within a strong public system.\"",
+          "effect": {"reputation": 5, "victoria_respect": 5},
+          "next": "balanced"
+        },
+        {
+          "text": "\"School choice is the future. Government monopolies fail our kids.\"",
+          "effect": {"victoria_trust": 10, "risk": 5},
+          "next": "aligned"
+        },
+        {
+          "text": "\"I'm still weighing the options.\"",
+          "effect": {"risk": 5},
+          "next": "noncommittal"
+        }
+      ]
+    },
+    {
+      "id": "aligned",
+      "speaker": "victoria",
+      "text": "She smiles with satisfaction. \"That's what I like to hear. Sometimes politicians need to make tough choices. I appreciate those who do.\"",
+      "choices": [
+        {
+          "text": "\"I try to do what's right, not what's easy.\"",
+          "effect": {"victoria_trust": 10, "victoria_respect": 5},
+          "next": "principled"
+        },
+        {
+          "text": "\"Your support means a lot, Victoria.\"",
+          "effect": {"lust": 5, "victoria_attraction": 5, "risk": 5},
+          "next": "flirtatious"
+        }
       ]
     },
     {
       "id": "closing",
-      "text": "We'll talk soon, Senator.",
-      "moodVariations": {
-        "Stressed": "Talk soon.",
-        "Relaxed": "We'll talk!",
-        "Neutral": "I'll be in touch."
-      },
-      "publicOptions": [
-        {"id": "acknowledge", "text": "Looking forward to it.", "reputationEffect": 3, "nextNode": null}
+      "speaker": "victoria",
+      "text": "\"I'll be watching your vote, Senator. Make it count.\" She raises her glass in a toast before gliding away, leaving you to wonder about her true intentions.",
+      "choices": [
+        {
+          "text": "\"I won't disappoint.\"",
+          "effect": {"victoria_trust": 5},
+          "next": "confident_exit"
+        }
       ]
     }
-  ]
+  ],
+  
+  "flags_set": ["victoria_ch2_met", "victoria_funding_discussed"],
+  "consequences": {
+    "high_trust": "Victoria may provide campaign funding (Chapter 4-5)",
+    "high_attraction": "Victoria may expect political favors in return",
+    "low_trust": "Victoria may fund your opponents"
+  }
 }
