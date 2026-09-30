@@ -1,0 +1,7 @@
+# R-John - Political Drama Visual Novel
+# No external dependencies required (Python 3.7+ standard library only)
+
+# Optional dependencies for enhanced features:
+# pytest>=7.0.0  # For running tests with better output
+# black>=22.0.0  # For code formatting
+# flake8>=4.0.0  # For linting
