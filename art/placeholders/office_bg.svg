@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720">
+  <rect width="1280" height="720" fill="#2c3e50"/>
+  <text x="640" y="360" font-family="Arial" font-size="48" fill="#ecf0f1" text-anchor="middle">Senator's Office (Placeholder Background)</text>
+  <rect x="100" y="200" width="300" height="400" fill="#34495e"/>
+  <rect x="880" y="200" width="300" height="400" fill="#34495e"/>
+  <rect x="400" y="450" width="480" height="150" fill="#7f8c8d"/>
+</svg>
