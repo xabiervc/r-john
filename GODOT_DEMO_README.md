@@ -1,4 +1,4 @@
-# R-John: Godot Vertical Slice Demo
+# R-John: Godot Day 1 Vertical Slice
 
 **Political Drama Visual Novel - Playable Demo**
 
@@ -15,32 +15,33 @@
 1. Open Godot Engine
 2. Import the project (`project.godot`)
 3. Press F5 or click Play
-4. Start the demo from main menu
+4. Start Day 1 from main menu
 
 ---
 
 ## 📖 Demo Content
 
-**Chapter 1: The Press Secretary**
-- Meet Maria (Press Secretary)
+**Day 1: The Office**
+- Meet Emma (Intern), Laura (Personal Assistant), Maria (Press Secretary)
 - Make choices that affect Reputation, Lust, and Risk
 - Experience the visual novel gameplay
 - See consequences of your decisions
+- Save your progress at the end of Day 1
 
-**Duration:** 5-10 minutes
-**Endings:** Multiple based on your choices
+**Duration:** 10-15 minutes
+**Endings:** Day 1 summary with stats and flags
 
 ---
 
 ## 🎯 Features
 
-- ✅ Full dialogue system with choices
+- ✅ Full dialogue system with choices (Emma, Laura, Maria)
 - ✅ Stats tracking (Reputation, Lust, Risk)
-- ✅ NPC relationship system
-- ✅ Save/Load system (coming soon)
-- ✅ Visual novel UI with portraits
-- ✅ Multiple choice paths
-- ✅ Consequence system
+- ✅ NPC relationship flags
+- ✅ Save/Load system (Day 1)
+- ✅ Visual novel UI with portraits and background
+- ✅ Multiple choice paths with consequences
+- ✅ Day 1 summary screen
 
 ---
 
@@ -51,14 +52,23 @@ r-john/
 ├── project.godot          # Godot project file
 ├── scenes/
 │   ├── main_menu.tscn     # Main menu scene
-│   └── dialogue_scene.tscn # Main dialogue scene
+│   ├── dialogue_scene.tscn # Main dialogue scene (Day 1)
+│   └── day1_summary.tscn  # Day 1 summary scene
 ├── scripts/
 │   ├── main_menu.gd       # Main menu logic
-│   └── dialogue_manager.gd # Dialogue system
+│   ├── dialogue_manager.gd # Dialogue system
+│   └── day1_summary.gd    # Summary screen logic
 ├── data/
 │   └── dialogues/
 │       └── chapter_1/
-│           └── dialogue_maria_ch1.json # Maria's dialogue
+│           ├── dialogue_day1.json         # Day 1 flow (Emma → Laura → Maria)
+│           ├── dialogue_emma_ch1_premium.json
+│           ├── dialogue_laura_ch1_premium.json
+│           └── dialogue_maria_ch1_premium.json
+├── art/
+│   └── placeholders/
+│       ├── README.md
+│       └── (placeholder images)
 └── icon.svg               # Game icon
 ```
 
@@ -77,12 +87,13 @@ See `ART_BRIEF_COMPLETE.md` in main branch for full specifications.
 
 ## 🚀 Next Steps
 
-1. **Add more dialogues** (Laura, Emma in Chapter 1)
-2. **Add save/load system**
-3. **Add character portraits** (placeholder art)
-4. **Add backgrounds** (Senator's Office)
-5. **Add music and SFX**
-6. **Expand to Chapters 2-7**
+1. ✅ Day 1 complete (Emma, Laura, Maria)
+2. ⏳ Add character portraits (placeholder art)
+3. ⏳ Add background (Senator's Office)
+4. ⏳ Add music and SFX
+5. ⏳ Expand to Days 2-7 (Chapters 2-7)
+6. ⏳ Full save/load system
+7. ⏳ Accessibility features (text scaling, high contrast)
 
 ---
 
@@ -101,6 +112,7 @@ This vertical slice demonstrates:
 - Choice and consequence system
 - Stats tracking and visualization
 - Visual novel presentation
+- Save/Load functionality
 
 **Goal:** Prove the core gameplay is engaging before full production.
 
@@ -110,7 +122,7 @@ This vertical slice demonstrates:
 
 **Branch:** `feat/godot-vertical-slice`
 **Godot Version:** 4.2+
-**Status:** Playable demo
+**Status:** Playable Day 1 demo
 
 ---
 
