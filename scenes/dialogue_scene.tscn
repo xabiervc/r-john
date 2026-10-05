@@ -1,0 +1,63 @@
+[gd_scene load_steps=2 format=3 uid="uid://dialogue_scene"]
+
+[ext_resource type="Script" path="res://scripts/dialogue_manager.gd" id="dialogue_manager"]
+
+[node name="DialogueScene" type="Node2D"]
+script = ExtResource("dialogue_manager")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+
+[node name="CharacterPortrait" type="Sprite2D" parent="."]
+position = Vector2(300, 360)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="TextBox" type="Panel" parent="UI"]
+offset_left = 100.0
+offset_top = 500.0
+offset_right = 1180.0
+offset_bottom = 680.0
+
+[node name="CharacterName" type="Label" parent="UI/TextBox"]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 300.0
+offset_bottom = 60.0
+text = "Character Name"
+
+[node name="DialogueText" type="RichTextLabel" parent="UI/TextBox"]
+offset_left = 20.0
+offset_top = 70.0
+offset_right = 1040.0
+offset_bottom = 140.0
+text = "Dialogue text goes here..."
+
+[node name="ChoicesContainer" type="VBoxContainer" parent="UI/TextBox"]
+offset_left = 20.0
+offset_top = 150.0
+offset_right = 1040.0
+offset_bottom = 170.0
+
+[node name="StatsUI" type="CanvasLayer" parent="."]
+
+[node name="ReputationBar" type="ProgressBar" parent="StatsUI"]
+offset_left = 1050.0
+offset_top = 20.0
+offset_right = 1260.0
+offset_bottom = 50.0
+value = 50.0
+
+[node name="LustBar" type="ProgressBar" parent="StatsUI"]
+offset_left = 1050.0
+offset_top = 60.0
+offset_right = 1260.0
+offset_bottom = 90.0
+value = 30.0
+
+[node name="RiskBar" type="ProgressBar" parent="StatsUI"]
+offset_left = 1050.0
+offset_top = 100.0
+offset_right = 1260.0
+offset_bottom = 130.0
+value = 30.0
