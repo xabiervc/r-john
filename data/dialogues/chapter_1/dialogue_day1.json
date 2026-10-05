@@ -1,0 +1,13 @@
+{
+  "id": "day1_flow",
+  "title": "Day 1: The Office",
+  "sequence": ["emma", "laura", "maria"],
+  "files": {
+    "emma": "res://data/dialogues/chapter_1/dialogue_emma_ch1_premium.json",
+    "laura": "res://data/dialogues/chapter_1/dialogue_laura_ch1_premium.json",
+    "maria": "res://data/dialogues/chapter_1/dialogue_maria_ch1_premium.json"
+  },
+  "ending": {
+    "scene": "res://scenes/day1_summary.tscn"
+  }
+}
