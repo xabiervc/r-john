@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/debate_3d.gd" id="1_debate"]
+
+[node name="Day1Debate3D" type="Node3D"]
+script = ExtResource("1_debate")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+position = Vector3(0, 5, 12)
+rotation_degrees = Vector3(-18, 0, 0)
+current = true
+
+[node name="Light" type="DirectionalLight3D" parent="."]
+rotation_degrees = Vector3(-45, 20, 0)
+light_energy = 1.4
+
+[node name="HUD" type="CanvasLayer" parent="."]
+[node name="Status" type="Label" parent="HUD"]
+offset_left = 30.0
+offset_top = 25.0
+offset_right = 1240.0
+offset_bottom = 55.0
+text = "LIVE DEBATE — Your preparation determines which answers are available."
+[node name="DebatePanel" type="Panel" parent="HUD"]
+offset_left = 80.0
+offset_top = 410.0
+offset_right = 1200.0
+offset_bottom = 670.0
+[node name="Text" type="RichTextLabel" parent="HUD/DebatePanel"]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 1080.0
+offset_bottom = 105.0
+[node name="Choices" type="VBoxContainer" parent="HUD/DebatePanel"]
+offset_left = 20.0
+offset_top = 120.0
+offset_right = 1080.0
+offset_bottom = 240.0

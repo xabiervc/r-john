@@ -1,0 +1,186 @@
+[gd_scene load_steps=12 format=3]
+
+[ext_resource type="Script" path="res://scripts/office_3d.gd" id="1_office"]
+[ext_resource type="Script" path="res://scripts/reginald_controller_3d.gd" id="2_player"]
+[ext_resource type="Script" path="res://scripts/click_adventure_controller.gd" id="3_click"]
+[ext_resource type="Script" path="res://scripts/interactive_3d.gd" id="4_interactive"]
+[ext_resource type="Script" path="res://scripts/hud_3d.gd" id="5_hud"]
+[ext_resource type="Script" path="res://scripts/dialogue_portrait_overlay.gd" id="6_dialogue"]
+
+[sub_resource type="BoxMesh" id="FloorMesh"]
+size = Vector3(18, 0.2, 14)
+[sub_resource type="BoxMesh" id="CharacterMesh"]
+size = Vector3(0.8, 1.9, 0.55)
+[sub_resource type="BoxMesh" id="DeskMesh"]
+size = Vector3(4.2, 1.2, 2.0)
+[sub_resource type="BoxMesh" id="CabinetMesh"]
+size = Vector3(1.5, 2.7, 0.7)
+[sub_resource type="BoxMesh" id="PhoneMesh"]
+size = Vector3(0.45, 0.18, 0.35)
+[sub_resource type="BoxMesh" id="DoorMesh"]
+size = Vector3(1.4, 3.0, 0.2)
+[sub_resource type="BoxShape3D" id="InteractionShape"]
+size = Vector3(1.8, 2.4, 1.8)
+[sub_resource type="BoxShape3D" id="FloorCollision"]
+size = Vector3(18, 0.2, 14)
+
+[node name="Day1Office3D" type="Node3D"]
+script = ExtResource("1_office")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+rotation_degrees = Vector3(-55, -25, 0)
+light_energy = 1.2
+
+[node name="Camera3D" type="Camera3D" parent="."]
+position = Vector3(0, 12, 15)
+rotation_degrees = Vector3(-38, 0, 0)
+current = true
+
+[node name="Floor" type="StaticBody3D" parent="."]
+[node name="Mesh" type="MeshInstance3D" parent="Floor"]
+mesh = SubResource("FloorMesh")
+[node name="Collision" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("FloorCollision")
+
+[node name="ReginaldJohn" type="CharacterBody3D" parent="."]
+position = Vector3(0, 1, 4.5)
+script = ExtResource("2_player")
+[node name="Mesh" type="MeshInstance3D" parent="ReginaldJohn"]
+mesh = SubResource("CharacterMesh")
+
+[node name="Desk" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.6, -1)
+mesh = SubResource("DeskMesh")
+
+[node name="Emma" type="Interactive3D" parent="."]
+position = Vector3(-5, 1, -2)
+script = ExtResource("4_interactive")
+interaction_id = "emma"
+display_name = "Emma"
+[node name="Mesh" type="MeshInstance3D" parent="Emma"]
+mesh = SubResource("CharacterMesh")
+[node name="Collision" type="CollisionShape3D" parent="Emma"]
+shape = SubResource("InteractionShape")
+
+[node name="Laura" type="Interactive3D" parent="."]
+position = Vector3(5, 1, -2)
+script = ExtResource("4_interactive")
+interaction_id = "laura"
+display_name = "Laura"
+[node name="Mesh" type="MeshInstance3D" parent="Laura"]
+mesh = SubResource("CharacterMesh")
+[node name="Collision" type="CollisionShape3D" parent="Laura"]
+shape = SubResource("InteractionShape")
+
+[node name="Maria" type="Interactive3D" parent="."]
+position = Vector3(1.8, 1, -3.7)
+script = ExtResource("4_interactive")
+interaction_id = "maria"
+display_name = "Maria"
+[node name="Mesh" type="MeshInstance3D" parent="Maria"]
+mesh = SubResource("CharacterMesh")
+[node name="Collision" type="CollisionShape3D" parent="Maria"]
+shape = SubResource("InteractionShape")
+
+[node name="Briefing" type="Interactive3D" parent="."]
+position = Vector3(-0.8, 1.3, -1)
+script = ExtResource("4_interactive")
+interaction_id = "briefing"
+display_name = "Debate Briefing"
+[node name="Mesh" type="MeshInstance3D" parent="Briefing"]
+mesh = SubResource("PhoneMesh")
+[node name="Collision" type="CollisionShape3D" parent="Briefing"]
+shape = SubResource("InteractionShape")
+
+[node name="Archive" type="Interactive3D" parent="."]
+position = Vector3(7.2, 1.35, -3.5)
+script = ExtResource("4_interactive")
+interaction_id = "archive"
+display_name = "Archive Cabinet"
+[node name="Mesh" type="MeshInstance3D" parent="Archive"]
+mesh = SubResource("CabinetMesh")
+[node name="Collision" type="CollisionShape3D" parent="Archive"]
+shape = SubResource("InteractionShape")
+
+[node name="Phone" type="Interactive3D" parent="."]
+position = Vector3(-7, 0.5, 0)
+script = ExtResource("4_interactive")
+interaction_id = "phone"
+display_name = "Campaign Phone"
+[node name="Mesh" type="MeshInstance3D" parent="Phone"]
+mesh = SubResource("PhoneMesh")
+[node name="Collision" type="CollisionShape3D" parent="Phone"]
+shape = SubResource("InteractionShape")
+
+[node name="Door" type="Interactive3D" parent="."]
+position = Vector3(8, 1.5, 4.5)
+script = ExtResource("4_interactive")
+interaction_id = "door"
+display_name = "Door to Debate Hall"
+[node name="Mesh" type="MeshInstance3D" parent="Door"]
+mesh = SubResource("DoorMesh")
+[node name="Collision" type="CollisionShape3D" parent="Door"]
+shape = SubResource("InteractionShape")
+
+[node name="ClickController" type="Node" parent="."]
+script = ExtResource("3_click")
+camera_path = NodePath("../Camera3D")
+player_path = NodePath("../ReginaldJohn")
+office_path = NodePath("..")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("5_hud")
+[node name="Stats" type="Label" parent="HUD"]
+offset_left = 780.0
+offset_top = 24.0
+offset_right = 1240.0
+offset_bottom = 55.0
+text = "REPUTATION 50   DESIRE 30   RISK 30"
+[node name="Inventory" type="Label" parent="HUD"]
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 700.0
+offset_bottom = 55.0
+text = "INVENTORY: empty"
+[node name="Prompt" type="Label" parent="HUD"]
+offset_left = 24.0
+offset_top = 670.0
+offset_right = 1250.0
+offset_bottom = 708.0
+text = "Click the floor to walk. Click people or objects to interact."
+
+[node name="DialoguePortrait" type="CanvasLayer" parent="."]
+script = ExtResource("6_dialogue")
+[node name="Panel" type="Panel" parent="DialoguePortrait"]
+offset_left = 60.0
+offset_top = 360.0
+offset_right = 1220.0
+offset_bottom = 680.0
+[node name="Portrait" type="ColorRect" parent="DialoguePortrait/Panel"]
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 290.0
+offset_bottom = 280.0
+color = Color(0.55, 0.7, 0.86, 1)
+[node name="Speaker" type="Label" parent="DialoguePortrait/Panel"]
+offset_left = 320.0
+offset_top = 24.0
+offset_right = 900.0
+offset_bottom = 55.0
+text = "SPEAKER"
+[node name="Expression" type="Label" parent="DialoguePortrait/Panel"]
+offset_left = 320.0
+offset_top = 58.0
+offset_right = 900.0
+offset_bottom = 85.0
+text = "Expression: neutral"
+[node name="Text" type="RichTextLabel" parent="DialoguePortrait/Panel"]
+offset_left = 320.0
+offset_top = 95.0
+offset_right = 1110.0
+offset_bottom = 175.0
+[node name="Choices" type="VBoxContainer" parent="DialoguePortrait/Panel"]
+offset_left = 320.0
+offset_top = 185.0
+offset_right = 1110.0
+offset_bottom = 295.0

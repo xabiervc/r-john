@@ -1,11 +1,11 @@
-; R-John: Public Servant — Godot 4.7.2 Day 1 vertical slice
+; R-John: Public Servant — Godot 4.7.2 hybrid 3D/2D vertical slice
 config_version=5
 
 [application]
 config/name="R-John: Public Servant"
-config/description="Political graphic-adventure vertical slice"
+config/description="Political graphic adventure — Day 1 playable vertical slice"
 run/main_scene="res://scenes/main_menu.tscn"
-config/features=PackedStringArray("4.7", "Forward Plus")
+config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
@@ -20,6 +20,10 @@ window/stretch/mode="canvas_items"
 interact={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"physical_keycode":69,"unicode":101)]
+}
+examine={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"button_index":2)]
 }
 
 [rendering]
