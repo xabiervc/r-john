@@ -1,0 +1,222 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://scripts/day1_office.gd" id="1_office"]
+[ext_resource type="Script" path="res://scripts/player_controller.gd" id="2_player"]
+[ext_resource type="Script" path="res://scripts/interaction_system.gd" id="3_interaction"]
+[ext_resource type="Script" path="res://scripts/inventory_system.gd" id="4_inventory"]
+[ext_resource type="Script" path="res://scripts/dialogue_adapter.gd" id="5_dialogue"]
+
+[sub_resource type="RectangleShape2D" id="PlayerShape"]
+size = Vector2(48, 72)
+
+[sub_resource type="RectangleShape2D" id="InteractShape"]
+size = Vector2(110, 100)
+
+[node name="Day1Office" type="Node2D"]
+script = ExtResource("1_office")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.13, 0.2, 0.28, 1)
+mouse_filter = 2
+
+[node name="OfficeTitle" type="Label" parent="."]
+position = Vector2(24, 24)
+text = "SENATOR JOHN'S OFFICE — DAY 1"
+theme_override_font_sizes/font_size = 22
+
+[node name="Desk" type="ColorRect" parent="."]
+position = Vector2(460, 390)
+size = Vector2(320, 150)
+color = Color(0.3, 0.18, 0.1, 1)
+mouse_filter = 2
+
+[node name="ArchiveCabinet" type="ColorRect" parent="."]
+position = Vector2(1040, 190)
+size = Vector2(150, 290)
+color = Color(0.25, 0.27, 0.31, 1)
+mouse_filter = 2
+
+[node name="PhoneDesk" type="ColorRect" parent="."]
+position = Vector2(100, 470)
+size = Vector2(190, 100)
+color = Color(0.2, 0.16, 0.12, 1)
+mouse_filter = 2
+
+[node name="ExitDoor" type="ColorRect" parent="."]
+position = Vector2(1140, 510)
+size = Vector2(100, 180)
+color = Color(0.35, 0.22, 0.12, 1)
+mouse_filter = 2
+
+[node name="ReginaldJohn" type="CharacterBody2D" parent="."]
+position = Vector2(620, 580)
+script = ExtResource("2_player")
+
+[node name="Body" type="Polygon2D" parent="ReginaldJohn"]
+polygon = PackedVector2Array(-24, 36, 24, 36, 24, -36, -24, -36)
+color = Color(0.16, 0.16, 0.19, 1)
+
+[node name="Name" type="Label" parent="ReginaldJohn"]
+position = Vector2(-52, -62)
+text = "R. JOHN"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ReginaldJohn"]
+shape = SubResource("PlayerShape")
+
+[node name="Emma" type="Area2D" parent="." groups=["interactable"]]
+position = Vector2(220, 260)
+script = ExtResource("3_interaction")
+interaction_id = "emma"
+prompt_text = "Talk to Emma [E]"
+
+[node name="Body" type="Polygon2D" parent="Emma"]
+polygon = PackedVector2Array(-32, 55, 32, 55, 32, -55, -32, -55)
+color = Color(0.76, 0.62, 0.75, 1)
+
+[node name="Name" type="Label" parent="Emma"]
+position = Vector2(-35, -84)
+text = "EMMA"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Emma"]
+shape = SubResource("InteractShape")
+
+[node name="Laura" type="Area2D" parent="." groups=["interactable"]]
+position = Vector2(890, 270)
+script = ExtResource("3_interaction")
+interaction_id = "laura"
+prompt_text = "Talk to Laura [E]"
+
+[node name="Body" type="Polygon2D" parent="Laura"]
+polygon = PackedVector2Array(-32, 55, 32, 55, 32, -55, -32, -55)
+color = Color(0.72, 0.75, 0.49, 1)
+
+[node name="Name" type="Label" parent="Laura"]
+position = Vector2(-35, -84)
+text = "LAURA"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Laura"]
+shape = SubResource("InteractShape")
+
+[node name="Maria" type="Area2D" parent="." groups=["interactable"]]
+position = Vector2(720, 240)
+script = ExtResource("3_interaction")
+interaction_id = "maria"
+prompt_text = "Talk to Maria [E]"
+
+[node name="Body" type="Polygon2D" parent="Maria"]
+polygon = PackedVector2Array(-32, 55, 32, 55, 32, -55, -32, -55)
+color = Color(0.55, 0.7, 0.86, 1)
+
+[node name="Name" type="Label" parent="Maria"]
+position = Vector2(-35, -84)
+text = "MARIA"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Maria"]
+shape = SubResource("InteractShape")
+
+[node name="Briefing" type="Area2D" parent="." groups=["interactable"]]
+position = Vector2(550, 380)
+script = ExtResource("3_interaction")
+interaction_id = "briefing"
+one_shot = true
+
+[node name="Body" type="Polygon2D" parent="Briefing"]
+polygon = PackedVector2Array(-42, 26, 42, 26, 42, -26, -42, -26)
+color = Color(0.94, 0.9, 0.69, 1)
+
+[node name="Name" type="Label" parent="Briefing"]
+position = Vector2(-35, -18)
+text = "BRIEFING"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Briefing"]
+shape = SubResource("InteractShape")
+
+[node name="Archive" type="Area2D" parent="." groups=["interactable"]]
+position = Vector2(1110, 350)
+script = ExtResource("3_interaction")
+interaction_id = "archive"
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Archive"]
+shape = SubResource("InteractShape")
+
+[node name="Phone" type="Area2D" parent="." groups=["interactable"]]
+position = Vector2(190, 500)
+script = ExtResource("3_interaction")
+interaction_id = "phone"
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Phone"]
+shape = SubResource("InteractShape")
+
+[node name="Door" type="Area2D" parent="." groups=["interactable"]]
+position = Vector2(1185, 590)
+script = ExtResource("3_interaction")
+interaction_id = "door"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
+shape = SubResource("InteractShape")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="StatsLabel" type="Label" parent="CanvasLayer"]
+offset_left = 850.0
+offset_top = 24.0
+offset_right = 1250.0
+offset_bottom = 55.0
+text = "REPUTATION 50   DESIRE 30   RISK 30"
+
+[node name="StatusLabel" type="Label" parent="CanvasLayer"]
+offset_left = 24.0
+offset_top = 670.0
+offset_right = 1250.0
+offset_bottom = 708.0
+text = "Move with arrows/WASD. Press E near people or objects."
+
+[node name="Inventory" type="Panel" parent="CanvasLayer"]
+offset_left = 24.0
+offset_top = 55.0
+offset_right = 460.0
+offset_bottom = 90.0
+script = ExtResource("4_inventory")
+
+[node name="Label" type="Label" parent="CanvasLayer/Inventory"]
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 425.0
+offset_bottom = 30.0
+text = "Inventory: empty"
+
+[node name="DialogueAdapter" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("5_dialogue")
+
+[node name="Panel" type="Panel" parent="CanvasLayer/DialogueAdapter"]
+offset_left = 80.0
+offset_top = 430.0
+offset_right = 1200.0
+offset_bottom = 650.0
+
+[node name="Speaker" type="Label" parent="CanvasLayer/DialogueAdapter/Panel"]
+offset_left = 20.0
+offset_top = 16.0
+offset_right = 250.0
+offset_bottom = 44.0
+text = "Speaker"
+
+[node name="Text" type="RichTextLabel" parent="CanvasLayer/DialogueAdapter/Panel"]
+offset_left = 20.0
+offset_top = 48.0
+offset_right = 1080.0
+offset_bottom = 112.0
+
+[node name="Choices" type="VBoxContainer" parent="CanvasLayer/DialogueAdapter/Panel"]
+offset_left = 20.0
+offset_top = 120.0
+offset_right = 1080.0
+offset_bottom = 208.0
