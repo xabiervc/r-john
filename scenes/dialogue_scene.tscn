@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dialogue_scene"]
 
 [ext_resource type="Script" path="res://scripts/dialogue_manager.gd" id="dialogue_script"]
-[ext_resource type="Texture2D" path="res://art/placeholders/office_bg.png" id="bg_texture"]
+[ext_resource type="Texture2D" path="res://art/placeholders/office_bg.svg" id="bg_texture"]
 
 [node name="DialogueScene" type="Node2D"]
 script = ExtResource("dialogue_script")
