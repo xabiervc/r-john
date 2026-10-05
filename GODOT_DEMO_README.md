@@ -1,4 +1,4 @@
-# R-John: Godot Day 1 Vertical Slice
+# R-John: Public Servant - Godot Day 1 Vertical Slice
 
 **Political Drama Visual Novel - Playable Demo**
 

@@ -21,7 +21,7 @@ offset_left = -300.0
 offset_top = 120.0
 offset_right = 300.0
 offset_bottom = 220.0
-text = "R-John: Power & Scandal"
+text = "R-John: Public Servant"
 horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 
 [node name="Subtitle" type="Label" parent="."]
