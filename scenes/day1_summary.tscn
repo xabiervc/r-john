@@ -1,16 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://day1_summary"]
+[gd_scene load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://scripts/day1_summary.gd" id="summary_script"]
+[ext_resource type="Script" path="res://scripts/day1_summary.gd" id="1_summary"]
 
 [node name="Day1Summary" type="Control"]
-script = ExtResource("summary_script")
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_summary")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color(0.15, 0.15, 0.2, 1)
+color = 0x262633ff
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 1
@@ -22,7 +26,7 @@ offset_top = 60.0
 offset_right = 300.0
 offset_bottom = 120.0
 text = "Day 1 Complete"
-horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+horizontal_alignment = 1
 
 [node name="StatsContainer" type="VBoxContainer" parent="."]
 layout_mode = 0

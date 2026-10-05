@@ -1,14 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://dialogue_scene"]
+[gd_scene load_steps=3 format=3]
 
-[ext_resource type="Script" path="res://scripts/dialogue_manager.gd" id="dialogue_script"]
-[ext_resource type="Texture2D" path="res://art/placeholders/office_bg.svg" id="bg_texture"]
+[ext_resource type="Script" path="res://scripts/dialogue_manager.gd" id="1_dialogue"]
+[ext_resource type="Texture2D" path="res://art/placeholders/office_bg.svg" id="2_bg"]
 
 [node name="DialogueScene" type="Node2D"]
-script = ExtResource("dialogue_script")
+script = ExtResource("1_dialogue")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(640, 360)
-texture = ExtResource("bg_texture")
+texture = ExtResource("2_bg")
 
 [node name="CharacterPortrait" type="Sprite2D" parent="."]
 position = Vector2(320, 380)
