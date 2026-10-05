@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://main_menu"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="main_menu"]
+
+[node name="MainMenu" type="Control"]
+script = ExtResource("main_menu")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="Title" type="Label" parent="."]
+offset_left = 340.0
+offset_top = 100.0
+offset_right = 940.0
+offset_bottom = 200.0
+text = "R-John: Power & Scandal"
+horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+
+[node name="Subtitle" type="Label" parent="."]
+offset_left = 390.0
+offset_top = 220.0
+offset_right = 890.0
+offset_bottom = 260.0
+text = "Political Drama Visual Novel"
+horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+
+[node name="StartButton" type="Button" parent="."]
+offset_left = 490.0
+offset_top = 350.0
+offset_right = 790.0
+offset_bottom = 410.0
+text = "Start Demo"
+
+[node name="QuitButton" type="Button" parent="."]
+offset_left = 490.0
+offset_top = 450.0
+offset_right = 790.0
+offset_bottom = 510.0
+text = "Quit"
