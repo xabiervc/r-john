@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="R-John: Power & Scandal"
-config/description="Political Drama Visual Novel - Vertical Slice Demo"
+config/description="Political Drama Visual Novel - Day 1 Vertical Slice"
 run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"

@@ -1,22 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://dialogue_scene"]
+[gd_scene load_steps=3 format=3 uid="uid://dialogue_scene"]
 
-[ext_resource type="Script" path="res://scripts/dialogue_manager.gd" id="dialogue_manager"]
+[ext_resource type="Script" path="res://scripts/dialogue_manager.gd" id="dialogue_script"]
+[ext_resource type="Texture2D" path="res://art/placeholders/office_bg.png" id="bg_texture"]
 
 [node name="DialogueScene" type="Node2D"]
-script = ExtResource("dialogue_manager")
+script = ExtResource("dialogue_script")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(640, 360)
+texture = ExtResource("bg_texture")
 
 [node name="CharacterPortrait" type="Sprite2D" parent="."]
-position = Vector2(300, 360)
+position = Vector2(320, 380)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="TextBox" type="Panel" parent="UI"]
-offset_left = 100.0
-offset_top = 500.0
-offset_right = 1180.0
+offset_left = 80.0
+offset_top = 460.0
+offset_right = 1200.0
 offset_bottom = 680.0
 
 [node name="CharacterName" type="Label" parent="UI/TextBox"]
@@ -29,35 +31,38 @@ text = "Character Name"
 [node name="DialogueText" type="RichTextLabel" parent="UI/TextBox"]
 offset_left = 20.0
 offset_top = 70.0
-offset_right = 1040.0
-offset_bottom = 140.0
+offset_right = 1080.0
+offset_bottom = 160.0
 text = "Dialogue text goes here..."
 
 [node name="ChoicesContainer" type="VBoxContainer" parent="UI/TextBox"]
 offset_left = 20.0
-offset_top = 150.0
-offset_right = 1040.0
-offset_bottom = 170.0
+offset_top = 170.0
+offset_right = 1080.0
+offset_bottom = 200.0
 
 [node name="StatsUI" type="CanvasLayer" parent="."]
 
 [node name="ReputationBar" type="ProgressBar" parent="StatsUI"]
-offset_left = 1050.0
+offset_left = 1020.0
 offset_top = 20.0
-offset_right = 1260.0
-offset_bottom = 50.0
+offset_right = 1240.0
+offset_bottom = 55.0
 value = 50.0
+max_value = 100.0
 
 [node name="LustBar" type="ProgressBar" parent="StatsUI"]
-offset_left = 1050.0
-offset_top = 60.0
-offset_right = 1260.0
-offset_bottom = 90.0
+offset_left = 1020.0
+offset_top = 65.0
+offset_right = 1240.0
+offset_bottom = 100.0
 value = 30.0
+max_value = 100.0
 
 [node name="RiskBar" type="ProgressBar" parent="StatsUI"]
-offset_left = 1050.0
-offset_top = 100.0
-offset_right = 1260.0
-offset_bottom = 130.0
+offset_left = 1020.0
+offset_top = 110.0
+offset_right = 1240.0
+offset_bottom = 145.0
 value = 30.0
+max_value = 100.0
